@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { GridOptions, ColDef, Module } from '@ag-grid-community/core';
 import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
+import { GridService } from '../services/grid.service';
 
 @Component({
   selector: 'app-gofer-output',
@@ -17,7 +18,7 @@ export class GoferOutputComponent implements OnInit {
   rowData: any[];
   modules: Module[] = [ClientSideRowModelModule];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private grid: GridService) { }
 
 
   ngOnInit() {
@@ -50,17 +51,36 @@ export class GoferOutputComponent implements OnInit {
 
   private getColumnDefs() {
     return [
-      {headerName: 'Make', field: 'make' },
-      {headerName: 'Model', field: 'model' },
-      {headerName: 'Price', field: 'price'}
+      { field: 'typeOfDisorder', headerName: 'Type of disorder'  },
+      { field: 'publicationYear', headerName: 'Publication year'  },
+      { field: 'firstAuthor', headerName: 'First author'  },
+      { field: 'studyName', headerName: 'Study name'  },
+      { field: 'country', headerName: 'Country', cellRenderer: this.grid.getNationalFlagCellRenderer() },
+      { field: 'context', headerName: 'Context', cellClass: 'centredCell'  },
+      { field: '_period', headerName: 'Period'  },
+      { field: 'studyType', headerName: 'Study type', cellClass: 'centredCell' },
+      // { field: '', headerName: ''  },
+      // { field: '', headerName: ''  },
+      // { field: '', headerName: ''  },
+      // { field: '', headerName: ''  },
+      // { field: '', headerName: ''  },
+      // { field: '', headerName: ''  },
+      // { field: '', headerName: ''  },
     ];
   }
 
   private setupRowData() {
     return [
-      { make: 'Toyota', model: 'Celica', price: 35000 },
-      { make: 'Ford', model: 'Mondeo', price: 32000 },
-      { make: 'Porsche', model: 'Boxter', price: 72000 }
+      {
+        typeOfDisorder: 'AD', publicationYear: 1997, firstAuthor: 'Evans', studyName: 'Unknown', country: 'US', context: 'HIC',
+        periodStart: 1982, periodEnd: 1987,
+        studyType: 'PC'
+      },
+      {
+        typeOfDisorder: 'AD', publicationYear: 2001, firstAuthor: 'Tyas', studyName: 'MSHA', country: 'CA', context: 'HIC',
+        periodStart: 1991, periodEnd: 1997,
+        studyType: 'PC'
+      },
     ];
   }
 
