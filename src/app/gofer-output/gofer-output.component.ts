@@ -57,7 +57,7 @@ export class GoferOutputComponent implements OnInit {
       { field: 'studyName', headerName: 'Study name'  },
       { field: 'country', headerName: 'Country', cellRenderer: this.grid.getNationalFlagCellRenderer() },
       { field: 'context', headerName: 'Context', cellClass: 'centredCell'  },
-      { field: '_period', headerName: 'Period'  },
+      { field: '_period', headerName: 'Period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, 'periodStart', 'periodEnd') },
       { field: 'studyType', headerName: 'Study type', cellClass: 'centredCell' },
       // { field: '', headerName: ''  },
       // { field: '', headerName: ''  },
@@ -79,6 +79,11 @@ export class GoferOutputComponent implements OnInit {
       {
         typeOfDisorder: 'AD', publicationYear: 2001, firstAuthor: 'Tyas', studyName: 'MSHA', country: 'CA', context: 'HIC',
         periodStart: 1991, periodEnd: 1997,
+        studyType: 'PC'
+      },
+      {
+        typeOfDisorder: 'AD', publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
+        periodStart: 1994, periodEnd: 2000,
         studyType: 'PC'
       },
     ];
