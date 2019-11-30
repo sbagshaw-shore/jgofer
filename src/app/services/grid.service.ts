@@ -25,9 +25,9 @@ export class GridService {
       const eDiv = document.createElement('div');
       eDiv.className = 'centredCell';
 
-      const percentPerIncrement = (rangeEnd - rangeStart) / 10;
+      const percentPerIncrement = 100 / (rangeEnd - rangeStart);
       const marginLeft = (dStart - rangeStart) * percentPerIncrement;
-      const width = (dEnd - dStart + 1) * percentPerIncrement;
+      const width = (dEnd - dStart) * percentPerIncrement;
 
       // console.log('pppi percentPerIncrement', percentPerIncrement)
       // console.log('pppi marginLeft', marginLeft)

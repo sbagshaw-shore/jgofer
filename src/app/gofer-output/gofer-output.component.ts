@@ -22,7 +22,6 @@ export class GoferOutputComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log('jgjg1', this.id$)
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         of([params.get('id')])
@@ -34,7 +33,6 @@ export class GoferOutputComponent implements OnInit {
     this.gridOptions = this.getGridOptions();
     this.rowData = this.setupRowData();
     this.columnDefs = this.getColumnDefs();
-    console.log('jgjg2', this.id$)
   }
 
   private getGridOptions(): GridOptions {
@@ -59,9 +57,6 @@ export class GoferOutputComponent implements OnInit {
       { field: 'context', headerName: 'Context', cellClass: 'centredCell'  },
       { field: '_period', headerName: 'Period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, 'periodStart', 'periodEnd') },
       { field: 'studyType', headerName: 'Study type', cellClass: 'centredCell' },
-      // { field: '', headerName: ''  },
-      // { field: '', headerName: ''  },
-      // { field: '', headerName: ''  },
       // { field: '', headerName: ''  },
       // { field: '', headerName: ''  },
       // { field: '', headerName: ''  },
