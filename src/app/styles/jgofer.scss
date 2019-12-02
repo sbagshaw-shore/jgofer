@@ -15,6 +15,10 @@
    justify-content: center;
 }
 
+.ag-header-cell {
+  background-color: white;
+}
+
 .centredCell {
   text-align: center;
   width: 100%;
@@ -25,6 +29,18 @@
 .jgofer-flag {
   font-size: 3.2em;
   width: 300px;
-  // color: dar
+}
+
+.subHeadingInRow {
+  font-size: 1.1em;
+  background-color: #220ed8;
+  color: white;
+}
+
+.ag-header-group-cell-label {
+  justify-content: center;
+  // background-color: white;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 

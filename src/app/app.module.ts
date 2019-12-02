@@ -5,17 +5,19 @@ import { AppComponent } from './app.component';
 import { AgGridModule } from '@ag-grid-community/angular';
 import { GoferOutputComponent } from './gofer-output/gofer-output.component';
 import { GoferListComponent } from './gofer-list/gofer-list.component';
+import { RangedLineHeaderComponent } from './elements/ranged-line-header/ranged-line-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GoferOutputComponent,
-    GoferListComponent
+    GoferListComponent,
+    RangedLineHeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AgGridModule.withComponents([]),
+    AgGridModule.withComponents([RangedLineHeaderComponent]),
     AppRoutingModule // leave AppRoutingModule last, to be after any app modules - see https://angular.io/guide/router "Module import order matters"
   ],
   providers: [],
