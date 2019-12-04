@@ -46,7 +46,6 @@ export class GoferOutputComponent implements OnInit {
 
   private getGridOptions(): GridOptions {
     return {
-      // onGridReady: ev => this.gridReady(ev, g),
       onGridSizeChanged: ev => ev.api.sizeColumnsToFit(),
       rowHeight: 50,
 
@@ -74,14 +73,28 @@ export class GoferOutputComponent implements OnInit {
         { field: 'context', headerName: '', cellClass: 'centredCell' } // todo icon
       ]},
       { headerName: 'Period', children: [
-        { field: '_period', headerName: '', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, 'periodStart', 'periodEnd', false),
+        {
+          // todo width needs to be matched in the headerComponent - might not be possible to make this dynamic
+          field: '_period',  width: 150, cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, 'periodStart', 'periodEnd', false),
           headerComponent: 'rangedLineHeaderComponent', headerComponentParams: {
             start: 1982, end: 2013
           }
         },
       ]},
+      { headerName: 'Baseline female %', children: [
+        { field: 'baselineFemalePercentage', headerName: '', cellRenderer: this.grid.getZeroFixedLineCellRenderer(100, true) }
+      ]},
       { headerName: 'Study type', children: [
         { field: 'studyType', headerName: '', cellClass: 'centredCell'  }
+      ]},
+      { headerName: 'Used diagnostic criteria', children: [
+        { field: 'usedDiagnosticCriteria', headerName: '', cellRenderer: this.grid.getBooleanCellRenderer()  }
+      ]},
+      { headerName: 'Screened before clinical evaluation', children: [
+        { field: 'screenedBeforeClinicalEvaluation', headerName: '', cellRenderer: this.grid.getBooleanCellRenderer()  }
+      ]},
+      { headerName: '# of follow-ups', children: [
+        { field: 'numFollowUps', headerName: '', cellRenderer: this.grid.getNumberByDotsCellRenderer()  }
       ]},
     ];
   }
@@ -94,17 +107,26 @@ export class GoferOutputComponent implements OnInit {
       {
         publicationYear: 1997, firstAuthor: 'Evans', studyName: 'Unknown', country: 'US', context: 'HIC',
         periodStart: 1982, periodEnd: 1987,
-        studyType: 'PC'
+        studyType: 'PC',
+        baselineFemalePercentage: 56.4,
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
+        numFollowUpsMin: 1, numFollowUpsMax: 2,
       },
       {
         publicationYear: 2001, firstAuthor: 'Tyas', studyName: 'MSHA', country: 'CA', context: 'HIC',
         periodStart: 1991, periodEnd: 1997,
-        studyType: 'PC'
+        studyType: 'PC',
+        baselineFemalePercentage: 62.4,
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
+        numFollowUpsMin: 1, numFollowUpsMax: 1,
       },
       {
         publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
         periodStart: 1994, periodEnd: 2000,
-        studyType: 'PC'
+        studyType: 'PC',
+        baselineFemalePercentage: 59,
+        usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
+        numFollowUpsMin: 1, numFollowUpsMax: 2,
       },
       {
         publicationYear: 'All dementia'
@@ -112,7 +134,10 @@ export class GoferOutputComponent implements OnInit {
       {
         publicationYear: 1994, firstAuthor: 'Stern', studyName: 'Unknown', country: 'US', context: 'HIC',
         periodStart: null, periodEnd: null,
-        studyType: 'PC'
+        studyType: 'PC',
+        baselineFemalePercentage: 72.9,
+        usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: false,
+        numFollowUpsMin: 1, numFollowUpsMax: 4,
       },
     ];
   }

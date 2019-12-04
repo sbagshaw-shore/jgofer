@@ -17,7 +17,6 @@ export class RangedLineHeaderComponent implements OnDestroy, IHeaderAngularComp 
   }
 
   agInit(params: LineRangeParams): void {
-    console.log('heieieie in there!!')
     this.params = params;
   }
 
