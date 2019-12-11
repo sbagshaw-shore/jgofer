@@ -27,7 +27,8 @@ export class GridService {
 
       const percentPerIncrement = 100 / rangeEnd;
       const width = dEnd * percentPerIncrement;
-      const valueText = isIncludeValueText ? `<div>${ dEnd }</div>` : '';
+      const suffix = rangeEnd === 100 ? '%' : '';
+      const valueText = isIncludeValueText ? `<div>${ dEnd }${ suffix }</div>` : '';
 
       eDiv.innerHTML = `<div style="width: ${ width }%; border-bottom: 3px solid darkgreen;"></div>${ valueText }`;
       return eDiv;
@@ -37,6 +38,7 @@ export class GridService {
   getRangedLineCellRenderer(rangeStart: number, rangeEnd: number, startProperty: string, endProperty: string, isIncludeValueText?: boolean) {
     return params => {
       const d = params.data;
+      const isFakeHeader = d.isFakeHeader;
 
       const dStart = +d[startProperty];
       const dEnd = +d[endProperty];
@@ -49,7 +51,7 @@ export class GridService {
       const percentPerIncrement = 100 / (rangeEnd - rangeStart);
       const marginLeft = (dStart - rangeStart) * percentPerIncrement;
       const width = (dEnd - dStart) * percentPerIncrement;
-      const valueText = isIncludeValueText ? `<div>${ d[startProperty] } - ${ d[endProperty] }</div>` : '';
+      const valueText = isFakeHeader || isIncludeValueText ? `<div>${ d[startProperty] } - ${ d[endProperty] }</div>` : '';
 
       // console.log('pppi percentPerIncrement', percentPerIncrement)
       // console.log('pppi marginLeft', marginLeft)
@@ -96,7 +98,7 @@ export class GridService {
   // if data is an int, display as normal; otherwise assume it's a subheader
   getSubHeadingRowCellClass(subHeadingClass: string) {
     return params => {
-      return (typeof params.value === 'number') ? '' : subHeadingClass;
+      return params.data.isFakeHeader || (typeof params.value === 'number') ? '' : subHeadingClass;
     };
   }
 }

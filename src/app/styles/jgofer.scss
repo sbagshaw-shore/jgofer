@@ -10,17 +10,15 @@
   line-height: 1.4;
 }
 
-.ag-header-cell {
-  width: 100% !important;
-}
-
 /* centres all header cells */
 .ag-header-cell-label {
    justify-content: center;
 }
 
 .ag-header-cell {
-  background-color: white;
+  // background-color: black;
+  // color: white;
+  // height: 150px;
 }
 
 .centredCell {
@@ -39,13 +37,6 @@
   font-size: 1.1em;
   background-color: #220ed8;
   color: white;
-}
-
-.ag-header-group-cell-label {
-  justify-content: center;
-  // background-color: white;
-  font-size: 1.1em;
-  font-weight: bold;
 }
 
 .dot {
