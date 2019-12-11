@@ -77,11 +77,12 @@ export class GoferOutputComponent implements OnInit {
   }
 
   private setupRowData() {
-    return [
-      {
-        isFakeHeader: true,
-        periodStart: 1982, periodEnd: 2013, // the entire range
-      },
+    const headerFooter = {
+      isFakeHeader: true,
+      periodStart: 1982, periodEnd: 2013, // the entire range
+    };
+
+    const data: any[] = [
       {
         publicationYear: 'AD',
         isSubCategoryRow: true
@@ -121,8 +122,13 @@ export class GoferOutputComponent implements OnInit {
         baselineFemalePercentage: 72.9,
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: false,
         numFollowUpsMin: 1, numFollowUpsMax: 4,
-      },
+      }
     ];
+
+    data.push(headerFooter);
+    data.splice(0, 0, headerFooter);
+
+    return data;
   }
 
 }
