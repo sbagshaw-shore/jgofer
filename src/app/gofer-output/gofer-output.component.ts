@@ -47,7 +47,8 @@ export class GoferOutputComponent implements OnInit {
       onGridSizeChanged: ev => ev.api.sizeColumnsToFit(),
 
       defaultColDef: {
-        resizable: true
+        resizable: true,
+        cellClass: this.grid.getCellClass()
       },
     };
 
@@ -57,7 +58,7 @@ export class GoferOutputComponent implements OnInit {
 
   private getColumnDefs() {
     return [
-      { headerName: 'Publication year', field: 'publicationYear', cellClass: this.grid.getSubHeadingRowCellClass('subHeadingInRow')  },
+      { headerName: 'Publication year', field: 'publicationYear', isSubHeadingInColumn: true  },
       { headerName: 'First author', field: 'firstAuthor' },
       { headerName: 'Study name', field: 'studyName' },
       { headerName: 'Country', field: 'country', cellRenderer: this.grid.getNationalFlagCellRenderer() },
@@ -69,7 +70,7 @@ export class GoferOutputComponent implements OnInit {
           }
       */
       { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getZeroFixedLineCellRenderer(100, true) },
-      { headerName: 'Study type', field: 'studyType', cellClass: 'centredCell' },
+      { headerName: 'Study type', field: 'studyType', isDataCentred: true },
       { headerName: 'Used diagnostic criteria', field: 'usedDiagnosticCriteria', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: 'Screened before clinical evaluation', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: '# of follow-ups', field: 'numFollowUps',  cellRenderer: this.grid.getNumberByDotsCellRenderer()  }

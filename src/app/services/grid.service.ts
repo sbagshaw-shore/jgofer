@@ -95,10 +95,15 @@ export class GridService {
     };
   }
 
-  // if data is an int, display as normal; otherwise assume it's a subheader
-  getSubHeadingRowCellClass(subHeadingClass: string) {
+  getCellClass() {
     return params => {
-      return params.data.isFakeHeader || (typeof params.value === 'number') ? '' : subHeadingClass;
+      let classes = '';
+
+      if (params.data.isFakeHeader) { classes = 'fakeHeader '; }
+      if (params.colDef.isDataCentred) { classes += 'centredCell '; }
+      if (params.colDef.isSubHeadingInColumn && !params.data.isFakeHeader && typeof params.value !== 'number') { classes += 'subHeadingInRow '; }
+
+      return classes;
     };
   }
 }
