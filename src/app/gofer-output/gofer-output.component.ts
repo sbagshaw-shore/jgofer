@@ -124,6 +124,22 @@ export class GoferOutputComponent implements OnInit {
         baselineFemalePercentage: 72.9,
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: false,
         numFollowUpsMin: 1, numFollowUpsMax: 4,
+      },
+      {
+        publicationYear: 1997, firstAuthor: 'Schmand', studyName: 'AMSTEL', country: 'NL', context: 'HIC',
+        periodStart: null, periodEnd: null,
+        studyType: 'PC',
+        baselineFemalePercentage: 62.6,
+        usedDiagnosticCriteria: false,  screenedBeforeClinicalEvaluation: false,
+        numFollowUpsMin: 1, numFollowUpsMax: 1,
+      },
+      {
+        publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
+        periodStart: 1994, periodEnd: 2000,
+        studyType: 'PC',
+        baselineFemalePercentage: 59,
+        usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
+        numFollowUpsMin: 1, numFollowUpsMax: 2,
       }
     ];
 
