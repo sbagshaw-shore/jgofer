@@ -18,24 +18,38 @@ export class GridService {
 
   getZeroFixedLineCellRenderer(rangeEnd: number, isIncludeValueText?: boolean) {
     return params => {
-      const dStart = 0.0;
-      const dEnd = +params.value;
 
       const eDiv = document.createElement('div');
-      eDiv.className = 'centredCell';
-      if (!dEnd) { return ''; }
+      eDiv.className = 'centredCell fullHeightCell';
 
-      const percentPerIncrement = 100 / rangeEnd;
-      const width = dEnd * percentPerIncrement;
-      const suffix = rangeEnd === 100 ? '%' : '';
-      const valueText = isIncludeValueText ? `<div>${ dEnd }${ suffix }</div>` : '';
+      if (params.data.isFakeHeader) {
+        eDiv.innerHTML = '<div class="squeeze">' +
+          '<div class="segmentLabel floatDown">50</div><div class="segmentLabel floatUp float-left">0</div><div class="segmentLabel float-right floatUp">100</div>' +
+        '</div>';
+      } else {
+        const dEnd = +params.value;
+        const percentPerIncrement = 100 / rangeEnd;
+        const width = dEnd * percentPerIncrement;
+        const suffix = rangeEnd === 100 ? '%' : '';
+        const valueText = isIncludeValueText && !params.data.isFakeHeader ? `<div>${ dEnd }${ suffix }</div>` : '';
 
-      eDiv.innerHTML = `<div style="width: ${ width }%; border-bottom: 3px solid darkgreen;"></div>${ valueText }`;
+        const markerLines =
+        '<div class="row squeeze">' +
+         '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr">&nbsp;</span>' +
+         '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr4">&nbsp;</span>' +
+        '</div>';
+
+        const line = params.data.isSubCategoryRow ? '' :
+          `<div style="width: ${ width }%; border-bottom: 3px solid goldenrod; margin:-22px 0 0 1px;"></div>${ valueText }`;
+
+        eDiv.innerHTML = `${ markerLines }${ line }`;
+      }
+
       return eDiv;
     };
   }
 
-  getRangedLineCellRenderer(rangeStart: number, rangeEnd: number, startProperty: string, endProperty: string, isIncludeValueText?: boolean) {
+  getRangedLineCellRenderer(rangeStart: number, rangeEnd: number, startProperty: string, endProperty: string, isIncludeValueText?: boolean, nullReplacement?: string) {
     return params => {
       const d = params.data;
       const isFakeHeader = d.isFakeHeader;
@@ -46,12 +60,21 @@ export class GridService {
       const eDiv = document.createElement('div');
       eDiv.className = 'centredCell';
 
-      if (!dStart) { return ''; }
+      if (!dStart) {
+        if (nullReplacement && !params.data.isSubCategoryRow) { eDiv.innerHTML = nullReplacement; }
+        return eDiv;
+      }
 
       const percentPerIncrement = 100 / (rangeEnd - rangeStart);
       const marginLeft = (dStart - rangeStart) * percentPerIncrement;
       const width = (dEnd - dStart) * percentPerIncrement;
-      const valueText = isFakeHeader || isIncludeValueText ? `<div>${ d[startProperty] } - ${ d[endProperty] }</div>` : '';
+      let valueText = '';
+
+      if (isFakeHeader) {
+        valueText = `<div><span style="float: left;">${ d[startProperty] }</span><div style="float:right;">${ d[endProperty] }</div></div>`;
+      } else if (isIncludeValueText) {
+        valueText = `<div>${ d[startProperty] } - ${ d[endProperty] }</div>`;
+      }
 
       // console.log('pppi percentPerIncrement', percentPerIncrement)
       // console.log('pppi marginLeft', marginLeft)

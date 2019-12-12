@@ -48,7 +48,8 @@ export class GoferOutputComponent implements OnInit {
 
       defaultColDef: {
         resizable: true,
-        cellClass: this.grid.getCellClass()
+        cellClass: this.grid.getCellClass(),
+        headerClass: 'header'
       },
     };
 
@@ -62,14 +63,14 @@ export class GoferOutputComponent implements OnInit {
       { headerName: 'First author', field: 'firstAuthor' },
       { headerName: 'Study name', field: 'studyName' },
       { headerName: 'Country', field: 'country', cellRenderer: this.grid.getNationalFlagCellRenderer() },
-      { headerName: 'Context', field: 'context' },
-      { headerName: 'Period', field: '_period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, 'periodStart', 'periodEnd', false) },
+      { headerName: 'Context', field: 'context', isDataCentred: true },
+      { headerName: 'Period', field: '_period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, 'periodStart', 'periodEnd', false, 'Unclear') },
       /*
       headerComponent: 'rangedLineHeaderComponent', headerComponentParams: {
             start: 1982, end: 2013
           }
       */
-      { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getZeroFixedLineCellRenderer(100, true) },
+      { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getZeroFixedLineCellRenderer(100, false) },
       { headerName: 'Study type', field: 'studyType', isDataCentred: true },
       { headerName: 'Used diagnostic criteria', field: 'usedDiagnosticCriteria', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: 'Screened before clinical evaluation', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },
