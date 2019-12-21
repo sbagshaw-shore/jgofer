@@ -71,7 +71,7 @@ export class GoferOutputComponent implements OnInit {
       { headerName: 'Population recruited', field: 'populationRecruited', isDataCentred: true },
       { headerName: 'Sample age recruited', field: '_sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(60, 100, 'sampleAgeRecruitedStart', 'sampleAgeRecruitedEnd', false, 'Unclear') },
       { headerName: 'Contributing #', field: 'contributingNumber', isDataCentred: true },
-      // { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getRangedLineCellRenderer(0, 100, false) },
+      { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getBinaryCategoryCellRenderer(['F', 'M']) },
       { headerName: 'Sample age mean (SD)', field: 'sampleAgeMean', isDataMultiline: true },
       { headerName: 'Used diagnostic criteria', field: 'usedDiagnosticCriteria', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: 'Screened before clinical evaluation', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },

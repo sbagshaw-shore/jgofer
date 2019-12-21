@@ -25,11 +25,6 @@ export class GridService {
       const eDiv = document.createElement('div');
       eDiv.className = 'centredCell fullHeightCell';
 
-      // if (!dStart) {
-      //   if (nullReplacement && !params.data.isSubCategoryRow) { eDiv.innerHTML = nullReplacement; }
-      //   return eDiv;
-      // }
-
       if (isFakeHeader) {
         eDiv.innerHTML = '<div class="squeeze">' +
           `<div class="segmentLabel floatDown">${ Math.round((rangeEnd - rangeStart) / 2) + rangeStart }</div><div class="segmentLabel floatUp float-left">${ rangeStart }</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
@@ -61,38 +56,28 @@ export class GridService {
     };
   }
 
-  // getZeroFixedLineCellRenderer(rangeEnd: number, isIncludeValueText?: boolean) {
-  //   return params => {
+  // fat line with two background colours, adding up to total width (assumes percentage value passed in for now)
+  getBinaryCategoryCellRenderer(headerLabels: string[]) {
+    return params => {
 
-  //     const eDiv = document.createElement('div');
-  //     eDiv.className = 'centredCell fullHeightCell';
+      const isFakeHeader = params.data.isFakeHeader;
+      const eDiv = document.createElement('div');
+      eDiv.className = 'centredCell fullHeightCell';
 
-  //     if (params.data.isFakeHeader) {
-  //       eDiv.innerHTML = '<div class="squeeze">' +
-  //         `<div class="segmentLabel floatDown">${ rangeEnd / 2 }</div><div class="segmentLabel floatUp float-left">0</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
-  //       '</div>';
-  //     } else {
-  //       const dEnd = +params.value;
-  //       const percentPerIncrement = 100 / rangeEnd;
-  //       const width = dEnd * percentPerIncrement;
-  //       const suffix = rangeEnd === 100 ? '%' : '';
-  //       const valueText = isIncludeValueText && !params.data.isFakeHeader ? `<div>${ dEnd }${ suffix }</div>` : '';
+      if (isFakeHeader) {
+        eDiv.innerHTML = '<div class="squeeze">' +
+        `<div class="float-left floatDown">${ headerLabels[0] }</div><div class="float-right floatDown">${ headerLabels[1] }</div>` +
+      '</div>';
+      } else if (!params.data.isSubCategoryRow) {
+        const first = `<div class="float-left" style="background-color: mediumvioletred; width: ${ params.value }%">&nbsp;</div>`;
+        const second = `<div class="float-right" style="background-color: orchid; width: ${ 100 - params.value }%">&nbsp;</div>`;
 
-  //       const markerLines =
-  //       '<div class="row squeeze">' +
-  //        '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr">&nbsp;</span>' +
-  //        '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr4">&nbsp;</span>' +
-  //       '</div>';
+        eDiv.innerHTML = `<div style="margin-top: 14px;">${ first }${ second }</div>`;
+      }
 
-  //       const line = params.data.isSubCategoryRow ? '' :
-  //         `<div style="width: ${ width }%; border-bottom: 3px solid goldenrod; margin:-22px 0 0 1px;"></div>${ valueText }`;
-
-  //       eDiv.innerHTML = `${ markerLines }${ line }`;
-  //     }
-
-  //     return eDiv;
-  //   };
-  // }
+      return eDiv;
+    };
+  }
 
 
   // fancier boolean cell renderer (green tick, red cross)
