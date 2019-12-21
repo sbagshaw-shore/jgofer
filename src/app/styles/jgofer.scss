@@ -16,14 +16,10 @@
    justify-content: center;
 }
 
-// .ag-theme-balham .ag-row {
-//   border-style: none; // this removes separator between rows (default is "solid")
-// }
-
-.ag-theme-balham .ag-row-first {
-  border-style: none; // this removes separator between rows (default is "solid") todo - want to do this??
-  background-color: greenyellow;
-  height: 100px;
+// need to have word-wrapping in header cells
+.ag-theme-balham .ag-header-cell-label .ag-header-cell-text {
+  white-space: normal;
+  text-align: center;
 }
 
 .centredCell {

@@ -45,6 +45,7 @@ export class GoferOutputComponent implements OnInit {
   private getGridOptions(): GridOptions {
     const gridOptions: GridOptions = {
       onGridSizeChanged: ev => ev.api.sizeColumnsToFit(),
+      headerHeight: 50,
 
       defaultColDef: {
         resizable: true,
@@ -71,7 +72,7 @@ export class GoferOutputComponent implements OnInit {
       { headerName: 'Sample age recruited', field: '_sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(60, 100, 'sampleAgeRecruitedStart', 'sampleAgeRecruitedEnd', false, 'Unclear') },
       { headerName: 'Contributing #', field: 'contributingNumber', cellRenderer: this.grid.getZeroFixedLineCellRenderer(4400, false) },
       { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getZeroFixedLineCellRenderer(100, false) },
-      { headerName: 'Sample age mean (SD)', field: 'sampleAgeMean' },
+      { headerName: 'Sample age mean (SD)', field: 'sampleAgeMean',  },
       { headerName: 'Used diagnostic criteria', field: 'usedDiagnosticCriteria', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: 'Screened before clinical evaluation', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: '# of follow-ups', field: 'numFollowUps',  cellRenderer: this.grid.getNumberByDotsCellRenderer()  }
@@ -125,7 +126,7 @@ export class GoferOutputComponent implements OnInit {
         sampleAgeRecruitedStart: 65, sampleAgeRecruitedEnd: 100,
         contributingNumber: 2356,
         baselineFemalePercentage: 59,
-        sampleAgeMean: '79.4 with dementia, 74.0 without dementia',
+        sampleAgeMean: '79.4 with dementia<br/> 74.0 without dementia',
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
         numFollowUpsMin: 1, numFollowUpsMax: 2,
       },
