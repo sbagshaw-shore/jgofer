@@ -76,7 +76,7 @@ export class GridService {
   }
 
   // fat line with two background colours, adding up to total width (assumes percentage value passed in for now)
-  getConfidenceCellRenderer() {
+  getConfidenceCellRenderer(rangeStart: number, rangeEnd: number) {
     return params => {
       const isFakeHeader = params.data.isFakeHeader;
       const eDiv = document.createElement('div');
@@ -84,14 +84,27 @@ export class GridService {
 
       if (isFakeHeader) {
         eDiv.innerHTML = '<div class="squeeze">' +
-        // `<div class="float-left floatDown">${ headerLabels[0] }</div><div class="float-right floatDown">${ headerLabels[1] }</div>` +
+        `<div class="floatDown">1</div><div class="floatUp float-left">${ rangeStart }</div><div class="float-right floatUp">${ rangeEnd }</div>` +
       '</div>';
       } else if (!params.data.isSubCategoryRow) {
-        const values = params.value; // [effect size, lowc i, high ci]
-        const first = `<div class="float-left" style="background-color: mediumvioletred; width: ${ params.value }%">&nbsp;</div>`;
-        const second = `<div class="float-right" style="background-color: orchid; width: ${ 100 - params.value }%">&nbsp;</div>`;
+        const dEffect = +params.value[0];
+        const dStart = +params.value[1];
+        const dEnd =  +params.value[2];
+        const percentPerIncrement = 100 / (rangeEnd - rangeStart);
+        const rangeMarginLeft = +(dStart - rangeStart) * percentPerIncrement;
+        const rangeWidth = (dEnd - dStart) * percentPerIncrement;
+        const pointMarginLeft = +(dEffect - rangeStart) * percentPerIncrement;
 
-        eDiv.innerHTML = `<div style="margin-top: 14px;">${ first }${ second }</div>`;
+        // just a 1 marker
+        const markerLines =
+        '<div class="row squeeze">' +
+          '<span class="col-6">&nbsp;</span><span class="col-6 qtr">&nbsp;</span>' +
+        '</div>';
+
+        const rangeLline = `<div style="margin-left: 1px;"><div style="margin-left: ${ rangeMarginLeft }%; margin-top: -24px; width: ${ rangeWidth }%; border-bottom: 4px solid skyblue;"></div></div>`;
+        const point = `<div style="margin-left: 1px;"><div style="margin-left: ${ pointMarginLeft }%; margin-top: -8px" id="diamond"></div></div>`;
+
+        eDiv.innerHTML = `${ markerLines }${ rangeLline }${ point }`;
       }
 
       return eDiv;

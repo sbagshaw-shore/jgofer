@@ -76,7 +76,7 @@ export class GoferOutputComponent implements OnInit {
       { headerName: 'Used diagnostic criteria', field: 'usedDiagnosticCriteria', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: 'Screened before clinical evaluation', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: '# of follow-ups', field: 'numFollowUps',  cellRenderer: this.grid.getNumberByDotsCellRenderer()  },
-      { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer() },
+      { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(0.5, 1.5), width: 600 },
     ];
   }
 
@@ -104,6 +104,7 @@ export class GoferOutputComponent implements OnInit {
         sampleAgeMean: 'Not reported',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
         numFollowUpsMin: 1, numFollowUpsMax: 2,
+        effectSize: [0.85, 0.754, 0.95]
       },
       {
         publicationYear: 2001, firstAuthor: 'Tyas', studyName: 'MSHA', country: 'CA', context: 'HIC',
@@ -117,6 +118,7 @@ export class GoferOutputComponent implements OnInit {
         sampleAgeMean: '74.0 (5.8)',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUpsMin: 1, numFollowUpsMax: 1,
+        effectSize: [0.86, 0.76, 0.96]
       },
       {
         publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
@@ -130,6 +132,7 @@ export class GoferOutputComponent implements OnInit {
         sampleAgeMean: '79.4 with dementia, 74.0 without dementia',
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
         numFollowUpsMin: 1, numFollowUpsMax: 2,
+        effectSize: [0.91, 0.86, 0.97]
       },
       {
         publicationYear: 'All dementia',
@@ -141,12 +144,13 @@ export class GoferOutputComponent implements OnInit {
         studyType: 'PC',
         sampling: 'Volunteer',
         populationRecruited: 'Non-specific',
-        sampleAgeRecruited: [65, 99],
+        sampleAgeRecruited: [60, 99],
         contributingNumber: 583,
         baselineFemalePercentage: 72.9,
         sampleAgeMean: '74.0 (7.6)',
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: false,
         numFollowUpsMin: 1, numFollowUpsMax: 4,
+        effectSize: [0.92, 0.88, 0.95]
       },
       {
         publicationYear: 1997, firstAuthor: 'Schmand', studyName: 'AMSTEL', country: 'NL', context: 'HIC',
@@ -160,6 +164,7 @@ export class GoferOutputComponent implements OnInit {
         sampleAgeMean: 'Normal: 74.1 (5.5); Cases: 77.5 (5.0)',
         usedDiagnosticCriteria: false,  screenedBeforeClinicalEvaluation: false,
         numFollowUpsMin: 1, numFollowUpsMax: 1,
+        effectSize: [0.86, 0.57, 1.31]
       },
       {
         publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
@@ -173,6 +178,7 @@ export class GoferOutputComponent implements OnInit {
         sampleAgeMean: '79.4 with dementia, 74.0 without dementia',
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
         numFollowUpsMin: 1, numFollowUpsMax: 2,
+        effectSize: [0.94, 0.9, 0.99]
       }
     ];
 
