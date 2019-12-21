@@ -16,12 +16,9 @@ export class GridService {
     };
   }
 
-  getRangedLineCellRenderer(rangeStart: number, rangeEnd: number, startProperty: string, endProperty: string, isIncludeValueText?: boolean, nullReplacement?: string) {
+  getRangedLineCellRenderer(rangeStart: number, rangeEnd: number, isIncludeValueText?: boolean, nullReplacement?: string) {
     return params => {
-      const d = params.data;
-      const isFakeHeader = d.isFakeHeader;
-      const dStart = +d[startProperty];
-
+      const isFakeHeader = params.data.isFakeHeader;
       const eDiv = document.createElement('div');
       eDiv.className = 'centredCell fullHeightCell';
 
@@ -29,8 +26,9 @@ export class GridService {
         eDiv.innerHTML = '<div class="squeeze">' +
           `<div class="segmentLabel floatDown">${ Math.round((rangeEnd - rangeStart) / 2) + rangeStart }</div><div class="segmentLabel floatUp float-left">${ rangeStart }</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
         '</div>';
-      } else {
-        const dEnd = +d[endProperty];
+      } else if (!params.data.isSubCategoryRow) {
+        const dStart = +params.value[0];
+        const dEnd =  +params.value[1];
         const percentPerIncrement = 100 / (rangeEnd - rangeStart);
         const marginLeft = +(dStart - rangeStart) * percentPerIncrement;
         const width = (dEnd - dStart) * percentPerIncrement;
@@ -46,8 +44,7 @@ export class GridService {
          '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr4">&nbsp;</span>' +
         '</div>';
 
-        const line = params.data.isSubCategoryRow ? '' :
-          `<div style="margin-left: 1px;"><div style="margin-left: ${ marginLeft }%; margin-top: -22px; width: ${ width }%; border-bottom: 4px solid goldenrod;"></div></div>${ valueText }`;
+        const line = `<div style="margin-left: 1px;"><div style="margin-left: ${ marginLeft }%; margin-top: -22px; width: ${ width }%; border-bottom: 4px solid goldenrod;"></div></div>${ valueText }`;
 
         eDiv.innerHTML = `${ markerLines }${ line }`;
       }
@@ -59,7 +56,6 @@ export class GridService {
   // fat line with two background colours, adding up to total width (assumes percentage value passed in for now)
   getBinaryCategoryCellRenderer(headerLabels: string[]) {
     return params => {
-
       const isFakeHeader = params.data.isFakeHeader;
       const eDiv = document.createElement('div');
       eDiv.className = 'centredCell fullHeightCell';
@@ -69,6 +65,29 @@ export class GridService {
         `<div class="float-left floatDown">${ headerLabels[0] }</div><div class="float-right floatDown">${ headerLabels[1] }</div>` +
       '</div>';
       } else if (!params.data.isSubCategoryRow) {
+        const first = `<div class="float-left" style="background-color: mediumvioletred; width: ${ params.value }%">&nbsp;</div>`;
+        const second = `<div class="float-right" style="background-color: orchid; width: ${ 100 - params.value }%">&nbsp;</div>`;
+
+        eDiv.innerHTML = `<div style="margin-top: 14px;">${ first }${ second }</div>`;
+      }
+
+      return eDiv;
+    };
+  }
+
+  // fat line with two background colours, adding up to total width (assumes percentage value passed in for now)
+  getConfidenceCellRenderer() {
+    return params => {
+      const isFakeHeader = params.data.isFakeHeader;
+      const eDiv = document.createElement('div');
+      eDiv.className = 'centredCell fullHeightCell';
+
+      if (isFakeHeader) {
+        eDiv.innerHTML = '<div class="squeeze">' +
+        // `<div class="float-left floatDown">${ headerLabels[0] }</div><div class="float-right floatDown">${ headerLabels[1] }</div>` +
+      '</div>';
+      } else if (!params.data.isSubCategoryRow) {
+        const values = params.value; // [effect size, lowc i, high ci]
         const first = `<div class="float-left" style="background-color: mediumvioletred; width: ${ params.value }%">&nbsp;</div>`;
         const second = `<div class="float-right" style="background-color: orchid; width: ${ 100 - params.value }%">&nbsp;</div>`;
 

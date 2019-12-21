@@ -65,25 +65,26 @@ export class GoferOutputComponent implements OnInit {
       { headerName: 'Study name', field: 'studyName' },
       { headerName: 'Country', field: 'country', cellRenderer: this.grid.getNationalFlagCellRenderer() },
       { headerName: 'Context', field: 'context', isDataCentred: true },
-      { headerName: 'Period', field: '_period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, 'periodStart', 'periodEnd', false, 'Unclear') },
+      { headerName: 'Period', field: 'period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, false, 'Unclear') },
       { headerName: 'Study type', field: 'studyType', isDataCentred: true },
       { headerName: 'Sampling', field: 'sampling', isDataCentred: true },
       { headerName: 'Population recruited', field: 'populationRecruited', isDataCentred: true },
-      { headerName: 'Sample age recruited', field: '_sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(60, 100, 'sampleAgeRecruitedStart', 'sampleAgeRecruitedEnd', false, 'Unclear') },
+      { headerName: 'Sample age recruited', field: 'sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(60, 100, false, 'Unclear') },
       { headerName: 'Contributing #', field: 'contributingNumber', isDataCentred: true },
       { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getBinaryCategoryCellRenderer(['F', 'M']) },
       { headerName: 'Sample age mean (SD)', field: 'sampleAgeMean', isDataMultiline: true },
       { headerName: 'Used diagnostic criteria', field: 'usedDiagnosticCriteria', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: 'Screened before clinical evaluation', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },
-      { headerName: '# of follow-ups', field: 'numFollowUps',  cellRenderer: this.grid.getNumberByDotsCellRenderer()  }
+      { headerName: '# of follow-ups', field: 'numFollowUps',  cellRenderer: this.grid.getNumberByDotsCellRenderer()  },
+      { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer() },
     ];
   }
 
   private setupRowData() {
     const headerFooter = {
       isFakeHeader: true,
-      periodStart: 1982, periodEnd: 2013, // the entire range
-      sampleAgeRecruitedStart: 60, sampleAgeRecruitedEnd: 100, // the entire range
+      period: [1982, 2013], // the entire range
+      sampleAgeRecruited: [65, 100], // the entire range
     };
 
     const data: any[] = [
@@ -93,11 +94,11 @@ export class GoferOutputComponent implements OnInit {
       },
       {
         publicationYear: 1997, firstAuthor: 'Evans', studyName: 'Unknown', country: 'US', context: 'HIC',
-        periodStart: 1982, periodEnd: 1987,
+        period: [1982, 1987],
         studyType: 'PC',
         sampling: 'Random',
         populationRecruited: 'Health-related',
-        sampleAgeRecruitedStart: 65, sampleAgeRecruitedEnd: 100,
+        sampleAgeRecruited: [65, 100],
         contributingNumber: 642,
         baselineFemalePercentage: 56.4,
         sampleAgeMean: 'Not reported',
@@ -106,11 +107,11 @@ export class GoferOutputComponent implements OnInit {
       },
       {
         publicationYear: 2001, firstAuthor: 'Tyas', studyName: 'MSHA', country: 'CA', context: 'HIC',
-        periodStart: 1991, periodEnd: 1997,
+        period: [1991, 1997],
         studyType: 'PC',
         sampling: 'Random',
         populationRecruited: 'Non-specific',
-        sampleAgeRecruitedStart: 65, sampleAgeRecruitedEnd: 100,
+        sampleAgeRecruited: [65, 100],
         contributingNumber: 694,
         baselineFemalePercentage: 62.4,
         sampleAgeMean: '74.0 (5.8)',
@@ -119,11 +120,11 @@ export class GoferOutputComponent implements OnInit {
       },
       {
         publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
-        periodStart: 1994, periodEnd: 2000,
+        period: [1994, 2000],
         studyType: 'PC',
         sampling: 'Random',
         populationRecruited: 'Non-specific',
-        sampleAgeRecruitedStart: 65, sampleAgeRecruitedEnd: 100,
+        sampleAgeRecruited: [65, 100],
         contributingNumber: 2356,
         baselineFemalePercentage: 59,
         sampleAgeMean: '79.4 with dementia, 74.0 without dementia',
@@ -136,11 +137,11 @@ export class GoferOutputComponent implements OnInit {
       },
       {
         publicationYear: 1994, firstAuthor: 'Stern', studyName: 'Unknown', country: 'US', context: 'HIC',
-        periodStart: null, periodEnd: null,
+        period: [null, null],
         studyType: 'PC',
         sampling: 'Volunteer',
         populationRecruited: 'Non-specific',
-        sampleAgeRecruitedStart: 60, sampleAgeRecruitedEnd: 99,
+        sampleAgeRecruited: [65, 99],
         contributingNumber: 583,
         baselineFemalePercentage: 72.9,
         sampleAgeMean: '74.0 (7.6)',
@@ -149,11 +150,11 @@ export class GoferOutputComponent implements OnInit {
       },
       {
         publicationYear: 1997, firstAuthor: 'Schmand', studyName: 'AMSTEL', country: 'NL', context: 'HIC',
-        periodStart: null, periodEnd: null,
+        period: [null, null],
         studyType: 'PC',
         sampling: 'Unclear',
         populationRecruited: 'Health-related',
-        sampleAgeRecruitedStart: 65, sampleAgeRecruitedEnd: 84,
+        sampleAgeRecruited: [65, 84],
         contributingNumber: 2063,
         baselineFemalePercentage: 62.6,
         sampleAgeMean: 'Normal: 74.1 (5.5); Cases: 77.5 (5.0)',
@@ -162,11 +163,11 @@ export class GoferOutputComponent implements OnInit {
       },
       {
         publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
-        periodStart: 1994, periodEnd: 2000,
+        period: [1994, 2000],
         studyType: 'PC',
         sampling: 'Random',
         populationRecruited: 'Health-related',
-        sampleAgeRecruitedStart: 65, sampleAgeRecruitedEnd: 100,
+        sampleAgeRecruited: [65, 100],
         contributingNumber: 2356,
         baselineFemalePercentage: 59,
         sampleAgeMean: '79.4 with dementia, 74.0 without dementia',
