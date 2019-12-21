@@ -24,7 +24,7 @@ export class GridService {
 
       if (params.data.isFakeHeader) {
         eDiv.innerHTML = '<div class="squeeze">' +
-          '<div class="segmentLabel floatDown">50</div><div class="segmentLabel floatUp float-left">0</div><div class="segmentLabel float-right floatUp">100</div>' +
+          `<div class="segmentLabel floatDown">${ rangeEnd / 2 }</div><div class="segmentLabel floatUp float-left">0</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
         '</div>';
       } else {
         const dEnd = +params.value;
@@ -71,13 +71,13 @@ export class GridService {
       let valueText = '';
 
       if (isFakeHeader) {
-        valueText = `<div><span style="float: left;">${ d[startProperty] }</span><div style="float:right;">${ d[endProperty] }</div></div>`;
+        valueText = `<div><div class="float-left">${ d[startProperty] }</div><div class="float-right">${ d[endProperty] }</div></div>`;
       } else if (isIncludeValueText) {
         valueText = `<div>${ d[startProperty] } - ${ d[endProperty] }</div>`;
       }
 
       // console.log('pppi percentPerIncrement', percentPerIncrement)
-      // console.log('pppi marginLeft', marginLeft)
+      // console.log('pppi marginLeft', marginLeft, isFakeHeader, d[startProperty], dStart, rangeStart)
       // console.log('pppi width', width)
       // console.log('pppi xx d', dStart, dEnd)
       // console.log('pppi xx range', rangeStart, rangeEnd)
