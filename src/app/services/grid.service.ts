@@ -118,10 +118,10 @@ export class GridService {
       const eDiv = document.createElement('div');
       eDiv.className = 'centredCell';
       eDiv.innerHTML = params.value === true || params.value === 1
-      ? '<button class="btn btn-success"><span class="fa fa-check"></span></button>'
+      ? '<button class="btn btn-success btn-xs"><span class="fa fa-check"></span></button>'
       : params.value === undefined || params.value === null
         ? ''
-        : '<button class="btn btn-secondary"><span class="fa fa-times"></span></button>';
+        : '<button class="btn btn-secondary btn-xs"><span class="fa fa-times"></span></button>';
       return eDiv;
     };
   }

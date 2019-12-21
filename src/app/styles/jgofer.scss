@@ -44,22 +44,21 @@
 }
 
 .subHeadingInRow {
-  font-size: 1.1em;
-  background-color: royalblue;
-  color: white;
+  font-size: 1.3em !important;
+  font-weight: bold;
 }
 
 .dot {
-  height: 25px;
-  width: 25px;
+  height: 15px;
+  width: 15px;
   background-color: lightgreen;
   border-radius: 50%;
   display: inline-block;
 }
 
 .dotOn {
-  height: 25px;
-  width: 25px;
+  height: 15px;
+  width: 15px;
   background-color: green;
   border-radius: 50%;
   display: inline-block;
@@ -83,6 +82,7 @@
 .qtr4 {
   border-left: 1px solid goldenrod;
   border-right: 1px solid goldenrod;
+  margin-right: -10px;
 }
 
 .segmentLabel {
@@ -104,12 +104,20 @@
   margin-top: 4px;
 }
 
+/* this style was somehow removed for BootStrap 4 */
+.btn-group-xs > .btn, .btn-xs {
+  padding: .25rem .4rem;
+  font-size: .875rem;
+  line-height: .5;
+  border-radius: .2rem;
+}
+
 #diamond {
   width: 0;
   height: 0;
   left: -12px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
   border: 12px solid transparent;
-  border-bottom: 6px solid skyblue;
+  border-bottom: 6px solid royalblue;
   position: relative;
   top: -12px;
 }
@@ -121,6 +129,6 @@
   width: 0;
   height: 0;
   border: 12px solid transparent;
-  border-top: 6px solid skyblue;
+  border-top: 6px solid royalblue;
 }
 

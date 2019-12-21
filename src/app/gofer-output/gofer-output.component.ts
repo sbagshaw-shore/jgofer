@@ -46,6 +46,7 @@ export class GoferOutputComponent implements OnInit {
     const gridOptions: GridOptions = {
       onGridSizeChanged: ev => ev.api.sizeColumnsToFit(),
       headerHeight: 50,
+      suppressPropertyNamesCheck: true,
 
       defaultColDef: {
         resizable: true,
@@ -74,7 +75,7 @@ export class GoferOutputComponent implements OnInit {
       { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getBinaryCategoryCellRenderer(['F', 'M']) },
       { headerName: 'Sample age mean (SD)', field: 'sampleAgeMean', isDataMultiline: true },
       { headerName: 'Used diagnostic criteria', field: 'usedDiagnosticCriteria', cellRenderer: this.grid.getBooleanCellRenderer() },
-      { headerName: 'Screened before clinical evaluation', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },
+      { headerName: 'Screened', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: '# of follow-ups', field: 'numFollowUps',  cellRenderer: this.grid.getNumberByDotsCellRenderer()  },
       { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(0.5, 1.5), width: 600 },
     ];
