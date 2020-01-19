@@ -14,14 +14,11 @@ export class GridService {
 
       if (params.data.isFakeHeader) { classes = 'fakeHeader '; }
       if (params.colDef.isCategory && !params.data.isFakeHeader && !!params.value) { classes = 'categoryCell '; }
+      if (!params.colDef.isCategory && !params.data.isFakeHeader) { classes = 'nonCategoryCell '; }
       if (params.colDef.isDataCentred) { classes += 'centredCell '; }
       if (params.colDef.isDataMultiline) { classes += 'multilineCell '; }
       if (params.colDef.isSubHeadingInColumn && !params.data.isFakeHeader && typeof params.value !== 'number') { classes += 'subHeadingInRow '; }
 
-      if (classes.indexOf('categ') >= 0) {
-        console.log('dlk', classes, params)
-      }
-// console.log('cccc', classes)
       return classes;
     };
   }

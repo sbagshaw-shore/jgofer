@@ -52,7 +52,6 @@ export class GoferOutputComponent implements OnInit {
 
       defaultColDef: {
         resizable: true,
-        // rowSpan: (params) => this.getRowSpan(params),
         cellClass: this.grid.getCellClass(),
         headerClass: 'header',
         cellStyle: (params) => this.getCellStyle(params)
@@ -67,9 +66,15 @@ export class GoferOutputComponent implements OnInit {
     if (!params.colDef.isCategory || params.data.isFakeHeader) { return null; }
 
     const val = params.data[params.colDef.field];
-    if (!val) { return {height: '0px'}; }
+    if (!val) {
+      return {
+        height: '0'
+      };
+    }
 
-    return {height: `${ this.getRowSpanForCategory(val) * this.rowHeight }px`};
+    // background-color: white; border-top: 1px solid #D6D6D6 !important;  border-bottom: 0px solid #fff !important;
+
+    return { height: `${ this.getRowSpanForCategory(val) * this.rowHeight }px` };
   }
 
   // JANET: enter numbers of rows for each category within the type
@@ -88,7 +93,10 @@ export class GoferOutputComponent implements OnInit {
 
   private getColumnDefs() {
     return [
-      { headerName: '', field: 'category', isCategory: true },
+      {
+         // specify 'category' in the data for ONLY the first row of each category
+        headerName: '', field: 'category', isCategory: true, width: 100
+      },
       // use isSubHeadingInColumn if having category headers on their own rows -
       // { headerName: 'Publication year', field: 'publicationYear', isSubHeadingInColumn: true  }, --
       { headerName: 'Publication year', field: 'publicationYear', isSubHeadingInColumn: true  },
@@ -329,6 +337,33 @@ export class GoferOutputComponent implements OnInit {
         effectSize: [0.94, 0.9, 0.99],
         weight: ''
       }
+
+      // EMPTY
+      /*
+
+      {
+        publicationYear: , firstAuthor: '', studyName: '', country: '', context: '',
+        period: [, ],
+        studyType: '',
+        sampling: '',
+        populationRecruited: '',
+        sampleAgeRecruited: [, ],
+        contributingNumber: ,
+        baselineFemalePercentage: ,
+        sampleAgeMean: '',
+        baselineEducation: '',
+        usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
+        numFollowUpsMin: , numFollowUpsMax: ,
+        followUpYears: '',
+        riskOfBias: LowMedHigh.,
+        numberIncidentCases: ,
+        measureOfEffect: '',
+        adjustedFor: '',
+        effectSize: [, , ],
+        weight: ''
+      }
+
+      */
     ];
 
     data.push(headerFooter);

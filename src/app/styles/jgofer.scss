@@ -43,20 +43,30 @@
   background-color: unset;
 }
 
+// hide default row separators so these can be controlled by cell (stops them appearing in the middle of category cells)
+.ag-theme-balham .ag-row:not(.ag-row-first) {
+  border-width: 0;
+}
+
 .categoryCell {
   font-size: 2.0em !important;
   font-weight: bold;
-  background-color: mediumblue !important;
+  background-color: #006ab3 !important;
   color: white;
 
   writing-mode:vertical-lr;
   transform: rotate(-180deg);
 
-  border: 5px solid darkblue !important;
+  border: 5px solid #006ab3 !important;
   border-radius: .7rem;
 
   display: flex;
   justify-content:center;
+}
+
+// row separators
+.nonCategoryCell {
+  border-top: 1px solid #dddddd !important;
 }
 
 .multilineCell {
@@ -107,7 +117,6 @@
 
 .qtr {
   border-left: 1px solid goldenrod;
-  height: 100%;
 }
 
 .qtr4 {
