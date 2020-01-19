@@ -21,6 +21,7 @@ export class GoferOutputComponent implements OnInit {
   rowData: any[];
   modules: Module[] = [ClientSideRowModelModule];
   public frameworkComponents: any;
+  rowHeight = 50;
 
   constructor(private route: ActivatedRoute, private grid: GridService) {
 
@@ -46,32 +47,60 @@ export class GoferOutputComponent implements OnInit {
   private getGridOptions(): GridOptions {
     const gridOptions: GridOptions = {
       onGridSizeChanged: ev => ev.api.sizeColumnsToFit(),
-      headerHeight: 50,
+      headerHeight: this.rowHeight,
       suppressPropertyNamesCheck: true,
 
       defaultColDef: {
         resizable: true,
+        // rowSpan: (params) => this.getRowSpan(params),
         cellClass: this.grid.getCellClass(),
-        headerClass: 'header'
+        headerClass: 'header',
+        cellStyle: (params) => this.getCellStyle(params)
       },
     };
 
-    gridOptions.getRowHeight = (params) => params.data.isFakeHeader ? 30 : 50;
+    gridOptions.getRowHeight = (params) => params.data.isFakeHeader ? 30 : this.rowHeight;
     return gridOptions;
+  }
+
+  private getCellStyle(params): any {
+    if (!params.colDef.isCategory || params.data.isFakeHeader) { return null; }
+
+    const val = params.data[params.colDef.field];
+    if (!val) { return {height: '0px'}; }
+
+    return {height: `${ this.getRowSpanForCategory(val) * this.rowHeight }px`};
+  }
+
+  // JANET: enter numbers of rows for each category within the type
+  private getRowSpanForCategory(val: string): number {
+    if (this.id$ === 1) { // continuous
+      if (val === 'AD') {
+        return 3;
+      }
+      if (val === 'All dementia') {
+        return 6;
+      }
+    }
+
+    return 1;
   }
 
   private getColumnDefs() {
     return [
+      { headerName: '', field: 'category', isCategory: true },
+      // use isSubHeadingInColumn if having category headers on their own rows -
+      // { headerName: 'Publication year', field: 'publicationYear', isSubHeadingInColumn: true  }, --
       { headerName: 'Publication year', field: 'publicationYear', isSubHeadingInColumn: true  },
       { headerName: 'First author', field: 'firstAuthor' },
       { headerName: 'Study name', field: 'studyName' },
       { headerName: 'Country', field: 'country', cellRenderer: this.grid.getNationalFlagCellRenderer() },
       { headerName: 'Context', field: 'context', isDataCentred: true },
-      { headerName: 'Period', field: 'period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, true, 'Unclear'), width: 300 },
+      { headerName: 'Period', field: 'period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, true, 'Unclear'), width: 400 },
       { headerName: 'Study type', field: 'studyType', isDataCentred: true },
       { headerName: 'Sampling', field: 'sampling', isDataCentred: true },
       { headerName: 'Population recruited', field: 'populationRecruited', isDataCentred: true },
-      { headerName: 'Sample age recruited', field: 'sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(60, 100, true, 'Unclear'), width: 300 },
+      { headerName: 'Sample age recruited', field: 'sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(60, 100, true, 'Unclear'), width: 400 },
       { headerName: 'Contributing #', field: 'contributingNumber', isDataCentred: true },
       { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getBinaryCategoryCellRenderer(['F', 'M']) },
       { headerName: 'Sample age mean (SD)', field: 'sampleAgeMean', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 270 },
@@ -81,7 +110,7 @@ export class GoferOutputComponent implements OnInit {
       { headerName: '# of follow-ups', field: 'numFollowUps', cellRenderer: this.grid.getNumberByDotsCellRenderer()  },
       { headerName: 'Follow-up years', field: 'followUpYears', isDataMultiline: true, width: 230 },
       { headerName: 'Risk of bias', field: 'riskOfBias', cellRenderer: this.grid.getLowMediumHighCellRenderer() },
-      { headerName: '# incident cases', field: 'numberIncidentCases' },
+      { headerName: '# incident cases', field: 'numberIncidentCases', isDataCentred: true },
       { headerName: 'Measure of effect', field: 'measureOfEffect' },
       { headerName: 'Adjusted for', field: 'adjustedFor', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 350 },
       { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(0.5, 1.5), width: 600 },
@@ -97,11 +126,13 @@ export class GoferOutputComponent implements OnInit {
     };
 
     const data: any[] = [
+      // below is to create a line that displays only the cols specified and others are blank
+      // {
+      //   publicationYear: 'AD',
+      //   isSubCategoryRow: true
+      // },
       {
-        publicationYear: 'AD',
-        isSubCategoryRow: true
-      },
-      {
+        category: 'AD',
         publicationYear: 1997, firstAuthor: 'Evans', studyName: 'Unknown', country: 'US', context: 'HIC',
         period: [1982, 1987],
         studyType: 'PC',
@@ -164,11 +195,12 @@ export class GoferOutputComponent implements OnInit {
         effectSize: [0.91, 0.86, 0.97],
         weight: ''
       },
+      // {
+      //   publicationYear: 'All dementia',
+      //   isSubCategoryRow: true
+      // },
       {
-        publicationYear: 'All dementia',
-        isSubCategoryRow: true
-      },
-      {
+        category: 'All dementia',
         publicationYear: 1994, firstAuthor: 'Stern', studyName: 'Unknown', country: 'US', context: 'HIC',
         period: [null, null],
         studyType: 'PC',
@@ -208,6 +240,72 @@ export class GoferOutputComponent implements OnInit {
         measureOfEffect: 'OR',
         adjustedFor: 'Age, gender, pre-morbid intelligence, occupation, comorbidity, family history',
         effectSize: [0.86, 0.57, 1.31],
+        weight: ''
+      },
+      {
+        publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
+        period: [1994, 2000],
+        studyType: 'PC',
+        sampling: 'Random',
+        populationRecruited: 'Health-related',
+        sampleAgeRecruited: [65, 100],
+        contributingNumber: 2356,
+        baselineFemalePercentage: 59,
+        sampleAgeMean: '79.4 w/ dementia<br/>74.0 w/o dementia',
+        baselineEducation: '12.8 w/ dementia<br/>13.9 w/o dementia',
+        usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
+        numFollowUpsMin: 1, numFollowUpsMax: 2,
+        followUpYears: '1 to 2',
+        riskOfBias: LowMedHigh.Medium,
+        numberIncidentCases: 215,
+        measureOfEffect: 'RaR',
+        adjustedFor: 'Age, sex, APOE',
+        effectSize: [0.94, 0.9, 0.99],
+        weight: ''
+      }
+
+
+      ,
+      {
+        publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
+        period: [1994, 2000],
+        studyType: 'PC',
+        sampling: 'Random',
+        populationRecruited: 'Health-related',
+        sampleAgeRecruited: [65, 100],
+        contributingNumber: 2356,
+        baselineFemalePercentage: 59,
+        sampleAgeMean: '79.4 w/ dementia<br/>74.0 w/o dementia',
+        baselineEducation: '12.8 w/ dementia<br/>13.9 w/o dementia',
+        usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
+        numFollowUpsMin: 1, numFollowUpsMax: 2,
+        followUpYears: '1 to 2',
+        riskOfBias: LowMedHigh.Medium,
+        numberIncidentCases: 215,
+        measureOfEffect: 'RaR',
+        adjustedFor: 'Age, sex, APOE',
+        effectSize: [0.94, 0.9, 0.99],
+        weight: ''
+      },
+      {
+        publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
+        period: [1994, 2000],
+        studyType: 'PC',
+        sampling: 'Random',
+        populationRecruited: 'Health-related',
+        sampleAgeRecruited: [65, 100],
+        contributingNumber: 2356,
+        baselineFemalePercentage: 59,
+        sampleAgeMean: '79.4 w/ dementia<br/>74.0 w/o dementia',
+        baselineEducation: '12.8 w/ dementia<br/>13.9 w/o dementia',
+        usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
+        numFollowUpsMin: 1, numFollowUpsMax: 2,
+        followUpYears: '1 to 2',
+        riskOfBias: LowMedHigh.Medium,
+        numberIncidentCases: 215,
+        measureOfEffect: 'RaR',
+        adjustedFor: 'Age, sex, APOE',
+        effectSize: [0.94, 0.9, 0.99],
         weight: ''
       },
       {
