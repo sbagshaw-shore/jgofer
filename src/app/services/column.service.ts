@@ -72,7 +72,7 @@ export class ColumnService {
       { headerName: 'Screened?', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: '# of follow-ups', field: 'numFollowUps', cellRenderer: this.grid.getNumberByDotsCellRenderer()  },
       // { headerName: 'Follow-up years', field: 'followUpYears', isDataMultiline: true, width: 230 },
-      { headerName: 'Follow-up years', field: 'followUpYears', cellRenderer: this.grid.getRangedLineCellRenderer(1, 20, false, '?', true), width: 200 },
+      { headerName: 'Follow-up years', field: 'followUpYears', cellRenderer: this.grid.getArrowCellRenderer(0, 20), width: 200 },
       { headerName: 'Risk of bias', field: 'riskOfBias', cellRenderer: this.grid.getLowMediumHighCellRenderer() },
       { headerName: '# incident cases', field: 'numberIncidentCases', isDataCentred: true },
       { headerName: 'Measure of effect', field: 'measureOfEffect' },

@@ -201,3 +201,21 @@
   border-top: 6px solid black;
 }
 
+.arrow {
+  background: goldenrod;
+  position: relative;
+  height: 4px;
+  // width: 0;
+}
+.arrow::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 12px solid goldenrod;
+  top: -3px;
+  right: -2px;
+}
+

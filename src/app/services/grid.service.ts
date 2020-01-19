@@ -102,6 +102,40 @@ export class GridService {
     };
   }
 
+  getArrowCellRenderer(rangeStart: number, rangeEnd: number) {
+    return params => {
+      const isFakeHeader = params.data.isFakeHeader;
+      const eDiv = document.createElement('div');
+      eDiv.className = 'centredCell fullHeightCell';
+
+      const markerLines =
+      '<div class="row squeeze">' +
+       '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr">&nbsp;</span>' +
+       '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr4">&nbsp;</span>' +
+      '</div>';
+
+      if (isFakeHeader) {
+        eDiv.innerHTML = '<div class="squeeze">' +
+        `<div class="segmentLabel floatDown">${ Math.round((rangeEnd - rangeStart) / 2) + rangeStart }</div><div class="segmentLabel floatUp float-left">${ rangeStart }</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
+      '</div>';
+    } else if (params.data.isAverageRow || params.data.isSubcategoryRow) {
+      eDiv.innerHTML = markerLines;
+    } else {
+        const dEnd =  +params.value[0];
+        const dataText =  params.value[1];
+        const percentPerIncrement = 100 / (rangeEnd - rangeStart);
+        const rangeWidth = dEnd * percentPerIncrement;
+
+        const arrow = dEnd ? `<div style="margin-left: 1px;"><div style="width: ${ rangeWidth }%; margin-top: -28px;" class="arrow"></div></div>` : '';
+        const valueText = dataText ? `<div style="text-align: center; margin-top: 3px;">${ dataText }</div>` : '';
+
+        eDiv.innerHTML = `${ markerLines }${ arrow }${ valueText }`;
+      }
+
+      return eDiv;
+    };
+  }
+
   // fat line with two background colours, adding up to total width (assumes percentage value passed in for now)
   getConfidenceCellRenderer(rangeStart: number, rangeEnd: number) {
     return params => {
