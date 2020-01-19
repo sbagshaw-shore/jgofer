@@ -105,6 +105,16 @@
   display: inline-block;
 }
 
+// appears amongst ranged lines
+.rangeDot {
+  height: 10px;
+  width: 10px;
+  margin-left: -5px;
+  background-color: goldenrod;
+  border-radius: 35%;
+  display: inline-block;
+}
+
 .header {
   background-color: black;
   color: white;

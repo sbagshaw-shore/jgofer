@@ -32,7 +32,7 @@ export class GridService {
     };
   }
 
-  getRangedLineCellRenderer(rangeStart: number, rangeEnd: number, isIncludeValueText?: boolean, nullReplacement?: string) {
+  getRangedLineCellRenderer(rangeStart: number, rangeEnd: number, isIncludeValueText?: boolean, nullReplacement?: string, isSoftRangeLine?: boolean) {
     return params => {
       const isFakeHeader = params.data.isFakeHeader;
       const eDiv = document.createElement('div');
@@ -54,18 +54,26 @@ export class GridService {
       } else if (!params.data.isSubCategoryRow) {
         const dStart = +params.value[0];
         const dEnd =  +params.value[1];
+        const dataText =  params.value[2];
         const percentPerIncrement = 100 / (rangeEnd - rangeStart);
         const marginLeft = +(dStart - rangeStart) * percentPerIncrement;
         const width = (dEnd - dStart) * percentPerIncrement;
+        const rangeLineBorder = isSoftRangeLine ? 'double' : 'solid';
         let valueText = '';
 
-        if (isIncludeValueText) {
-          valueText = !dStart && nullReplacement ? `<div>${ nullReplacement }</div>` : `<div>${ dStart } - ${ dEnd }</div>`;
+        if (dataText) { // specific text for this record to be displayed
+          valueText = `<div>${ dataText }</div>`;
+        } else if (isIncludeValueText) {
+          valueText = !dStart && nullReplacement ? `<div>${ nullReplacement }</div>` : `<div>${ dStart } ${ dEnd ? ' - ' + dEnd : '' }</div>`;
         }
 
-        const line = `<div style="margin-left: 1px;"><div style="margin-left: ${ marginLeft }%; margin-top: -22px; width: ${ width }%; border-bottom: 4px solid goldenrod;"></div></div>${ valueText }`;
+        console.log('ssss', valueText, marginLeft)
+        // display a circle on the start point if no end value
+        const line = !!dEnd ?
+          `<div style="margin-left: 1px;"><div style="margin-left: ${ marginLeft }%; margin-top: -22px; width: ${ width }%; border-bottom: 4px ${ rangeLineBorder } goldenrod;"></div></div>` :
+          `<div style="margin-left: 1px;"><div style="margin-left: ${ marginLeft }%; margin-top: -34px; width: 100%; text-align: left"><span class="rangeDot"></span></div></div>`;
 
-        eDiv.innerHTML = `${ markerLines }${ line }`;
+        eDiv.innerHTML = `${ markerLines }${ line }${ valueText }`;
       }
 
       return eDiv;
