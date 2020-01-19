@@ -34,7 +34,6 @@ export class ColumnService {
     const columnDefs = this.getColumnDefs();
 
     columnDefs.push({ headerName: 'Ed cat', field: 'educationSubcategory' });
-    columnDefs.push({ headerName: 'Lowest cat', field: 'lowestSubcategory' });
     columnDefs.push({ headerName: 'Ref cat', field: 'referenceSubcategory' });
 
     const periodColumn = columnDefs.find(x => x.field === 'period');

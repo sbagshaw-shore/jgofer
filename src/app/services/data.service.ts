@@ -26,7 +26,7 @@ export class DataService {
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
         numFollowUpsMin: 1, numFollowUpsMax: 2,
         // followUpYears: 'Average 4.3',
-        followUpYears: [4.3, null, 'average 4.3'],
+        followUpYears: [4.3, 'average 4.3'],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 151,
         measureOfEffect: 'OR',
@@ -287,21 +287,18 @@ export class DataService {
         adjustedFor: 'Age, sex, current smoker, current ethanol consumption, stroke, diabetes mellitus, hypertension, heart disease, depressive symptoms',
         effectSize: [4.8, 1.98, 11.61],
         educationSubcategory: 'Illiterate', // additional to others
-        lowestSubcategory: 'Illiterate', // additional to others
         referenceSubcategory: 'Secondary or higher studies' // additional to others
       },
       {
         isSubcategoryRow: true,
         effectSize: [2.11, 0.88, 5],
         educationSubcategory: 'Can read and write',
-        lowestSubcategory: 'Illiterate',
         referenceSubcategory: 'Secondary or higher studies'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.73, 0.7, 4.29],
         educationSubcategory: 'Primary studies',
-        lowestSubcategory: 'Illiterate',
         referenceSubcategory: 'Secondary or higher studies'
       },
       {
@@ -324,14 +321,12 @@ export class DataService {
         adjustedFor: 'Multivariate model, covariates not specified but age and "demographic variables"',
         effectSize: [0.32, 0.12, 0.89],
         educationSubcategory: '6-10 years',
-        lowestSubcategory: '0-5 years',
         referenceSubcategory: '0-5 years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.34, 0.12, 0.96],
         educationSubcategory: '>= 11 years',
-        lowestSubcategory: '0-5 years',
         referenceSubcategory: '0-5 years'
       },
     ];
