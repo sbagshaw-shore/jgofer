@@ -81,7 +81,11 @@ export class GoferOutputComponent implements OnInit {
       { headerName: '# of follow-ups', field: 'numFollowUps', cellRenderer: this.grid.getNumberByDotsCellRenderer()  },
       { headerName: 'Follow-up years', field: 'followUpYears', isDataMultiline: true, width: 230 },
       { headerName: 'Risk of bias', field: 'riskOfBias', cellRenderer: this.grid.getLowMediumHighCellRenderer() },
+      { headerName: '# incident cases', field: 'numberIncidentCases' },
+      { headerName: 'Measure of effect', field: 'measureOfEffect' },
+      { headerName: 'Adjusted for', field: 'adjustedFor', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 350 },
       { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(0.5, 1.5), width: 600 },
+      { headerName: 'Weight', field: 'weight' }
     ];
   }
 
@@ -112,7 +116,11 @@ export class GoferOutputComponent implements OnInit {
         numFollowUpsMin: 1, numFollowUpsMax: 2,
         followUpYears: 'Average 4.3',
         riskOfBias: LowMedHigh.Medium,
-        effectSize: [0.85, 0.754, 0.95]
+        numberIncidentCases: 151,
+        measureOfEffect: 'OR',
+        adjustedFor: 'Follow-up interval, age, sex, occupation, income',
+        effectSize: [0.85, 0.754, 0.95],
+        weight: ''
       },
       {
         publicationYear: 2001, firstAuthor: 'Tyas', studyName: 'MSHA', country: 'CA', context: 'HIC',
@@ -129,7 +137,11 @@ export class GoferOutputComponent implements OnInit {
         numFollowUpsMin: 1, numFollowUpsMax: 1,
         followUpYears: '5',
         riskOfBias: LowMedHigh.Medium,
-        effectSize: [0.86, 0.76, 0.96]
+        numberIncidentCases: 194,
+        measureOfEffect: 'RR',
+        adjustedFor: 'Age, sex',
+        effectSize: [0.86, 0.76, 0.96],
+        weight: ''
       },
       {
         publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
@@ -146,7 +158,11 @@ export class GoferOutputComponent implements OnInit {
         numFollowUpsMin: 1, numFollowUpsMax: 2,
         followUpYears: 'Presume 4',
         riskOfBias: LowMedHigh.Medium,
-        effectSize: [0.91, 0.86, 0.97]
+        numberIncidentCases: 74,
+        measureOfEffect: 'RaR',
+        adjustedFor: 'Age, sex, APOE',
+        effectSize: [0.91, 0.86, 0.97],
+        weight: ''
       },
       {
         publicationYear: 'All dementia',
@@ -167,7 +183,11 @@ export class GoferOutputComponent implements OnInit {
         numFollowUpsMin: 1, numFollowUpsMax: 4,
         followUpYears: '1 to 4',
         riskOfBias: LowMedHigh.Medium,
-        effectSize: [0.92, 0.88, 0.95]
+        numberIncidentCases: 106,
+        measureOfEffect: 'HR',
+        adjustedFor: 'Age, gender',
+        effectSize: [0.92, 0.88, 0.95],
+        weight: ''
       },
       {
         publicationYear: 1997, firstAuthor: 'Schmand', studyName: 'AMSTEL', country: 'NL', context: 'HIC',
@@ -184,7 +204,11 @@ export class GoferOutputComponent implements OnInit {
         numFollowUpsMin: 1, numFollowUpsMax: 1,
         followUpYears: '1',
         riskOfBias: LowMedHigh.Medium,
-        effectSize: [0.86, 0.57, 1.31]
+        numberIncidentCases: 152,
+        measureOfEffect: 'OR',
+        adjustedFor: 'Age, gender, pre-morbid intelligence, occupation, comorbidity, family history',
+        effectSize: [0.86, 0.57, 1.31],
+        weight: ''
       },
       {
         publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
@@ -201,7 +225,11 @@ export class GoferOutputComponent implements OnInit {
         numFollowUpsMin: 1, numFollowUpsMax: 2,
         followUpYears: '1 to 2',
         riskOfBias: LowMedHigh.Medium,
-        effectSize: [0.94, 0.9, 0.99]
+        numberIncidentCases: 215,
+        measureOfEffect: 'RaR',
+        adjustedFor: 'Age, sex, APOE',
+        effectSize: [0.94, 0.9, 0.99],
+        weight: ''
       }
     ];
 
