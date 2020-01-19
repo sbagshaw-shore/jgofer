@@ -1,6 +1,6 @@
 <div class="jgofer-grid-container">
   <ag-grid-angular class="ag-theme-balham jgofer-grid" [id]="id$" [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions"
-    [modules]="modules"></ag-grid-angular> <!--  [frameworkComponents]="frameworkComponents" -->
+    [modules]="modules"></ag-grid-angular>
 
   <div class="jgofer-legend-container">
     <div class="row">
@@ -8,7 +8,7 @@
         <button class="btn btn-danger btn-xs"><span class="fa fa-exclamation-circle"></span></button><span class="legend-text">High</span>
       </div>
       <div class="col-1">
-        <button class="btn btn-success btn-xs"><span class="fa fa-check-circle"></span></button><span class="legend-text">Yes</span>
+        <button class="btn btn-secondary btn-xs"><span class="fa fa-check-circle"></span></button><span class="legend-text">Yes</span>
       </div>
     </div>
     <div class="row">
@@ -22,6 +22,9 @@
     <div class="row">
       <div class="col-1">
         <button class="btn btn-success btn-xs"><span class="fa fa-exclamation-circle"></span></button><span class="legend-text">Low</span>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-secondary btn-xs"><span class="fa fa-question-circle"></span></button><span class="legend-text">N/A or unclear</span>
       </div>
     </div>
   </div>

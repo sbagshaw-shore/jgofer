@@ -49,9 +49,9 @@ export class GridService {
         eDiv.innerHTML = '<div class="squeeze">' +
           `<div class="segmentLabel floatDown">${ Math.round((rangeEnd - rangeStart) / 2) + rangeStart }</div><div class="segmentLabel floatUp float-left">${ rangeStart }</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
         '</div>';
-      } else if (params.data.isAverageRow) {
+      } else if (params.data.isAverageRow || params.data.isSubcategoryRow) {
         eDiv.innerHTML = markerLines;
-      } else if (!params.data.isSubCategoryRow) {
+      } else {
         const dStart = +params.value[0];
         const dEnd =  +params.value[1];
         const dataText =  params.value[2];
@@ -67,7 +67,6 @@ export class GridService {
           valueText = !dStart && nullReplacement ? `<div>${ nullReplacement }</div>` : `<div>${ dStart } ${ dEnd ? ' - ' + dEnd : '' }</div>`;
         }
 
-        console.log('ssss', valueText, marginLeft)
         // display a circle on the start point if no end value
         const line = !!dEnd ?
           `<div style="margin-left: 1px;"><div style="margin-left: ${ marginLeft }%; margin-top: -22px; width: ${ width }%; border-bottom: 4px ${ rangeLineBorder } goldenrod;"></div></div>` :
@@ -92,7 +91,7 @@ export class GridService {
         eDiv.innerHTML = '<div class="squeeze">' +
           `<div class="segmentLabel floatDown">&nbsp;</div><div class="segmentLabel floatUp float-left">${ headerLabels[0] }</div><div class="segmentLabel float-right floatUp">${ headerLabels[1] }</div>` +
         '</div>';
-      } else if (!params.data.isSubCategoryRow && !params.data.isAverageRow) {
+      } else if (!params.data.isAverageRow && !params.data.isSubcategoryRow) {
         const first = `<div class="float-left" style="background-color: mediumvioletred; width: ${ params.value }%">&nbsp;</div>`;
         const second = `<div class="float-right" style="background-color: orchid; width: ${ 100 - params.value }%">&nbsp;</div>`;
 
@@ -114,7 +113,7 @@ export class GridService {
         eDiv.innerHTML = '<div class="squeeze">' +
         `<div class="segmentLabel floatDown">1</div><div class="segmentLabel floatUp float-left">${ rangeStart }</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
       '</div>';
-      } else if (!params.data.isSubCategoryRow) {
+      } else {
         const dEffect = +params.value[0];
         const dStart = +params.value[1];
         const dEnd =  +params.value[2];
@@ -158,11 +157,16 @@ export class GridService {
     return params => {
       const eDiv = document.createElement('div');
       eDiv.className = 'centredCell';
-      eDiv.innerHTML = params.value === true || params.value === 1
-      ? '<button class="btn btn-success btn-xs"><span class="fa fa-check-circle"></span></button>'
-      : params.value === undefined || params.value === null
-        ? ''
-        : '<button class="btn btn-secondary btn-xs"><span class="fa fa-times"></span></button>';
+      let contents = '';
+      if (params.value === true || params.value === 1) {
+        contents = '<button class="btn btn-secondary btn-xs"><span class="fa fa-check-circle"></span></button>';
+      } else if (params.value === null) { // not undefined - that is blank
+        contents = '<button class="btn btn-secondary btn-xs"><span class="fa fa-question-circle"></span></button>';
+      } else if (params.value === false) {
+        contents = '<button class="btn btn-secondary btn-xs"><span class="fa fa-times"></span></button>';
+      }
+
+      eDiv.innerHTML = contents;
       return eDiv;
     };
   }
