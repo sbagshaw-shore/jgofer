@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LowMedHigh } from './enums';
 
 @Injectable({
   providedIn: 'root'
@@ -111,6 +112,14 @@ export class GridService {
     };
   }
 
+  getMultilineTextCellRenderer() {
+    return params => {
+      const eDiv = document.createElement('div');
+      eDiv.className = 'centredCell';
+      eDiv.innerHTML = params.value ? params.value : '';
+      return eDiv;
+    };
+  }
 
   // fancier boolean cell renderer (green tick, red cross)
   getBooleanCellRenderer() {
@@ -122,6 +131,36 @@ export class GridService {
       : params.value === undefined || params.value === null
         ? ''
         : '<button class="btn btn-secondary btn-xs"><span class="fa fa-times"></span></button>';
+      return eDiv;
+    };
+  }
+
+  getLowMediumHighCellRenderer() {
+    return params => {
+      const eDiv = document.createElement('div');
+      eDiv.className = 'centredCell';
+      if (!params.value && params.value !== 0) { return eDiv; }
+
+      let cls = '';
+      const icon = 'exclamation-circle';
+
+      switch (params.value) {
+        case LowMedHigh.Low:
+          cls = 'success';
+          break;
+
+        case LowMedHigh.Medium:
+          cls = 'warning';
+          break;
+
+        case LowMedHigh.High:
+          cls = 'danger';
+          break;
+
+        default:
+          break;
+      }
+      eDiv.innerHTML = `<button class="btn btn-${ cls } btn-xs"><span class="fa fa-${ icon }"></span></button>`;
       return eDiv;
     };
   }
