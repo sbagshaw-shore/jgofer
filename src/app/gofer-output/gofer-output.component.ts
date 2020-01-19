@@ -58,7 +58,7 @@ export class GoferOutputComponent implements OnInit {
       },
     };
 
-    gridOptions.getRowHeight = (params) => params.data.isFakeHeader ? 30 : this.rowHeight;
+    gridOptions.getRowHeight = (params) => params.data.isFakeHeader || params.data.isAverageRow ? 30 : this.rowHeight;
     return gridOptions;
   }
 
@@ -203,6 +203,11 @@ export class GoferOutputComponent implements OnInit {
         effectSize: [0.91, 0.86, 0.97],
         weight: ''
       },
+      {
+        isAverageRow: true,
+        // JANET: these are fake numbers
+        effectSize: [0.96, 0.75, 1.17, true], // true indicates this is an average of other values
+      },
       // {
       //   publicationYear: 'All dementia',
       //   isSubCategoryRow: true
@@ -336,9 +341,16 @@ export class GoferOutputComponent implements OnInit {
         adjustedFor: 'Age, sex, APOE',
         effectSize: [0.94, 0.9, 0.99],
         weight: ''
+      },
+      {
+        isAverageRow: true,
+        // JANET: these are fake numbers
+        effectSize: [0.86, 0.71, 0.97, true], // true indicates this is an average of other values
       }
 
-      // EMPTY
+      // JANET - copy and paste EMPTY rows and enter the data
+      // where there is '' it is a string; otherwise it's a number
+      // [] indicates an array, so far just of numbers
       /*
 
       {

@@ -36,12 +36,21 @@ export class GridService {
     return params => {
       const isFakeHeader = params.data.isFakeHeader;
       const eDiv = document.createElement('div');
+
       eDiv.className = 'centredCell fullHeightCell';
+
+      const markerLines =
+      '<div class="row squeeze">' +
+       '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr">&nbsp;</span>' +
+       '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr4">&nbsp;</span>' +
+      '</div>';
 
       if (isFakeHeader) {
         eDiv.innerHTML = '<div class="squeeze">' +
           `<div class="segmentLabel floatDown">${ Math.round((rangeEnd - rangeStart) / 2) + rangeStart }</div><div class="segmentLabel floatUp float-left">${ rangeStart }</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
         '</div>';
+      } else if (params.data.isAverageRow) {
+        eDiv.innerHTML = markerLines;
       } else if (!params.data.isSubCategoryRow) {
         const dStart = +params.value[0];
         const dEnd =  +params.value[1];
@@ -53,12 +62,6 @@ export class GridService {
         if (isIncludeValueText) {
           valueText = !dStart && nullReplacement ? `<div>${ nullReplacement }</div>` : `<div>${ dStart } - ${ dEnd }</div>`;
         }
-
-        const markerLines =
-        '<div class="row squeeze">' +
-         '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr">&nbsp;</span>' +
-         '<span class="col-3 qtr">&nbsp;</span><span class="col-3 qtr4">&nbsp;</span>' +
-        '</div>';
 
         const line = `<div style="margin-left: 1px;"><div style="margin-left: ${ marginLeft }%; margin-top: -22px; width: ${ width }%; border-bottom: 4px solid goldenrod;"></div></div>${ valueText }`;
 
@@ -74,13 +77,14 @@ export class GridService {
     return params => {
       const isFakeHeader = params.data.isFakeHeader;
       const eDiv = document.createElement('div');
+
       eDiv.className = 'centredCell fullHeightCell';
 
       if (isFakeHeader) {
         eDiv.innerHTML = '<div class="squeeze">' +
-        `<div class="float-left floatDown">${ headerLabels[0] }</div><div class="float-right floatDown">${ headerLabels[1] }</div>` +
-      '</div>';
-      } else if (!params.data.isSubCategoryRow) {
+          `<div class="segmentLabel floatDown">&nbsp;</div><div class="segmentLabel floatUp float-left">${ headerLabels[0] }</div><div class="segmentLabel float-right floatUp">${ headerLabels[1] }</div>` +
+        '</div>';
+      } else if (!params.data.isSubCategoryRow && !params.data.isAverageRow) {
         const first = `<div class="float-left" style="background-color: mediumvioletred; width: ${ params.value }%">&nbsp;</div>`;
         const second = `<div class="float-right" style="background-color: orchid; width: ${ 100 - params.value }%">&nbsp;</div>`;
 
@@ -100,12 +104,13 @@ export class GridService {
 
       if (isFakeHeader) {
         eDiv.innerHTML = '<div class="squeeze">' +
-        `<div class="floatDown">1</div><div class="floatUp float-left">${ rangeStart }</div><div class="float-right floatUp">${ rangeEnd }</div>` +
+        `<div class="segmentLabel floatDown">1</div><div class="segmentLabel floatUp float-left">${ rangeStart }</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
       '</div>';
       } else if (!params.data.isSubCategoryRow) {
         const dEffect = +params.value[0];
         const dStart = +params.value[1];
         const dEnd =  +params.value[2];
+        const isAverage = params.value[3];
         const percentPerIncrement = 100 / (rangeEnd - rangeStart);
         const rangeMarginLeft = +(dStart - rangeStart) * percentPerIncrement;
         const rangeWidth = (dEnd - dStart) * percentPerIncrement;
@@ -117,10 +122,14 @@ export class GridService {
           '<span class="col-6">&nbsp;</span><span class="col-6 qtr">&nbsp;</span>' +
         '</div>';
 
-        const rangeLline = `<div style="margin-left: 1px;"><div style="margin-left: ${ rangeMarginLeft }%; margin-top: -24px; width: ${ rangeWidth }%; border-bottom: 4px solid skyblue;"></div></div>`;
-        const point = `<div style="margin-left: 1px;"><div style="margin-left: ${ pointMarginLeft }%; margin-top: -8px" id="diamond"></div></div>`;
+        const colour = isAverage ? '#888888' : 'skyblue';
+        const diamondId = isAverage ? 'averageDiamond' : 'diamond';
 
-        eDiv.innerHTML = `${ markerLines }${ rangeLline }${ point }`;
+        const rangeLine = `<div style="margin-left: 1px;"><div style="margin-left: ${ rangeMarginLeft }%; margin-top: -24px; width: ${ rangeWidth }%; border-bottom: 4px solid ${ colour };"></div></div>`;
+        const point = `<div style="margin-left: 1px;"><div style="margin-left: ${ pointMarginLeft }%; margin-top: -8px" id="${ diamondId }"></div></div>`;
+        const valueText = isAverage ? `<div style="margin-top: -8px; text-align: center; font-weight: bold;">Summary OR: ${ dEffect } (${ dStart } - ${ dEnd })</div>` : '';
+
+        eDiv.innerHTML = `${ markerLines }${ rangeLine }${ point }${ valueText }`;
       }
 
       return eDiv;
