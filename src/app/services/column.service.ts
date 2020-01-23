@@ -62,7 +62,7 @@ export class ColumnService {
       { headerName: 'Study type', field: 'studyType', isDataCentred: true },
       { headerName: 'Sampling', field: 'sampling', isDataCentred: true },
       { headerName: 'Population recruited', field: 'populationRecruited', isDataCentred: true },
-      { headerName: 'Sample age recruited', field: 'sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(60, 100, true, '?'), width: 200 },
+      { headerName: 'Sample age recruited', field: 'sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(55, 100, true, '?'), width: 200 },
       { headerName: 'Contributing #', field: 'contributingNumber', isDataCentred: true },
       { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getBinaryCategoryCellRenderer(['F', 'M']) },
       { headerName: 'Sample age mean (SD)', field: 'sampleAgeMean', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 135 },
@@ -74,7 +74,7 @@ export class ColumnService {
       { headerName: 'Follow-up years', field: 'followUpYears', cellRenderer: this.grid.getArrowCellRenderer(0, 20), width: 200 },
       { headerName: 'Risk of bias', field: 'riskOfBias', cellRenderer: this.grid.getLowMediumHighCellRenderer() },
       { headerName: '# incident cases', field: 'numberIncidentCases', isDataCentred: true },
-      { headerName: 'Measure of effect', field: 'measureOfEffect' },
+      { headerName: 'Measure of effect', field: 'measureOfEffect', isDataCentred: true },
       { headerName: 'Adjusted for', field: 'adjustedFor', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 175 },
       { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(0.5, 1.5), width: 250 }
     ];
