@@ -51,13 +51,13 @@
 .categoryCell {
   font-size: 2.0em !important;
   font-weight: bold;
-  background-color: darkgrey !important;
+  background-color: #006ab3 !important;
   color: white;
 
   writing-mode:vertical-lr;
   transform: rotate(-180deg);
 
-  border: 5px solid darkgrey !important;
+  border: 5px solid #006ab3 !important;
   border-radius: .7rem;
 
   display: flex;
@@ -161,6 +161,12 @@
   border-radius: .3rem;
   background-color: white;
   margin-right: 3px;
+  padding: 7px 5px !important;
+}
+
+.letteredButtonSmall {
+  font-size: 0.8em !important;
+  padding: 8px 5px !important;
 }
 
 .averageRowText {

@@ -88,12 +88,8 @@ export class GridService {
 
       let html = '';
       params.value.forEach(val => {
-        if (val.length > 1) {
-          html += val;
-        } else {
-          const icon = '';
-          html += `<button class="btn btn-xs letteredButton">${ val }</button>`;
-        }
+        const extraClass = val.length > 1 ? ' letteredButtonSmall' : '';
+        html += `<button class="btn btn-xs letteredButton ${ extraClass }">${ val }</button>`;
       });
 
       eDiv.innerHTML = html; // `<button class="btn btn-${ cls } btn-xs"><span class="fa fa-${ icon }"></span></button>`;

@@ -3,28 +3,60 @@
     [modules]="modules"></ag-grid-angular>
 
   <div class="jgofer-legend-container">
-    <div class="row">
+    <div class="row jgofer-legend-header-row">
+      <div class="col-2">
+        Context
+      </div>
       <div class="col-1">
-        <button class="btn btn-danger btn-xs"><span class="fa fa-exclamation-circle"></span></button><span class="legend-text">High</span>
+        Sampling
+      </div>
+      <div class="col-1">
+        &nbsp;
+      </div>
+      <div class="col-1">
+        Risk of bias
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <button class="btn btn-xs letteredButton">H</button><span class="legend-text">High-income country</span>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-xs letteredButton">A</button><span class="legend-text">All</span>
       </div>
       <div class="col-1">
         <button class="btn btn-secondary btn-xs"><span class="fa fa-check-circle"></span></button><span class="legend-text">Yes</span>
       </div>
+      <div class="col-1">
+        <button class="btn btn-danger btn-xs"><span class="fa fa-exclamation-circle"></span></button><span class="legend-text">High</span>
+      </div>
     </div>
     <div class="row">
+      <div class="col-2">
+        <button class="btn btn-xs letteredButton">LM</button><span class="legend-text">Low-medium-income country</span>
+      </div>
       <div class="col-1">
-        <button class="btn btn-warning btn-xs"><span class="fa fa-exclamation-circle"></span></button><span class="legend-text">Medium</span>
+        <button class="btn btn-xs letteredButton">R</button><span class="legend-text">Random</span>
       </div>
       <div class="col-1">
         <button class="btn btn-secondary btn-xs"><span class="fa fa-times"></span></button><span class="legend-text">No</span>
       </div>
+      <div class="col-1">
+        <button class="btn btn-warning btn-xs"><span class="fa fa-exclamation-circle"></span></button><span class="legend-text">Medium</span>
+      </div>
     </div>
     <div class="row">
+      <div class="col-2">
+        <button class="btn btn-xs letteredButton">L</button><span class="legend-text">Low-income country</span>
+      </div>
       <div class="col-1">
-        <button class="btn btn-success btn-xs"><span class="fa fa-exclamation-circle"></span></button><span class="legend-text">Low</span>
+        <button class="btn btn-xs letteredButton">V</button><span class="legend-text">Volunteer</span>
       </div>
       <div class="col-1">
         <button class="btn btn-secondary btn-xs"><span class="fa fa-question-circle"></span></button><span class="legend-text">N/A or unclear</span>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-success btn-xs"><span class="fa fa-exclamation-circle"></span></button><span class="legend-text">Low</span>
       </div>
     </div>
   </div>

@@ -56,7 +56,7 @@ export class ColumnService {
       { headerName: 'First author', field: 'firstAuthor' },
       { headerName: 'Study name', field: 'studyName' },
       { headerName: 'Country', field: 'country', cellRenderer: this.grid.getNationalFlagCellRenderer() },
-      { headerName: 'Context', field: 'context', isDataCentred: true },
+      { headerName: 'Context', field: 'context', cellRenderer: this.grid.getLetteredCellRenderer() },
       { headerName: 'Period', field: 'period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, true, '?'), width: 200 },
       { headerName: 'Study type', field: 'studyType', isDataCentred: true },
       { headerName: 'Sampling', field: 'sampling', cellRenderer: this.grid.getLetteredCellRenderer() },

@@ -13,7 +13,7 @@ export class DataService {
     return [
       {
         category: 'Alzheimer\'s disease',
-        publicationYear: 1997, firstAuthor: 'Evans', studyName: 'Unknown', country: 'US', context: 'HIC',
+        publicationYear: 1997, firstAuthor: 'Evans', studyName: 'Unknown', country: 'US', context: ['H'],
         period: [1982, 1987],
         studyType: 'PC',
         sampling: ['R'],
@@ -34,7 +34,7 @@ export class DataService {
         weight: 8.01
       },
       {
-        publicationYear: 2001, firstAuthor: 'Tyas', studyName: 'MSHA', country: 'CA', context: 'HIC',
+        publicationYear: 2001, firstAuthor: 'Tyas', studyName: 'MSHA', country: 'CA', context: ['H'],
         period: [1991, 1997],
         studyType: 'PC',
         sampling: ['R'],
@@ -55,7 +55,7 @@ export class DataService {
         weight: 8.14
       },
       {
-        publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
+        publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: ['H'],
         period: [1994, 2000],
         studyType: 'PC',
         sampling: ['R'],
@@ -76,7 +76,7 @@ export class DataService {
         weight: 16.1
       },
       {
-        publicationYear: 2002, firstAuthor: 'Lindsay', studyName: 'CSHA', country: 'CA', context: 'HIC',
+        publicationYear: 2002, firstAuthor: 'Lindsay', studyName: 'CSHA', country: 'CA', context: ['H'],
         period: [1992, 1996],
         studyType: 'CC',
         sampling: ['R'],
@@ -97,7 +97,7 @@ export class DataService {
         weight: 18.35
       },
       {
-        publicationYear: 2008, firstAuthor: 'Lee', studyName: 'KYS', country: 'KR', context: 'HIC',
+        publicationYear: 2008, firstAuthor: 'Lee', studyName: 'KYS', country: 'KR', context: ['H'],
         period: [1996, 2003],
         studyType: 'PC',
         sampling: ['?'],
@@ -118,7 +118,7 @@ export class DataService {
         weight: 6.26
       },
       {
-        publicationYear: 2014, firstAuthor: 'Borenstein', studyName: 'Kame', country: 'US', context: 'HIC',
+        publicationYear: 2014, firstAuthor: 'Borenstein', studyName: 'Kame', country: 'US', context: ['H'],
         period: [1992, 2001],
         studyType: 'PC',
         sampling: ['A'],
@@ -139,7 +139,7 @@ export class DataService {
         weight: 10.91
       },
       {
-        publicationYear: 2017, firstAuthor: 'Yu', studyName: 'MAP', country: 'US', context: 'HIC',
+        publicationYear: 2017, firstAuthor: 'Yu', studyName: 'MAP', country: 'US', context: ['H'],
         period: [1997, 2004],
         studyType: 'PC',
         sampling: ['V'],
@@ -160,7 +160,7 @@ export class DataService {
         weight: 13.99
       },
       {
-        publicationYear: 2018, firstAuthor: 'Hendrie', studyName: 'IIDP', country: 'US', context: 'HIC',
+        publicationYear: 2018, firstAuthor: 'Hendrie', studyName: 'IIDP', country: 'US', context: ['H'],
         period: [1992, 2009],
         studyType: 'PC',
         sampling: ['R'],
@@ -186,7 +186,7 @@ export class DataService {
       },
       {
         category: 'All dementia',
-        publicationYear: 1994, firstAuthor: 'Stern', studyName: 'Unknown', country: 'US', context: 'HIC',
+        publicationYear: 1994, firstAuthor: 'Stern', studyName: 'Unknown', country: 'US', context: ['H'],
         period: [null, null],
         studyType: 'PC',
         sampling: ['V', 'mixed'],
@@ -207,7 +207,7 @@ export class DataService {
         weight: 15.06
       },
       {
-        publicationYear: 1997, firstAuthor: 'Schmand - A', studyName: 'AMSTEL', country: 'NL', context: 'HIC',
+        publicationYear: 1997, firstAuthor: 'Schmand - A', studyName: 'AMSTEL', country: 'NL', context: ['H'],
         period: [null, null],
         studyType: 'PC',
         sampling: ['?'],
@@ -228,7 +228,7 @@ export class DataService {
         weight: 0.20
       },
       {
-        publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: 'HIC',
+        publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: ['H'],
         period: [1994, 2000],
         studyType: 'PC',
         sampling: ['R'],
@@ -249,7 +249,7 @@ export class DataService {
         weight: 11.23
       },
       {
-        publicationYear: 2010, firstAuthor: 'Kerola', studyName: 'Kuopio 75+', country: 'FI', context: 'HIC',
+        publicationYear: 2010, firstAuthor: 'Kerola', studyName: 'Kuopio 75+', country: 'FI', context: ['H'],
         period: [1998, 2003],
         studyType: 'PC',
         sampling: ['R'],
@@ -270,7 +270,7 @@ export class DataService {
         weight: 0.20
       },
       {
-        publicationYear: 2010, firstAuthor: 'Brayne', studyName: 'EClipSE - CFAS, CC75C, Vantaa 85+', country: 'GB', context: 'HIC',
+        publicationYear: 2010, firstAuthor: 'Brayne', studyName: 'EClipSE - CFAS, CC75C, Vantaa 85+', country: 'GB', context: ['H'],
         period: [1985, 2005],
         studyType: 'PC',
         sampling: ['?'],
@@ -291,7 +291,7 @@ export class DataService {
         weight: 7.46
       },
       {
-        publicationYear: 2012, firstAuthor: 'Katz', studyName: 'EAS', country: 'US', context: 'HIC',
+        publicationYear: 2012, firstAuthor: 'Katz', studyName: 'EAS', country: 'US', context: ['H'],
         period: [1993, 2009],
         studyType: 'PC',
         sampling: ['?'],
@@ -312,7 +312,7 @@ export class DataService {
         weight: 0.25
       },
       {
-        publicationYear: 2012, firstAuthor: 'Unverzagt', studyName: 'ACTIVE', country: 'US', context: 'HIC',
+        publicationYear: 2012, firstAuthor: 'Unverzagt', studyName: 'ACTIVE', country: 'US', context: ['H'],
         period: [null, null],
         studyType: 'RCT',
         sampling: ['?'],
@@ -333,7 +333,7 @@ export class DataService {
         weight: 1.20
       },
       {
-        publicationYear: 2013, firstAuthor: 'St John', studyName: 'MSHA', country: 'CA', context: 'HIC',
+        publicationYear: 2013, firstAuthor: 'St John', studyName: 'MSHA', country: 'CA', context: ['H'],
         period: [1991, 1996],
         studyType: 'PC',
         sampling: ['R'],
@@ -354,7 +354,7 @@ export class DataService {
         weight: 5.91
       },
       {
-        publicationYear: 2014, firstAuthor: 'Borenstein', studyName: 'Kame', country: 'US', context: 'HIC',
+        publicationYear: 2014, firstAuthor: 'Borenstein', studyName: 'Kame', country: 'US', context: ['H'],
         period: [1992, 2001],
         studyType: 'PC',
         sampling: ['A'],
@@ -375,7 +375,7 @@ export class DataService {
         weight: 4.92
       },
       {
-        publicationYear: 2015, firstAuthor: 'Contador', studyName: 'NEDICES', country: 'ES', context: 'HIC',
+        publicationYear: 2015, firstAuthor: 'Contador', studyName: 'NEDICES', country: 'ES', context: ['H'],
         period: [1994, 1998],
         studyType: 'PC',
         sampling: ['A', 'R'],
@@ -396,7 +396,7 @@ export class DataService {
         weight: 10.37
       },
       {
-        publicationYear: 2016, firstAuthor: 'Then', studyName: 'LEILA75+', country: 'DE', context: 'HIC',
+        publicationYear: 2016, firstAuthor: 'Then', studyName: 'LEILA75+', country: 'DE', context: ['H'],
         period: [1997, 2013],
         studyType: 'PC',
         sampling: ['R'],
@@ -417,7 +417,7 @@ export class DataService {
         weight: 4.10
       },
       {
-        publicationYear: 2016, firstAuthor: 'Zahodne', studyName: 'WHICAP', country: 'US', context: 'HIC',
+        publicationYear: 2016, firstAuthor: 'Zahodne', studyName: 'W HAP', country: 'US', context: ['H'],
         period: [1992, 2011],
         studyType: 'PC',
         sampling: ['R'],
@@ -438,7 +438,7 @@ export class DataService {
         weight: 26.15
       },
       {
-        publicationYear: 2018, firstAuthor: 'Hendrie', studyName: 'IIDP', country: 'US', context: 'HIC',
+        publicationYear: 2018, firstAuthor: 'Hendrie', studyName: 'IIDP', country: 'US', context: ['H'],
         period: [1992, 2009],
         studyType: 'PC',
         sampling: ['R'],
@@ -470,10 +470,10 @@ export class DataService {
       /*
 
       {
-        publicationYear: , firstAuthor: '', studyName: '', country: '', context: '',
+        publicationYear: , firstAuthor: '', studyName: '', country: '', context: [''],
         period: [, ],
         studyType: '',
-        sampling: ['',
+        sampling: [''],
         populationRecruited: '',
         sampleAgeRecruited: [, ],
         contributingNumber: ,
@@ -500,7 +500,7 @@ export class DataService {
     return [
       {
         category: 'Alzheimer\'s disease',
-        publicationYear: 1992, firstAuthor: 'Beard', studyName: 'REP', country: 'US', context: 'HIC',
+        publicationYear: 1992, firstAuthor: 'Beard', studyName: 'REP', country: 'US', context: ['H'],
         period: [1975, 1979],
         studyType: 'CC',
         sampling: ['Age and sex-matched'],
@@ -521,7 +521,7 @@ export class DataService {
         cutoff: '9 years' // additional to continuous
       },
       {
-        publicationYear: 1995, firstAuthor: 'Yoshitake', studyName: 'Hisayama', country: 'JP', context: 'HIC',
+        publicationYear: 1995, firstAuthor: 'Yoshitake', studyName: 'Hisayama', country: 'JP', context: ['H'],
         period: [1985, 1992],
         studyType: 'PC',
         sampling: ['A'],
@@ -548,7 +548,7 @@ export class DataService {
       },
       {
         category: 'All dementia',
-        publicationYear: 1994, firstAuthor: 'Bickel', studyName: 'Unknown', country: 'DE', context: 'HIC',
+        publicationYear: 1994, firstAuthor: 'Bickel', studyName: 'Unknown', country: 'DE', context: ['H'],
         period: [1982, 1989], // was marked with ?1982-?1989 need it???
         studyType: 'PC',
         sampling: ['R'],
@@ -581,7 +581,7 @@ export class DataService {
     return [
       {
         category: 'Alzheimer\'s disease',
-        publicationYear: 2008, firstAuthor: 'Bermejo-Pareja', studyName: 'NEDICES', country: 'ES', context: 'HIC',
+        publicationYear: 2008, firstAuthor: 'Bermejo-Pareja', studyName: 'NEDICES', country: 'ES', context: ['H'],
         period: [1994, 1998],
         studyType: 'PC',
         sampling: ['A'],
@@ -615,7 +615,7 @@ export class DataService {
         referenceSubcategory: 'Secondary or higher studies'
       },
       {
-        publicationYear: 2002, firstAuthor: 'Di Carlo', studyName: 'ILSA', country: 'IT', context: 'HIC',
+        publicationYear: 2002, firstAuthor: 'Di Carlo', studyName: 'ILSA', country: 'IT', context: ['H'],
         period: [1992, 1995],
         studyType: 'PC',
         sampling: ['R'],
@@ -631,7 +631,7 @@ export class DataService {
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 127,
         measureOfEffect: 'HR',
-        adjustedFor: 'Multivariate model, covariates not specified but age and "demographic variables"',
+        adjustedFor: 'Multivariate model, covariates not specified but age and "demograp H variables"',
         effectSize: [0.32, 0.12, 0.89],
         educationSubcategory: '6-10 years',
         referenceSubcategory: '0-5 years'
