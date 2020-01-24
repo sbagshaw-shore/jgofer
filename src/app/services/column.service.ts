@@ -59,7 +59,7 @@ export class ColumnService {
       { headerName: 'Context', field: 'context', isDataCentred: true },
       { headerName: 'Period', field: 'period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, true, '?'), width: 200 },
       { headerName: 'Study type', field: 'studyType', isDataCentred: true },
-      { headerName: 'Sampling', field: 'sampling', isDataCentred: true },
+      { headerName: 'Sampling', field: 'sampling', cellRenderer: this.grid.getLetteredCellRenderer() },
       { headerName: 'Pop', field: 'populationRecruited', isDataCentred: true },
       { headerName: 'Age recruited', field: 'sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(55, 100, true, '?'), width: 200 },
       { headerName: 'N', field: 'contributingNumber', isDataCentred: true },

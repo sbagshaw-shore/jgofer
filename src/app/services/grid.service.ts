@@ -79,6 +79,28 @@ export class GridService {
     };
   }
 
+  // return letters in the array in a format resembling icons
+  getLetteredCellRenderer() {
+    return params => {
+      const eDiv = document.createElement('div');
+      eDiv.className = 'centredCell';
+      if (!params.value || params.value.length === 0 || params.data.isAverageRow || params.data.isSubcategoryRow) { return eDiv; }
+
+      let html = '';
+      params.value.forEach(val => {
+        if (val.length > 1) {
+          html += val;
+        } else {
+          const icon = '';
+          html += `<button class="btn btn-xs letteredButton">${ val }</button>`;
+        }
+      });
+
+      eDiv.innerHTML = html; // `<button class="btn btn-${ cls } btn-xs"><span class="fa fa-${ icon }"></span></button>`;
+      return eDiv;
+    };
+  }
+
   // fat line with two background colours, adding up to total width (assumes percentage value passed in for now)
   getBinaryCategoryCellRenderer(headerLabels: string[]) {
     return params => {

@@ -155,6 +155,14 @@
   margin-top: 4px;
 }
 
+// to resemble an icon with just a letter in it
+.letteredButton {
+  border: 1px solid black;
+  border-radius: .3rem;
+  background-color: white;
+  margin-right: 3px;
+}
+
 .averageRowText {
   text-align: center;
   font-weight: bold;
