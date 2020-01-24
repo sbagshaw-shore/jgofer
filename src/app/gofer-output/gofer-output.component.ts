@@ -56,7 +56,7 @@ export class GoferOutputComponent implements OnInit {
       },
     };
 
-    gridOptions.getRowHeight = (params) => params.data.isFakeHeader || params.data.isAverageRow ? 30 : this.rowHeight;
+    gridOptions.getRowHeight = (params) => params.data.isFakeHeader ? 30 : this.rowHeight;
     return gridOptions;
   }
 

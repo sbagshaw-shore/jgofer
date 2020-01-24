@@ -25,7 +25,6 @@ export class DataService {
         baselineEducation: 'unclear',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
         numFollowUpsMin: 1, numFollowUpsMax: 1,
-        // followUpYears: 'Average 4.3',
         followUpYears: [4.3, 'average 4.3'],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 95,
@@ -271,7 +270,7 @@ export class DataService {
         weight: 0.20
       },
       {
-        publicationYear: 2010, firstAuthor: 'Brayne', studyName: 'EClipSE - CFAS, CC75C, Vantaa 85+', country: 'UK', context: 'HIC',
+        publicationYear: 2010, firstAuthor: 'Brayne', studyName: 'EClipSE - CFAS, CC75C, Vantaa 85+', country: 'GB', context: 'HIC',
         period: [1985, 2005],
         studyType: 'PC',
         sampling: 'unclear',

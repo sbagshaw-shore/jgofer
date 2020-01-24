@@ -51,17 +51,17 @@
 .categoryCell {
   font-size: 2.0em !important;
   font-weight: bold;
-  background-color: #006ab3 !important;
+  background-color: darkgrey !important;
   color: white;
 
   writing-mode:vertical-lr;
   transform: rotate(-180deg);
 
-  border: 5px solid #006ab3 !important;
+  border: 5px solid darkgrey !important;
   border-radius: .7rem;
 
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
 // row separators
@@ -85,7 +85,7 @@
 }
 
 .subHeadingInRow {
-  font-size: 1.3em !important;
+  font-size: 2.3em !important;
   font-weight: bold;
 }
 
@@ -127,11 +127,13 @@
 
 .qtr {
   border-left: 1px solid goldenrod;
+  opacity: 0.5;
 }
 
 .qtr4 {
   border-left: 1px solid goldenrod;
   border-right: 1px solid goldenrod;
+  opacity: 0.5;
 }
 
 .segmentLabel {
@@ -153,6 +155,32 @@
   margin-top: 4px;
 }
 
+.averageRowText {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.binaryCategoryCell {
+  margin-top: 14px;
+}
+
+.binaryCategoryLeft {
+  background-color: mediumvioletred;
+}
+
+.binaryCategoryRight {
+  background-color: orchid;
+}
+
+.binaryCategoryText {
+  justify-content: left;
+  text-align: left;
+  margin-left: 5px;
+  color: white;
+  margin-top: -18px;
+}
+
 /* this style was somehow removed for BootStrap 4 */
 .btn-group-xs > .btn, .btn-xs {
   padding: .25rem .4rem;
@@ -164,41 +192,41 @@
 #diamond {
   width: 0;
   height: 0;
-  left: -12px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
-  border: 12px solid transparent;
-  border-bottom: 6px solid royalblue;
+  left: -9px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
+  border: 9px solid transparent;
+  border-bottom: 4px solid royalblue;
   position: relative;
-  top: -12px;
+  top: -7px;
 }
 #diamond:after {
   content:'';
   position: absolute;
-  left: -12px;
-  top: 6px;
+  left: -9px;
+  top: 4px;
   width: 0;
   height: 0;
-  border: 12px solid transparent;
-  border-top: 6px solid royalblue;
+  border: 9px solid transparent;
+  border-top: 4px solid royalblue;
 }
 
 #averageDiamond {
   width: 0;
   height: 0;
-  left: -12px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
-  border: 12px solid transparent;
-  border-bottom: 6px solid black;
+  left: -9px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
+  border: 9px solid transparent;
+  border-bottom: 4px solid black;
   position: relative;
-  top: -12px;
+  top: -7px;
 }
 #averageDiamond:after {
   content:'';
   position: absolute;
-  left: -12px;
-  top: 6px;
+  left: -9px;
+  top: 4px;
   width: 0;
   height: 0;
-  border: 12px solid transparent;
-  border-top: 6px solid black;
+  border: 9px solid transparent;
+  border-top: 4px solid black;
 }
 
 .arrow {

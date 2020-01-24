@@ -92,10 +92,11 @@ export class GridService {
           `<div class="segmentLabel floatDown">&nbsp;</div><div class="segmentLabel floatUp float-left">${ headerLabels[0] }</div><div class="segmentLabel float-right floatUp">${ headerLabels[1] }</div>` +
         '</div>';
       } else if (!params.data.isAverageRow && !params.data.isSubcategoryRow) {
-        const first = `<div class="float-left" style="background-color: mediumvioletred; width: ${ params.value }%">&nbsp;</div>`;
-        const second = `<div class="float-right" style="background-color: orchid; width: ${ 100 - params.value }%">&nbsp;</div>`;
+        const first = `<div class="float-left binaryCategoryLeft" style="width: ${ params.value }%">&nbsp;</div>`;
+        const second = `<div class="float-right binaryCategoryRight" style="width: ${ 100 - params.value }%">&nbsp;</div>`;
+        const text = `<div class="float-left binaryCategoryText">${ params.value }%</div>`;
 
-        eDiv.innerHTML = `<div style="margin-top: 14px;">${ first }${ second }</div>`;
+        eDiv.innerHTML = `<div class="binaryCategoryCell">${ first }${ second }</div>${ text }`;
       }
 
       return eDiv;
@@ -165,10 +166,11 @@ export class GridService {
 
         const colour = isAverage ? '#888888' : 'skyblue';
         const diamondId = isAverage ? 'averageDiamond' : 'diamond';
+        const marginTop = isAverage ? -38 : -24;
 
-        const rangeLine = `<div style="margin-left: 1px;"><div style="margin-left: ${ rangeMarginLeft }%; margin-top: -24px; width: ${ rangeWidth }%; border-bottom: 4px solid ${ colour };"></div></div>`;
+        const rangeLine = `<div style="margin-left: 1px;"><div style="margin-left: ${ rangeMarginLeft }%; margin-top: ${ marginTop }px; width: ${ rangeWidth }%; border-bottom: 4px solid ${ colour };"></div></div>`;
         const point = `<div style="margin-left: 1px;"><div style="margin-left: ${ pointMarginLeft }%; margin-top: -8px" id="${ diamondId }"></div></div>`;
-        const valueText = isAverage ? `<div style="margin-top: -8px; text-align: center; font-weight: bold;">Summary OR: ${ dEffect } (${ dStart } - ${ dEnd })</div>` : '';
+        const valueText = isAverage ? `<div class="averageRowText">Summ OR: ${ dEffect } (${ dStart } - ${ dEnd })</div>` : '';
 
         eDiv.innerHTML = `${ markerLines }${ rangeLine }${ point }${ valueText }`;
       }

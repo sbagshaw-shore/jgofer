@@ -52,8 +52,7 @@ export class ColumnService {
         headerName: '', field: 'category', isCategory: true, width: 60
       },
       // use isSubHeadingInColumn if having category headers on their own rows -
-      // { headerName: 'Publication year', field: 'publicationYear', isSubHeadingInColumn: true  }, --
-      { headerName: 'Publication year', field: 'publicationYear', isSubHeadingInColumn: true  },
+      { headerName: 'Pub year', field: 'publicationYear', isSubHeadingInColumn: true  },
       { headerName: 'First author', field: 'firstAuthor' },
       { headerName: 'Study name', field: 'studyName' },
       { headerName: 'Country', field: 'country', cellRenderer: this.grid.getNationalFlagCellRenderer() },
@@ -61,22 +60,22 @@ export class ColumnService {
       { headerName: 'Period', field: 'period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, true, '?'), width: 200 },
       { headerName: 'Study type', field: 'studyType', isDataCentred: true },
       { headerName: 'Sampling', field: 'sampling', isDataCentred: true },
-      { headerName: 'Population recruited', field: 'populationRecruited', isDataCentred: true },
-      { headerName: 'Sample age recruited', field: 'sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(55, 100, true, '?'), width: 200 },
-      { headerName: 'Contributing #', field: 'contributingNumber', isDataCentred: true },
-      { headerName: 'Baseline female %', field: 'baselineFemalePercentage', cellRenderer: this.grid.getBinaryCategoryCellRenderer(['F', 'M']) },
-      { headerName: 'Sample age mean (SD)', field: 'sampleAgeMean', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 135 },
-      { headerName: 'Baseline education of sample', field: 'baselineEducation', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 135 },
+      { headerName: 'Pop', field: 'populationRecruited', isDataCentred: true },
+      { headerName: 'Age recruited', field: 'sampleAgeRecruited', cellRenderer: this.grid.getRangedLineCellRenderer(55, 100, true, '?'), width: 200 },
+      { headerName: 'N', field: 'contributingNumber', isDataCentred: true },
+      { headerName: '% female', field: 'baselineFemalePercentage', cellRenderer: this.grid.getBinaryCategoryCellRenderer(['F', 'M']) },
+      { headerName: 'Mean age (SD/range)', field: 'sampleAgeMean', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 135 },
+      { headerName: 'Education', field: 'baselineEducation', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 135 },
       { headerName: 'Used diagnostic criteria?', field: 'usedDiagnosticCriteria', cellRenderer: this.grid.getBooleanCellRenderer() },
       { headerName: 'Screened?', field: 'screenedBeforeClinicalEvaluation', cellRenderer: this.grid.getBooleanCellRenderer() },
-      { headerName: '# of follow-ups', field: 'numFollowUps', cellRenderer: this.grid.getNumberByDotsCellRenderer()  },
+      { headerName: 'Follow-ups', field: 'numFollowUps', cellRenderer: this.grid.getNumberByDotsCellRenderer()  },
       // { headerName: 'Follow-up years', field: 'followUpYears', isDataMultiline: true, width: 230 },
       { headerName: 'Follow-up years', field: 'followUpYears', cellRenderer: this.grid.getArrowCellRenderer(0, 20), width: 200 },
       { headerName: 'Risk of bias', field: 'riskOfBias', cellRenderer: this.grid.getLowMediumHighCellRenderer() },
-      { headerName: '# incident cases', field: 'numberIncidentCases', isDataCentred: true },
-      { headerName: 'Measure of effect', field: 'measureOfEffect', isDataCentred: true },
+      { headerName: 'N incident cases', field: 'numberIncidentCases', isDataCentred: true },
+      { headerName: 'Effect measure', field: 'measureOfEffect', isDataCentred: true },
       { headerName: 'Adjusted for', field: 'adjustedFor', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 175 },
-      { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(0.5, 1.5), width: 250 }
+      { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(0.3, 1.7), width: 250 }
     ];
   }
 }
