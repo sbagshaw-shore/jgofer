@@ -89,20 +89,17 @@
   font-weight: bold;
 }
 
-.dot {
-  height: 15px;
-  width: 15px;
-  background-color: lightgreen;
-  border-radius: 50%;
-  display: inline-block;
+.dotRow {
+  height: 11px;
 }
 
-.dotOn {
-  height: 15px;
-  width: 15px;
-  background-color: green;
+.dot {
+  height: 9px;
+  width: 9px;
+  background-color: purple;
   border-radius: 50%;
   display: inline-block;
+  margin-right: 1px;
 }
 
 // appears amongst ranged lines

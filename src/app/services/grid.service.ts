@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵCompiler_compileModuleSync__POST_R3__ } from '@angular/core';
 import { LowMedHigh } from './enums';
 
 @Injectable({
@@ -88,7 +88,7 @@ export class GridService {
 
       let html = '';
       params.value.forEach(val => {
-        const extraClass = val.length > 1 ? ' letteredButtonSmall' : '';
+        const extraClass = val.length > 3 ? ' letteredButtonSmall' : '';
         html += `<button class="btn btn-xs letteredButton ${ extraClass }">${ val }</button>`;
       });
 
@@ -255,16 +255,28 @@ export class GridService {
     };
   }
 
-  getNumberByDotsCellRenderer() {
+  getNumberByDotsCellRenderer(numDotsPerRow: number) {
     return params => {
       const eDiv = document.createElement('div');
       let html = '';
-      const propertyPrefix = params.colDef.field;
-      const min = params.data[propertyPrefix + 'Min'];
-      const max = params.data[propertyPrefix + 'Max'];
+      const val = params.value;
 
-      for (let i = 1; i <= max; i++) {
-        html += `<span class="${ i <= min ? 'dotOn' : 'dot' }"></span>`;
+      if (!!val) {
+        for (let i = 1; i <= val; i++) {
+          if (i % numDotsPerRow === 1) {
+            html += '<div class="dotRow">';
+          }
+
+          html += `<span class="dot"></span>`;
+
+          if (i % numDotsPerRow === 0) {
+            html += '</div>';
+          }
+        }
+
+        if (!html.endsWith('</div>')) {
+          html += '</div>';
+        }
       }
 
       eDiv.innerHTML = html;
