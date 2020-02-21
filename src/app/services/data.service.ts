@@ -503,7 +503,7 @@ export class DataService {
         publicationYear: 2000, firstAuthor: 'He', studyName: 'unknown', country: 'CN', context: ['LM'],
         period: [1987, 1997],
         studyType: ['PC'],
-        sampling: ['RC'], //can I please have RC for random cluster?
+        sampling: ['RC'], // can I please have RC for random cluster?
         populationRecruited: ['C'],
         sampleAgeRecruited: [55, 100],
         contributingNumber: 1203,
@@ -517,7 +517,7 @@ export class DataService {
         numberIncidentCases: 124,
         measureOfEffect: ['RR'],
         adjustedFor: 'age, sex',
-        cutoff: 'illiterate'
+        cutoff: 'illiterate',
         effectSize: [1.18, 0.61, 2.27],
         weight: 21.10
       },
@@ -534,12 +534,12 @@ export class DataService {
         baselineEducation: '26.4% illiteracy',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
-        followUpYears: [7, mean 5.4 (1.6)],
+        followUpYears: [7, 'mean 5.4 (1.6)'],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 74,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, education years',
-        cutoff: 'illiterate'
+        cutoff: 'illiterate',
         effectSize: [1.78, 1.08, 2.93],
         weight: 9.26
       },
@@ -561,7 +561,7 @@ export class DataService {
         numberIncidentCases: 140,
         measureOfEffect: ['HR'],
         adjustedFor: 'sex, age x sex',
-        cutoff: 'no education or no primary school diploma'
+        cutoff: 'no education or no primary school diploma',
         effectSize: [1.78, 1.27, 2.45],
         weight: 17.62
       },
@@ -583,7 +583,7 @@ export class DataService {
         numberIncidentCases: 103,
         measureOfEffect: ['RR'],
         adjustedFor: 'age',
-        cutoff: '6 years'
+        cutoff: '6 years',
         effectSize: [1.18, 0.61, 2.27],
         weight: 5.74
       },
@@ -605,7 +605,7 @@ export class DataService {
         numberIncidentCases: 77,
         measureOfEffect: ['OR'],
         adjustedFor: 'age, sex',
-        cutoff: '6 years'
+        cutoff: '6 years',
         effectSize: [2.09, 1.29, 3.38],
         weight: 9.83
       },
@@ -627,7 +627,7 @@ export class DataService {
         numberIncidentCases: 241,
         measureOfEffect: ['OR'],
         adjustedFor: 'age, sex',
-        cutoff: '9 years' // additional to continuous
+        cutoff: '9 years', // additional to continuous
         effectSize: [1.13, 0.69, 1.85],
         weight: 9.45
       },
@@ -644,12 +644,12 @@ export class DataService {
         baselineEducation: 'unclear',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 4,
-        followUpYears: [9, mean 6.0 (2.7)],
+        followUpYears: [9, 'mean 6.0 (2.7)'],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 90,
         measureOfEffect: ['RR'],
         adjustedFor: 'age, gender',
-        cutoff: '11 years'
+        cutoff: '11 years',
         effectSize: [1.77, 1.12, 2.80],
         weight: 10.67
       },
@@ -671,7 +671,7 @@ export class DataService {
         numberIncidentCases: 393,
         measureOfEffect: ['OR'],
         adjustedFor: 'age, gender, siblings, APOE-e4',
-        cutoff: 'less than high school'
+        cutoff: 'less than high school',
         effectSize: [2.27, 1.67, 3.33],
         weight: 16.34
       },
@@ -683,13 +683,13 @@ export class DataService {
       {
         category: 'All dementia',
         publicationYear: 2012, firstAuthor: 'Prince', studyName: 'Unknown', country: 'CU-DO-VE-PE-MX-CN', context: ['LM'],
-        period: [2003, 2010], 
+        period: [2003, 2010],
         studyType: ['PC'],
         sampling: ['?'],
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 8137,
-        baselineFemalePercentage: 64, 
+        baselineFemalePercentage: 64,
         sampleAgeMean: '77.1 (6.1)',
         baselineEducation: '18% illiterate',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
@@ -699,19 +699,19 @@ export class DataService {
         numberIncidentCases: 770,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, occupation, assets',
-        cutoff: '(il)literacy'
+        cutoff: '(il)literacy',
         effectSize: [1.47, 1.19, 1.82],
         weight: 15.89
       },
       {
         publicationYear: 1999, firstAuthor: 'Letenneur', studyName: 'PAQUID', country: 'FR', context: ['H'],
-        period: [1987, 1993], 
+        period: [1987, 1993],
         studyType: ['PC'],
         sampling: ['R'],
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 2881,
-        baselineFemalePercentage: null, 
+        baselineFemalePercentage: null,
         sampleAgeMean: 'unclear',
         baselineEducation: '4.2% no education',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
@@ -721,7 +721,7 @@ export class DataService {
         numberIncidentCases: 190,
         measureOfEffect: ['HR'],
         adjustedFor: 'sex, age x sex',
-        cutoff: 'no education or no primary school diploma'
+        cutoff: 'no education or no primary school diploma',
         effectSize: [1.82, 1.36, 2.42],
         weight: 11.29
       },
@@ -733,89 +733,89 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 422,
-        baselineFemalePercentage: 69, 
+        baselineFemalePercentage: 69,
         sampleAgeMean: '75 approx',
         baselineEducation: 'unclear',
-        usedDiagnosticCriteria: null, screenedBeforeClinicalEvaluation: false, 
+        usedDiagnosticCriteria: null, screenedBeforeClinicalEvaluation: false,
         numFollowUps: 1,
         followUpYears: [8, null],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 50,
         measureOfEffect: ['RR'],
         adjustedFor: 'age',
-        cutoff: 'elementary school'
+        cutoff: 'elementary school',
         effectSize: [1.48, 0.60, 3.40],
         weight: 1.86
       },
       {
         publicationYear: 1994, firstAuthor: 'Stern', studyName: 'unknown', country: 'US', context: ['H'],
-        period: [null, null], 
+        period: [null, null],
         studyType: ['PC'],
         sampling: ['R-V'],
         populationRecruited: ['C-H'],
         sampleAgeRecruited: [65, 99],
         contributingNumber: 583,
-        baselineFemalePercentage: 72.9, 
+        baselineFemalePercentage: 72.9,
         sampleAgeMean: '74.0 (7.6)',
         baselineEducation: '44% low (approx)',
-        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false, 
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
         numFollowUps: 4,
         followUpYears: [4, null],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 106,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, gender, occupation',
-        cutoff: '8 years'
+        cutoff: '8 years',
         effectSize: [2.02, 1.33, 3.06],
         weight: 6.70
       },
       {
         publicationYear: 2001, firstAuthor: 'Scarmeas', studyName: 'unknown', country: 'US', context: ['H'],
-        period: [1991, 1998], 
+        period: [1991, 1998],
         studyType: ['PC'],
         sampling: ['R'],
         populationRecruited: ['H'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 1772,
-        baselineFemalePercentage: 68, 
+        baselineFemalePercentage: 68,
         sampleAgeMean: '76 (approx)',
         baselineEducation: '49% high (approx)',
-        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false, 
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
         numFollowUps: 3,
         followUpYears: [7, 'mean 2.9'],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 207,
         measureOfEffect: ['RR'],
         adjustedFor: 'age, ethnic group, occupation, leisure activities',
-        cutoff: '8 years'
+        cutoff: '8 years',
         effectSize: [1.23, 0.89, 1.72],
         weight: 9.48
       },
       {
         publicationYear: 2014, firstAuthor: 'Kaup', studyName: 'Health ABC', country: 'US', context: ['H'],
-        period: [1997, 2009], 
+        period: [1997, 2009],
         studyType: ['PC'],
         sampling: ['R'],
         populationRecruited: ['H'],
         sampleAgeRecruited: [70, 79],
         contributingNumber: 2458,
         baselineFemalePercentage: 52,
-        sampleAgeMean: '76 (approx),
+        sampleAgeMean: '76 (approx)',
         baselineEducation: '23.3% limited literacy',
         usedDiagnosticCriteria: null, screenedBeforeClinicalEvaluation: null,
         numFollowUps: 5,
-        followUpYears: [9, mean 7.3 (1.9)],
+        followUpYears: [9, 'mean 7.3 (1.9)'],
         riskOfBias: LowMedHigh.Low,
         numberIncidentCases: 496,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, race, education, household income, hypertensio, myocardial infarction, stroke/TIA, obesity, smoking, alcohol, APOE-e4',
-        cutoff: '9th grade reading level'
+        cutoff: '9th grade reading level',
         effectSize: [1.39, 1.04, 1.85],
         weight: 11.30
       },
       {
         publicationYear: 2016, firstAuthor: 'Then', studyName: 'LEILA75+', country: 'DE', context: ['H'],
-        period: [1997, 2013], 
+        period: [1997, 2013],
         studyType: ['PC'],
         sampling: ['R'],
         populationRecruited: ['C'],
@@ -824,36 +824,36 @@ export class DataService {
         baselineFemalePercentage: 73.8,
         sampleAgeMean: '81.5 (4.8)',
         baselineEducation: '11.9 (1.8)',
-        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false, 
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
         numFollowUps: 6,
         followUpYears: [15, null],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 189,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, gender, martial status, living situation, diabetes, heart attack, stroke, history of depression',
-        cutoff: '10 years'
+        cutoff: '10 years',
         effectSize: [1.47, 1.06, 2.04],
         weight: 9.61
       },
       {
         publicationYear: 2019, firstAuthor: 'Kotaki', studyName: 'Ohsaki', country: 'JP', context: ['H'],
-        period: [2006, 2012], 
+        period: [2006, 2012],
         studyType: ['PC'],
         sampling: ['A'],
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 8563,
-        baselineFemalePercentage: 49.6, 
+        baselineFemalePercentage: 49.6,
         sampleAgeMean: '73.1 (5.6)',
         baselineEducation: '26.7% low ed',
         usedDiagnosticCriteria: false, screenedBeforeClinicalEvaluation: false, // former is unclear
         numFollowUps: 5,
-        followUpYears: [6, mean 5.7],
+        followUpYears: [6, 'mean 5.7'],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 577,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, diabetes, hypertension, BMI, exercise, psychological distress, smoking',
-        cutoff: 'finished school < age 16'
+        cutoff: 'finished school < age 16',
         effectSize: [1.17, 0.99, 1.39],
         weight: 19.16
       },
@@ -865,39 +865,39 @@ export class DataService {
     ];
   }
 
-  // CATEGORICAL - to discuss - there are categories within categories here. Need 3 separate GOfERs for Alzheimer's, All dementia and VaD. 
-  //The first two need 2 sections (Low ed as base, high ed as base) like the continuous and dichotomous had 2 sections for ALzheimer's and All dementia
+  // CATEGORICAL - to discuss - there are categories within categories here. Need 3 separate GOfERs for Alzheimer's, All dementia and VaD.
+  // The first two need 2 sections (Low ed as base, high ed as base) like the continuous and dichotomous had 2 sections for ALzheimer's and All dementia
   public getCategoricalData(): any[] {
     return [
       {
-        //new GOfER - Alzheimer's disease
-        category: 'Alzheimer\'s disease',
-        //first category - low ed as base
-        category: "Low education is the base"
-        publicationYear: 2003, firstAuthor: 'Harmanci', studyName: 'TAPS', country: 'TR', context: ['UM'], //can I please have this? Upper middle income
+        // new GOfER - Alzheimer's disease
+        // category: 'Alzheimer\'s disease',
+        // first category - low ed as base
+        category: 'Low education is the base',
+        publicationYear: 2003, firstAuthor: 'Harmanci', studyName: 'TAPS', country: 'TR', context: ['UM'], // can I please have this? Upper middle income
         period: [null, null],
         studyType: ['CC'],
         sampling: ['R'],
         populationRecruited: ['C'],
         sampleAgeRecruited: [70, 100],
         contributingNumber: 184,
-        baselineFemalePercentage: 65.2, 
+        baselineFemalePercentage: 65.2,
         sampleAgeMean: '77.3 (6.0) cases<br>76.1 (5.8) controls',
         baselineEducation: '25% no schooling',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: null,
         followUpYears: [null, null],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 57,
         measureOfEffect: ['OR'],
         adjustedFor: 'unclear',
         effectSize: [0.9, 0.38, 2.12],
         educationSubcategory: 'primary education',
-        referenceSubcategory: 'no schooling' 
+        referenceSubcategory: 'no schooling'
       },
       {
         isSubcategoryRow: true,
-        effectSize: [0.23*, 0.23, 1.37],
+        effectSize: [0.23, 0.23, 1.37],
         educationSubcategory: 'secondary education',
         referenceSubcategory: 'no schooling'
       },
@@ -915,7 +915,7 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [55, 100],
         contributingNumber: 12881,
-        baselineFemalePercentage: 53.4, 
+        baselineFemalePercentage: 53.4,
         sampleAgeMean: 'unclear',
         baselineEducation: '34.9% 1-6 years',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
@@ -926,8 +926,8 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'age group, gender, residence status, region east vs west',
         effectSize: [0.77, 0.54, 1.12],
-        educationSubcategory: '1-6 years', 
-        referenceSubcategory: '<1 year' 
+        educationSubcategory: '1-6 years',
+        referenceSubcategory: '<1 year'
       },
       {
         isSubcategoryRow: true,
@@ -949,26 +949,26 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 84],
         contributingNumber: 2498,
-        baselineFemalePercentage: 47.0, 
+        baselineFemalePercentage: 47.0,
         sampleAgeMean: '74.0 (5.6)',
         baselineEducation: '6.1 (4.6)',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 1,
         followUpYears: [4, 'mean 3.8 (0.9)'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 67,
         measureOfEffect: ['HR'],
         adjustedFor: 'age and "demographic variables"',
         effectSize: [0.32, 0.12, 0.89],
-        educationSubcategory: '6-10 years', 
-        referenceSubcategory: '0-5 years' 
+        educationSubcategory: '6-10 years',
+        referenceSubcategory: '0-5 years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.34, 0.12, 0.96],
         educationSubcategory: '>=11 years',
         referenceSubcategory: '<0-5 years'
-      },    
+      },
       {
         publicationYear: 2007, firstAuthor: 'van Oijen', studyName: 'Rotterdam', country: 'NL', context: ['H'],
         period: [1990, 2004],
@@ -977,7 +977,7 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [55, 100],
         contributingNumber: 6927,
-        baselineFemalePercentage: 60.0, 
+        baselineFemalePercentage: 60.0,
         sampleAgeMean: '69.5 (9.1)',
         baselineEducation: '24.1% low',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
@@ -988,21 +988,21 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, BMI, ever smoking, diabetes, APOE-e4, CVD',
         effectSize: [0.82, 0.63, 1.07],
-        educationSubcategory: 'low-intermediate', 
-        referenceSubcategory: 'low' 
+        educationSubcategory: 'low-intermediate',
+        referenceSubcategory: 'low'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.72, 0.54, 0.95],
         educationSubcategory: 'high-intermediate',
         referenceSubcategory: 'low'
-      }, 
+      },
       {
         isSubcategoryRow: true,
         effectSize: [0.56, 0.31, 0.99],
         educationSubcategory: 'high',
         referenceSubcategory: 'low'
-      }, 
+      },
       {
         publicationYear: 2011, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: ['H'],
         period: [1994, 2000],
@@ -1011,29 +1011,29 @@ export class DataService {
         populationRecruited: ['H'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 2356,
-        baselineFemalePercentage: 59.0, 
+        baselineFemalePercentage: 59.0,
         sampleAgeMean: '79.4 with dementia<br>74.0 without dementia',
         baselineEducation: '7.8% illiterate',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
         followUpYears: [4, null],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 151,
         measureOfEffect: ['RR'],
         adjustedFor: 'age, sex, APOE-e4',
         effectSize: [0.73, 0.47, 1.14],
-        educationSubcategory: '12-15 years', 
-        referenceSubcategory: '<12 years' 
+        educationSubcategory: '12-15 years',
+        referenceSubcategory: '<12 years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.48, 0.27, 0.84],
         educationSubcategory: '>15 years',
         referenceSubcategory: '<12 years'
-      }, 
-      //new section - high ed as base
+      },
+      // new section - high ed as base
       {
-        category: "High education is the base"
+        category: 'High education is the base',
         publicationYear: 2005, firstAuthor: 'Ravaglia', studyName: 'CSBA', country: 'IT', context: ['H'],
         period: [1991, 2004],
         studyType: ['PC'],
@@ -1041,26 +1041,26 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 857,
-        baselineFemalePercentage: 53.7, 
+        baselineFemalePercentage: 53.7,
         sampleAgeMean: '74 (6)',
         baselineEducation: '4.7 (2.4)',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 1,
         followUpYears: [4, '3.8 (0.8)'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 72,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex',
         effectSize: [2.66, 1.02, 6.89],
-        educationSubcategory: '<=3 years', 
-        referenceSubcategory: '6+ years' 
+        educationSubcategory: '<=3 years',
+        referenceSubcategory: '6+ years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.20, 0.46, 3.13],
         educationSubcategory: '4-5 years',
         referenceSubcategory: '6+ years'
-      }, 
+      },
       {
         publicationYear: 2011, firstAuthor: 'Lobo', studyName: 'Zarademp', country: 'ES', context: ['H'],
         period: [1994, 1999],
@@ -1069,25 +1069,26 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [55, 100],
         contributingNumber: 2403,
-        baselineFemalePercentage: 54.9, 
+        baselineFemalePercentage: 54.9,
         sampleAgeMean: '72.1 (9.1)',
         baselineEducation: '7.8% illiterate',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
         followUpYears: [4, '4.5'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 87,
-        measureOfEffect: ['IRR'], //can I please have this? Incident rate ratio
+        measureOfEffect: ['IRR'], // can I please have this? Incident rate ratio
         adjustedFor: 'age',
         effectSize: [3.33, 1.88, 5.67],
-        educationSubcategory: 'illiterate', 
-        referenceSubcategory: 'primary' 
+        educationSubcategory: 'illiterate',
+        referenceSubcategory: 'primary'
+      },
       {
         isSubcategoryRow: true,
         effectSize: [3.92, 1.81, 8.86],
         educationSubcategory: 'illiterate',
         referenceSubcategory: 'medium/high'
-      },                
+      },
       {
         publicationYear: 2008, firstAuthor: 'Bermejo-Pareja', studyName: 'NEDICES', country: 'ES', context: ['H'],
         period: [1994, 1998],
@@ -1096,7 +1097,7 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 3891,
-        baselineFemalePercentage: 57, 
+        baselineFemalePercentage: 57,
         sampleAgeMean: '79.5 (6.8)',
         baselineEducation: '30.4% illiterate cases<br/> 11.3% illiterate controls',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
@@ -1107,8 +1108,8 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, current smoker, current ethanol consumption, stroke, diabetes mellitus, hypertension, heart disease, depressive symptoms',
         effectSize: [4.80, 1.98, 11.61],
-        educationSubcategory: 'illiterate', 
-        referenceSubcategory: 'secondary or higher studies' 
+        educationSubcategory: 'illiterate',
+        referenceSubcategory: 'secondary or higher studies'
       },
       {
         isSubcategoryRow: true,
@@ -1130,26 +1131,26 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 12647,
-        baselineFemalePercentage: null, 
+        baselineFemalePercentage: null,
         sampleAgeMean: 'unclear',
         baselineEducation: '37.6% low',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
         followUpYears: [3, '2.24(0.73)'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 328,
         measureOfEffect: ['RR'],
         adjustedFor: 'age, age x age, study, sex, history of MI, stroke, smoking',
         effectSize: [1.96, 1.09, 3.52],
-        educationSubcategory: '<=7 years', 
-        referenceSubcategory: '>=12 years' 
+        educationSubcategory: '<=7 years',
+        referenceSubcategory: '>=12 years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.42, 0.80, 2.50],
         educationSubcategory: '8-11 years',
         referenceSubcategory: '>= 12 years'
-      },         
+      },
       {
         publicationYear: 2007, firstAuthor: 'McDowell', studyName: 'CSHA', country: 'CA', context: ['H'],
         period: [1991, 2001],
@@ -1183,12 +1184,12 @@ export class DataService {
         effectSize: [1.30, 1.01, 1.74],
         educationSubcategory: '9-12 years',
         referenceSubcategory: '13+ years'
-      },    
-      //new GOfER - categorical all dementia
+      },
+      // new GOfER - categorical all dementia
       {
-        category: 'All dementia',
-        //first section - low ed is base
-        category: 'Low education is the base'
+        // category: 'All dementia',
+        // first section - low ed is base
+        category: 'Low education is the base',
         publicationYear: 2016, firstAuthor: 'Yuan', studyName: 'unknown', country: 'CN', context: ['LM'],
         period: [1997, 2002],
         studyType: ['PC'],
@@ -1196,7 +1197,7 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [55, 100],
         contributingNumber: 12881,
-        baselineFemalePercentage: 53.4, 
+        baselineFemalePercentage: 53.4,
         sampleAgeMean: 'unclear',
         baselineEducation: '34.9% 1-6 years',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
@@ -1207,20 +1208,21 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'age group, gender, residence status, region east vs west',
         effectSize: [0.69, 0.51, 0.92],
-        educationSubcategory: '1-6 years', 
-        referenceSubcategory: '<1 years' 
+        educationSubcategory: '1-6 years',
+        referenceSubcategory: '<1 years'
+      },
       {
         isSubcategoryRow: true,
         effectSize: [0.34, 0.21, 0.56],
-        educationSubcategory: '7-12 years', 
-        referenceSubcategory: '<1 years' 
-      },   
+        educationSubcategory: '7-12 years',
+        referenceSubcategory: '<1 years'
+      },
       {
         isSubcategoryRow: true,
         effectSize: [0.40, 0.20, 0.78],
-        educationSubcategory: '13+ years', 
-        referenceSubcategory: '<1 years' 
-      },      
+        educationSubcategory: '13+ years',
+        referenceSubcategory: '<1 years'
+      },
       {
         publicationYear: 2002, firstAuthor: 'Di Carlo', studyName: 'ILSA', country: 'IT', context: ['H'],
         period: [1992, 1995],
@@ -1229,19 +1231,19 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 84],
         contributingNumber: 2498,
-        baselineFemalePercentage: 47.0, 
+        baselineFemalePercentage: 47.0,
         sampleAgeMean: '74.0 (5.6)',
         baselineEducation: '6.1 (4.6)',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 1,
         followUpYears: [4, 'mean 3.8 (0.9)'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 127,
         measureOfEffect: ['HR'],
         adjustedFor: 'age and "demographic variables"',
         effectSize: [0.39, 0.20, 0.77],
-        educationSubcategory: '6-10 years', 
-        referenceSubcategory: '0-5 years' 
+        educationSubcategory: '6-10 years',
+        referenceSubcategory: '0-5 years'
       },
       {
         isSubcategoryRow: true,
@@ -1257,7 +1259,7 @@ export class DataService {
         populationRecruited: ['H'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 'unclear',
-        baselineFemalePercentage: 60.0, 
+        baselineFemalePercentage: 60.0,
         sampleAgeMean: 'unclear',
         baselineEducation: 'median 9 (IQR 9-10)',
         usedDiagnosticCriteria: false, screenedBeforeClinicalEvaluation: true,
@@ -1268,8 +1270,8 @@ export class DataService {
         measureOfEffect: ['OR'],
         adjustedFor: 'vascular risk factors, occupation, social engagement',
         effectSize: [1.1, 0.7, 1.9],
-        educationSubcategory: 'medium', 
-        referenceSubcategory: 'low' 
+        educationSubcategory: 'medium',
+        referenceSubcategory: 'low'
       },
       {
         isSubcategoryRow: true,
@@ -1296,8 +1298,8 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'age, gender, marital status, living situation, diabetes, heart attack, stroke, history of depression',
         effectSize: [0.95, 0.66, 1.04],
-        educationSubcategory: 'CASMIN middle', 
-        referenceSubcategory: 'CASMIN low' 
+        educationSubcategory: 'CASMIN middle',
+        referenceSubcategory: 'CASMIN low'
       },
       {
         isSubcategoryRow: true,
@@ -1324,8 +1326,8 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'age, gender, childhood school grades',
         effectSize: [0.73, 0.51, 1.04],
-        educationSubcategory: 'secondary education', 
-        referenceSubcategory: 'elementary education' 
+        educationSubcategory: 'secondary education',
+        referenceSubcategory: 'elementary education'
       },
       {
         isSubcategoryRow: true,
@@ -1352,8 +1354,8 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'calendar year during follow up, birth cohort, sex, childhood grades, occupational complexity',
         effectSize: [0.95, 0.82, 1.10],
-        educationSubcategory: 'senior high school', 
-        referenceSubcategory: 'elementary (up to 10 years)' 
+        educationSubcategory: 'senior high school',
+        referenceSubcategory: 'elementary (up to 10 years)'
       },
       {
         isSubcategoryRow: true,
@@ -1372,16 +1374,16 @@ export class DataService {
         baselineFemalePercentage: 61,
         sampleAgeMean: '75.69 (6.93)',
         baselineEducation: '25.4% less than high school',
-        usedDiagnosticCriteria: false,  screenedBeforeClinicalEvaluation: true-false, //has a true and a false - is this possible?
-        numFollowUps: unclear,
-        followUpYears: [unclear, 'mean 7.1'],
-        riskOfBias: LowMedHigh.Med,
+        usedDiagnosticCriteria: false,  screenedBeforeClinicalEvaluation: null, // todo true-false, //has a true and a false - is this possible?
+        numFollowUps: 'unclear',
+        followUpYears: ['unclear', 'mean 7.1'],
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 257,
         measureOfEffect: ['IRR'],
         adjustedFor: 'birth cohort, age, sex',
         effectSize: [0.88, 0.65, 1.19],
-        educationSubcategory: 'high school graduate', 
-        referenceSubcategory: 'less than high school' 
+        educationSubcategory: 'high school graduate',
+        referenceSubcategory: 'less than high school'
       },
       {
         isSubcategoryRow: true,
@@ -1408,18 +1410,18 @@ export class DataService {
         measureOfEffect: ['RR'],
         adjustedFor: 'age, sex, APOE',
         effectSize: [0.85, 0.58, 1.24],
-        educationSubcategory: '12-15 years', 
-        referenceSubcategory: '<12 years' 
+        educationSubcategory: '12-15 years',
+        referenceSubcategory: '<12 years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.64, 0.40, 1.00],
-        educationSubcategory: '>15 years', 
-        referenceSubcategory: '<12 years' 
+        educationSubcategory: '>15 years',
+        referenceSubcategory: '<12 years'
       },
-      //new section - high ed as base
+      // new section - high ed as base
       {
-        category: "High education is the base"
+        category: 'High education is the base',
         publicationYear: 2005, firstAuthor: 'Ravaglia', studyName: 'CSBA', country: 'IT', context: ['H'],
         period: [1991, 2004],
         studyType: ['PC'],
@@ -1427,26 +1429,26 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 857,
-        baselineFemalePercentage: 53.7, 
+        baselineFemalePercentage: 53.7,
         sampleAgeMean: '74 (6)',
         baselineEducation: '4.7 (2.4)',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 1,
         followUpYears: [4, '3.8 (0.8)'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 115,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex',
         effectSize: [2.20, 1.07, 4.53],
-        educationSubcategory: '<=3 years', 
-        referenceSubcategory: '6+ years' 
+        educationSubcategory: '<=3 years',
+        referenceSubcategory: '6+ years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.19, 0.58, 2.46],
         educationSubcategory: '4-5 years',
         referenceSubcategory: '6+ years'
-      }, 
+      },
        {
         publicationYear: 2011, firstAuthor: 'Lobo', studyName: 'Zarademp', country: 'ES', context: ['H'],
         period: [1994, 1999],
@@ -1455,26 +1457,26 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [55, 100],
         contributingNumber: 2403,
-        baselineFemalePercentage: 54.9, 
+        baselineFemalePercentage: 54.9,
         sampleAgeMean: '72.1 (9.1)',
         baselineEducation: '7.8% illiterate',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
         followUpYears: [4, '4.5'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 138,
         measureOfEffect: ['IRR'],
         adjustedFor: 'age',
         effectSize: [2.82, 1.77, 4.35],
-        educationSubcategory: 'illiterate', 
-        referenceSubcategory: 'primary' 
+        educationSubcategory: 'illiterate',
+        referenceSubcategory: 'primary'
       },
       {
         isSubcategoryRow: true,
         effectSize: [5.58, 2.73, 12.08],
         educationSubcategory: 'illiterate',
         referenceSubcategory: 'secondary school or higher'
-      }, 
+      },
       {
         publicationYear: 1998, firstAuthor: 'Zhang', studyName: 'unknown', country: 'CN', context: ['LM'],
         period: [1987, 1992],
@@ -1483,19 +1485,19 @@ export class DataService {
         populationRecruited: ['RC'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 1970,
-        baselineFemalePercentage: 56, 
+        baselineFemalePercentage: 56,
         sampleAgeMean: 'unclear',
         baselineEducation: '29% 0 years',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 1,
         followUpYears: [5, null],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 114,
         measureOfEffect: ['OR'],
         adjustedFor: 'age',
         effectSize: [2.23, 1.42, 3.51],
-        educationSubcategory: 'illiterate', 
-        referenceSubcategory: 'elementary' 
+        educationSubcategory: 'illiterate',
+        referenceSubcategory: 'elementary'
       },
       {
         isSubcategoryRow: true,
@@ -1517,31 +1519,31 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 1119,
-        baselineFemalePercentage: 58, 
+        baselineFemalePercentage: 58,
         sampleAgeMean: 'unclear',
         baselineEducation: '34.2% illiterate',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 1,
         followUpYears: [3, null],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 50,
         measureOfEffect: ['IRR'],
         adjustedFor: 'unadjusted',
         effectSize: [2.01, 0.61, 6.58],
-        educationSubcategory: '0 years (illiterate)', 
-        referenceSubcategory: '8 or more years' 
+        educationSubcategory: '0 years (illiterate)',
+        referenceSubcategory: '8 or more years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.16, 0.34, 3.94],
-        educationSubcategory: '1-3 years', 
-        referenceSubcategory: '8 or more years' 
+        educationSubcategory: '1-3 years',
+        referenceSubcategory: '8 or more years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.39, 0.40, 4.89],
-        educationSubcategory: '4-7 years', 
-        referenceSubcategory: '8 or more years' 
+        educationSubcategory: '4-7 years',
+        referenceSubcategory: '8 or more years'
       },
       {
         publicationYear: 2018, firstAuthor: 'Nakahori', studyName: 'Toyama Dementia Survey', country: 'JP', context: ['HIC'],
@@ -1551,7 +1553,7 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 1176,
-        baselineFemalePercentage: 57, 
+        baselineFemalePercentage: 57,
         sampleAgeMean: 'unclear',
         baselineEducation: '6.6% <=6 years',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
@@ -1562,14 +1564,14 @@ export class DataService {
         measureOfEffect: ['OR'],
         adjustedFor: 'age, sex, lifestyle, medical history, SES',
         effectSize: [3.56, 1.90, 6.66],
-        educationSubcategory: '<=6 years', 
-        referenceSubcategory: '>=10 years' 
+        educationSubcategory: '<=6 years',
+        referenceSubcategory: '>=10 years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.92, 0.57, 1.50],
-        educationSubcategory: '7-9 years', 
-        referenceSubcategory: '>=10 years' 
+        educationSubcategory: '7-9 years',
+        referenceSubcategory: '>=10 years'
       },
       {
         publicationYear: 2000, firstAuthor: 'Letenneur', studyName: 'EURODEM', country: 'DK-FR-NL-GB', context: ['H'],
@@ -1579,19 +1581,19 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 12647,
-        baselineFemalePercentage: null, 
+        baselineFemalePercentage: null,
         sampleAgeMean: 'unclear',
         baselineEducation: '37.6% low',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
         followUpYears: [3, '2.24(0.73)'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 493,
         measureOfEffect: ['RR'],
         adjustedFor: 'age, age x age, study, sex, history of MI, stroke, smoking',
         effectSize: [1.83, 1.16, 2.89],
-        educationSubcategory: '<=7 years', 
-        referenceSubcategory: '>=12 years' 
+        educationSubcategory: '<=7 years',
+        referenceSubcategory: '>=12 years'
       },
       {
         isSubcategoryRow: true,
@@ -1607,26 +1609,26 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [75, 80],
         contributingNumber: 636,
-        baselineFemalePercentage: 62.9, 
+        baselineFemalePercentage: 62.9,
         sampleAgeMean: '77.6 (1.52)',
         baselineEducation: '42.5% 1-8 years',
         usedDiagnosticCriteria: false, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 3,
         followUpYears: [3, 'approx'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 72,
         measureOfEffect: ['IRR'],
         adjustedFor: 'unadjusted',
         effectSize: [4.18, 1.52, 16.08],
-        educationSubcategory: '1-8 years', 
-        referenceSubcategory: '>12 years' 
+        educationSubcategory: '1-8 years',
+        referenceSubcategory: '>12 years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [2.20, 0.77, 8.67],
         educationSubcategory: '9-12 years',
         referenceSubcategory: '>12 years'
-      },      
+      },
       {
         publicationYear: 2016, firstAuthor: 'Ojagbemi', studyName: 'ISA', country: 'NG', context: ['L'],
         period: [2003, 2009],
@@ -1635,32 +1637,32 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 1894,
-        baselineFemalePercentage: 54, 
+        baselineFemalePercentage: 54,
         sampleAgeMean: '74.4 (8.8)',
         baselineEducation: '55.1% 0 years',
         usedDiagnosticCriteria: false, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 3,
         followUpYears: [5, null],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 136,
         measureOfEffect: ['HR'],
         adjustedFor: 'unadjusted',
         effectSize: [0.90, 0.50, 1.90],
-        educationSubcategory: '0 years', 
-        referenceSubcategory: '>=13 years' 
+        educationSubcategory: '0 years',
+        referenceSubcategory: '>=13 years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.00, 0.50, 2.10],
-        educationSubcategory: '1-6 years', 
-        referenceSubcategory: '>=13 years' 
-      },   
+        educationSubcategory: '1-6 years',
+        referenceSubcategory: '>=13 years'
+      },
       {
         isSubcategoryRow: true,
         effectSize: [1.00, 0.50, 2.20],
-        educationSubcategory: '7-12 years', 
-        referenceSubcategory: '>=13 years' 
-      },   
+        educationSubcategory: '7-12 years',
+        referenceSubcategory: '>=13 years'
+      },
        {
         publicationYear: 2007, firstAuthor: 'McDowell', studyName: 'CSHA', country: 'CA', context: ['H'],
         period: [1991, 2001],
@@ -1694,13 +1696,13 @@ export class DataService {
         effectSize: [1.20, 0.93, 1.44],
         educationSubcategory: '9-12 years',
         referenceSubcategory: '13+ years'
-      },  
+      },
       {
         publicationYear: 2011, firstAuthor: 'Chen', studyName: 'Anhui', country: 'CN', context: ['LM'],
         period: [2001, 2009],
         studyType: ['PC'],
         sampling: ['R'],
-        populationRecruited: ['Ex'], //excluded rural aged <65 and illiterate
+        populationRecruited: ['Ex'], // excluded rural aged <65 and illiterate
         sampleAgeRecruited: [60, 100],
         contributingNumber: 1307,
         baselineFemalePercentage: null,
@@ -1709,7 +1711,7 @@ export class DataService {
         usedDiagnosticCriteria: false, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
         followUpYears: [7.5, 'median 3.9'],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 80,
         measureOfEffect: ['OR'],
         adjustedFor: 'unclear - possibly age, sex, BMI, urban/rural, occupation, income, smoking',
@@ -1731,7 +1733,7 @@ export class DataService {
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 3891,
-        baselineFemalePercentage: 57, 
+        baselineFemalePercentage: 57,
         sampleAgeMean: '79.5 (6.8)',
         baselineEducation: '30.4% illiterate cases<br/> 11.3% illiterate controls',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
@@ -1742,8 +1744,8 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, current smoker, current ethanol consumption, stroke, diabetes mellitus, hypertension, heart disease, depressive symptoms',
         effectSize: [2.71, 1.46, 5.02],
-        educationSubcategory: 'illiterate', 
-        referenceSubcategory: 'secondary or higher studies' 
+        educationSubcategory: 'illiterate',
+        referenceSubcategory: 'secondary or higher studies'
       },
       {
         isSubcategoryRow: true,
@@ -1756,7 +1758,7 @@ export class DataService {
         effectSize: [1.01, 0.53, 1.92],
         educationSubcategory: 'primary studies',
         referenceSubcategory: 'secondary or higher studies'
-      },     
+      },
       {
         publicationYear: 1997, firstAuthor: 'Schmand - B', studyName: 'AMSTEL', country: 'NL', context: ['H'],
         period: [1990, 1994],
@@ -1765,7 +1767,7 @@ export class DataService {
         populationRecruited: ['H'],
         sampleAgeRecruited: [65, 85],
         contributingNumber: 1950,
-        baselineFemalePercentage: 62.4, 
+        baselineFemalePercentage: 62.4,
         sampleAgeMean: '75.4 (5.7)',
         baselineEducation: '8.2 (2.5)',
         usedDiagnosticCriteria: false, screenedBeforeClinicalEvaluation: false,
@@ -1776,39 +1778,39 @@ export class DataService {
         measureOfEffect: ['OR'],
         adjustedFor: 'age and sex',
         effectSize: [1.76, 0.48, 6.36],
-        educationSubcategory: 'incomplete primary (<6 years)', 
-        referenceSubcategory: 'higher levels (11-18 years)' 
+        educationSubcategory: 'incomplete primary (<6 years)',
+        referenceSubcategory: 'higher levels (11-18 years)'
       },
       {
         isSubcategoryRow: true,
         effectSize: [2.19, 1.05, 4.59],
-        educationSubcategory: 'primary (6 years)', 
-        referenceSubcategory: 'higher levels (11-18 years)' 
+        educationSubcategory: 'primary (6 years)',
+        referenceSubcategory: 'higher levels (11-18 years)'
       },
       {
         isSubcategoryRow: true,
         effectSize: [2.19, 0.93, 5.14],
         educationSubcategory: 'extended primary (7-8 years)',
         referenceSubcategory: 'higher levels (11-18 years)'
-      },  
+      },
       {
         isSubcategoryRow: true,
         effectSize: [2.31, 1.06, 5.01],
-        educationSubcategory: 'lower vocational (9-10 years)', 
-        referenceSubcategory: 'higher levels (11-18 years)' 
+        educationSubcategory: 'lower vocational (9-10 years)',
+        referenceSubcategory: 'higher levels (11-18 years)'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.77, 0.32, 1.86],
-        educationSubcategory: 'general intermediate (10-12 years)', 
-        referenceSubcategory: 'higher levels (11-18 years)' 
+        educationSubcategory: 'general intermediate (10-12 years)',
+        referenceSubcategory: 'higher levels (11-18 years)'
       },
       {
         publicationYear: 2015, firstAuthor: 'de Bruijn', studyName: 'Rotterdam - original cohort', country: 'NL', context: ['H'],
         period: [1990, 2003],
         studyType: ['PC'],
         sampling: ['A'],
-        populationRecruited: ['C'], 
+        populationRecruited: ['C'],
         sampleAgeRecruited: [55, 100],
         contributingNumber: 7003,
         baselineFemalePercentage: 59.8,
@@ -1830,13 +1832,13 @@ export class DataService {
         effectSize: [0.99, 0.68, 1.45],
         educationSubcategory: 'intermediate (secondary or intermediate vocational)',
         referenceSubcategory: 'high (higher vocational or university)'
-      },   
+      },
       {
         publicationYear: 2015, firstAuthor: 'de Bruijn', studyName: 'Rotterdam - extended cohort', country: 'NL', context: ['H'],
         period: [2000, 2012],
         studyType: ['PC'],
         sampling: ['A'],
-        populationRecruited: ['C'], 
+        populationRecruited: ['C'],
         sampleAgeRecruited: [55, 100],
         contributingNumber: 2593,
         baselineFemalePercentage: 56.2,
@@ -1858,13 +1860,13 @@ export class DataService {
         effectSize: [1.01, 0.57, 1.78],
         educationSubcategory: 'intermediate (secondary or intermediate vocational)',
         referenceSubcategory: 'high (higher vocational or university)'
-      }, 
+      },
       {
         publicationYear: 2018, firstAuthor: 'Cadar', studyName: 'ELSA', country: 'GB', context: ['H'],
         period: [2002, 2015],
         studyType: ['PC'],
         sampling: [null],
-        populationRecruited: ['C'], 
+        populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 6220,
         baselineFemalePercentage: 54.8,
@@ -1873,7 +1875,7 @@ export class DataService {
         usedDiagnosticCriteria: false, screenedBeforeClinicalEvaluation: false,
         numFollowUps: 7,
         followUpYears: [12, null],
-        riskOfBias: LowMedHigh.Med,
+        riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 463,
         measureOfEffect: ['HR'],
         adjustedFor: 'wealth, deprivation index, sex, marital status, stroke, hypertension, diabetes, CVD',
@@ -1886,178 +1888,177 @@ export class DataService {
         effectSize: [0.74, 0.44, 1.22],
         educationSubcategory: '<A-level',
         referenceSubcategory: 'university degree'
-      },  
+      },
       {
         isSubcategoryRow: true,
         effectSize: [0.84, 0.62, 1.14],
         educationSubcategory: 'A-level',
         referenceSubcategory: 'university degree'
-      },  
-      //Vascular Dementia
+      },
+      // Vascular Dementia
       {
-        category: 'Vascular dementia',
-        //first section - low ed as base
-        category: "Low education is the base"
-        {
-          publicationYear: 2016, firstAuthor: 'Yuan', studyName: 'unknown', country: 'CN', context: ['LM'],
-          period: [1997, 2002],
-          studyType: ['PC'],
-          sampling: ['A'],
-          populationRecruited: ['C'],
-          sampleAgeRecruited: [55, 100],
-          contributingNumber: 12881,
-          baselineFemalePercentage: 53.4, 
-          sampleAgeMean: 'unclear',
-          baselineEducation: '34.9% 1-6 years',
-          usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
-          numFollowUps: 2,
-          followUpYears: [4, 'mean 3.1 (range 2.9 - 3.5)'],
-          riskOfBias: LowMedHigh.Low,
-          numberIncidentCases: 91,
-          measureOfEffect: ['HR'],
-          adjustedFor: 'age group, gender, residence status, region east vs west',
-          effectSize: [0.60, 0.36, 1.02],
-          educationSubcategory: '1-6 years', 
-          referenceSubcategory: '<1 year' 
-        },
-        {
-          isSubcategoryRow: true,
-          effectSize: [0.32, 0.13, 0.76],
-          educationSubcategory: '7-12 years',
-          referenceSubcategory: '<1 year'
-        },
-        {
-          isSubcategoryRow: true,
-          effectSize: [0.11, 0.02, 0.86],
-          educationSubcategory: '12+ years',
-          referenceSubcategory: '<1 year'
-        },      
-        {
-          publicationYear: 2002, firstAuthor: 'Di Carlo', studyName: 'ILSA', country: 'IT', context: ['H'],
-          period: [1992, 1995],
-          studyType: ['PC'],
-          sampling: ['R'],
-          populationRecruited: ['C'],
-          sampleAgeRecruited: [65, 84],
-          contributingNumber: 2498,
-          baselineFemalePercentage: 47.0, 
-          sampleAgeMean: '74.0 (5.6)',
-          baselineEducation: '6.1 (4.6)',
-          usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
-          numFollowUps: 1,
-          followUpYears: [4, 'mean 3.8 (0.9)'],
-          riskOfBias: LowMedHigh.Med,
-          numberIncidentCases: 34,
-          measureOfEffect: ['HR'],
-          adjustedFor: 'age and "demographic variables"',
-          effectSize: [0.33, 0.08, 1.37],
-          educationSubcategory: '6-10 years', 
-          referenceSubcategory: '0-5 years' 
-        },
-        {
-          isSubcategoryRow: true,
-          effectSize: [0.47, 0.14, 1.58],
-          educationSubcategory: '>=11 years',
-          referenceSubcategory: '0-5 years'
-        }, 
-        {
-          //second section - high ed as base
-          category: "High education is the base"
-          publicationYear: 2005, firstAuthor: 'Ravaglia', studyName: 'CSBA', country: 'IT', context: ['H'],
-          period: [1991, 2004],
-          studyType: ['PC'],
-          sampling: ['A'],
-          populationRecruited: ['C'],
-          sampleAgeRecruited: [65, 100],
-          contributingNumber: 857,
-          baselineFemalePercentage: 53.7, 
-          sampleAgeMean: '74 (6)',
-          baselineEducation: '4.7 (2.4)',
-          usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
-          numFollowUps: 1,
-          followUpYears: [4, '3.8 (0.8)'],
-          riskOfBias: LowMedHigh.Med,
-          numberIncidentCases: 34,
-          measureOfEffect: ['HR'],
-          adjustedFor: 'age, sex',
-          effectSize: [1.85, 0.52, 6.60],
-          educationSubcategory: '<=3 years', 
-          referenceSubcategory: '6+ years' 
-        },
-        {
-          isSubcategoryRow: true,
-          effectSize: [1.12, 0.32, 3.96],
-          educationSubcategory: '4-5 years',
-          referenceSubcategory: '6+ years'
-        },   
-        {
-          publicationYear: 2007, firstAuthor: 'McDowell', studyName: 'CSHA', country: 'CA', context: ['H'],
-          period: [1991, 2001],
-          studyType: ['PC'],
-          sampling: ['R'],
-          populationRecruited: ['C'],
-          sampleAgeRecruited: [65, 100],
-          contributingNumber: 5177,
-          baselineFemalePercentage: null,
-          sampleAgeMean: 'unclear',
-          baselineEducation: 'unclear',
-          usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
-          numFollowUps: 2,
-          followUpYears: [10, null],
-          riskOfBias: LowMedHigh.Low,
-          numberIncidentCases: 163,
-          measureOfEffect: ['RR'],
-          adjustedFor: 'age, sex, marital status, income, occupational attainment, health problems, exercise, alcohol, smoking',
-          effectSize: [2.10, 1.16, 3.74],
-          educationSubcategory: '<6 years',
-          referenceSubcategory: '13+ years'
-        },
-        {
-          isSubcategoryRow: true,
-          effectSize: [0.80, 0.43, 1.34],
-          educationSubcategory: '6-8 years',
-          referenceSubcategory: '13+ years'
-        },
-        {
-          isSubcategoryRow: true,
-          effectSize: [1.00, 0.61, 1.56],
-          educationSubcategory: '9-12 years',
-          referenceSubcategory: '13+ years'
-        },  
-        {
-          publicationYear: 2008, firstAuthor: 'Bermejo-Pareja', studyName: 'NEDICES', country: 'ES', context: ['H'],
-          period: [1994, 1998],
-          studyType: ['PC'],
-          sampling: ['A'],
-          populationRecruited: ['C'],
-          sampleAgeRecruited: [65, 100],
-          contributingNumber: 3891,
-          baselineFemalePercentage: 57, 
-          sampleAgeMean: '79.5 (6.8)',
-          baselineEducation: '30.4% illiterate cases<br/> 11.3% illiterate controls',
-          usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
-          numFollowUps: 1,
-          followUpYears: [6, 'mean 3.2 (range 0.03 - 6.6)'],
-          riskOfBias: LowMedHigh.Low,
-          numberIncidentCases: 18,
-          measureOfEffect: ['HR'],
-          adjustedFor: 'age, sex, current smoker, current ethanol consumption, stroke, diabetes mellitus, hypertension, heart disease, depressive symptoms',
-          effectSize: [1.83, 0.41, 8.13],
-          educationSubcategory: 'illiterate', 
-          referenceSubcategory: 'secondary or higher studies' 
-        },
-        {
-          isSubcategoryRow: true,
-          effectSize: [0.33, 0.07, 1.54],
-          educationSubcategory: 'can read and write',
-          referenceSubcategory: 'secondary or higher studies'
-        },
-        {
-          isSubcategoryRow: true,
-          effectSize: [0.48, 0.09, 2.46],
-          educationSubcategory: 'primary studies',
-          referenceSubcategory: 'secondary or higher studies'
-        },  
+        // category: 'Vascular dementia',
+        // first section - low ed as base
+        category: 'Low education is the base',
+        publicationYear: 2016, firstAuthor: 'Yuan', studyName: 'unknown', country: 'CN', context: ['LM'],
+        period: [1997, 2002],
+        studyType: ['PC'],
+        sampling: ['A'],
+        populationRecruited: ['C'],
+        sampleAgeRecruited: [55, 100],
+        contributingNumber: 12881,
+        baselineFemalePercentage: 53.4,
+        sampleAgeMean: 'unclear',
+        baselineEducation: '34.9% 1-6 years',
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
+        numFollowUps: 2,
+        followUpYears: [4, 'mean 3.1 (range 2.9 - 3.5)'],
+        riskOfBias: LowMedHigh.Low,
+        numberIncidentCases: 91,
+        measureOfEffect: ['HR'],
+        adjustedFor: 'age group, gender, residence status, region east vs west',
+        effectSize: [0.60, 0.36, 1.02],
+        educationSubcategory: '1-6 years',
+        referenceSubcategory: '<1 year'
+      },
+      {
+        isSubcategoryRow: true,
+        effectSize: [0.32, 0.13, 0.76],
+        educationSubcategory: '7-12 years',
+        referenceSubcategory: '<1 year'
+      },
+      {
+        isSubcategoryRow: true,
+        effectSize: [0.11, 0.02, 0.86],
+        educationSubcategory: '12+ years',
+        referenceSubcategory: '<1 year'
+      },
+      {
+        publicationYear: 2002, firstAuthor: 'Di Carlo', studyName: 'ILSA', country: 'IT', context: ['H'],
+        period: [1992, 1995],
+        studyType: ['PC'],
+        sampling: ['R'],
+        populationRecruited: ['C'],
+        sampleAgeRecruited: [65, 84],
+        contributingNumber: 2498,
+        baselineFemalePercentage: 47.0,
+        sampleAgeMean: '74.0 (5.6)',
+        baselineEducation: '6.1 (4.6)',
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
+        numFollowUps: 1,
+        followUpYears: [4, 'mean 3.8 (0.9)'],
+        riskOfBias: LowMedHigh.Medium,
+        numberIncidentCases: 34,
+        measureOfEffect: ['HR'],
+        adjustedFor: 'age and "demographic variables"',
+        effectSize: [0.33, 0.08, 1.37],
+        educationSubcategory: '6-10 years',
+        referenceSubcategory: '0-5 years'
+      },
+      {
+        isSubcategoryRow: true,
+        effectSize: [0.47, 0.14, 1.58],
+        educationSubcategory: '>=11 years',
+        referenceSubcategory: '0-5 years'
+      },
+      {
+        // second section - high ed as base
+        category: 'High education is the base',
+        publicationYear: 2005, firstAuthor: 'Ravaglia', studyName: 'CSBA', country: 'IT', context: ['H'],
+        period: [1991, 2004],
+        studyType: ['PC'],
+        sampling: ['A'],
+        populationRecruited: ['C'],
+        sampleAgeRecruited: [65, 100],
+        contributingNumber: 857,
+        baselineFemalePercentage: 53.7,
+        sampleAgeMean: '74 (6)',
+        baselineEducation: '4.7 (2.4)',
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
+        numFollowUps: 1,
+        followUpYears: [4, '3.8 (0.8)'],
+        riskOfBias: LowMedHigh.Medium,
+        numberIncidentCases: 34,
+        measureOfEffect: ['HR'],
+        adjustedFor: 'age, sex',
+        effectSize: [1.85, 0.52, 6.60],
+        educationSubcategory: '<=3 years',
+        referenceSubcategory: '6+ years'
+      },
+      {
+        isSubcategoryRow: true,
+        effectSize: [1.12, 0.32, 3.96],
+        educationSubcategory: '4-5 years',
+        referenceSubcategory: '6+ years'
+      },
+      {
+        publicationYear: 2007, firstAuthor: 'McDowell', studyName: 'CSHA', country: 'CA', context: ['H'],
+        period: [1991, 2001],
+        studyType: ['PC'],
+        sampling: ['R'],
+        populationRecruited: ['C'],
+        sampleAgeRecruited: [65, 100],
+        contributingNumber: 5177,
+        baselineFemalePercentage: null,
+        sampleAgeMean: 'unclear',
+        baselineEducation: 'unclear',
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
+        numFollowUps: 2,
+        followUpYears: [10, null],
+        riskOfBias: LowMedHigh.Low,
+        numberIncidentCases: 163,
+        measureOfEffect: ['RR'],
+        adjustedFor: 'age, sex, marital status, income, occupational attainment, health problems, exercise, alcohol, smoking',
+        effectSize: [2.10, 1.16, 3.74],
+        educationSubcategory: '<6 years',
+        referenceSubcategory: '13+ years'
+      },
+      {
+        isSubcategoryRow: true,
+        effectSize: [0.80, 0.43, 1.34],
+        educationSubcategory: '6-8 years',
+        referenceSubcategory: '13+ years'
+      },
+      {
+        isSubcategoryRow: true,
+        effectSize: [1.00, 0.61, 1.56],
+        educationSubcategory: '9-12 years',
+        referenceSubcategory: '13+ years'
+      },
+      {
+        publicationYear: 2008, firstAuthor: 'Bermejo-Pareja', studyName: 'NEDICES', country: 'ES', context: ['H'],
+        period: [1994, 1998],
+        studyType: ['PC'],
+        sampling: ['A'],
+        populationRecruited: ['C'],
+        sampleAgeRecruited: [65, 100],
+        contributingNumber: 3891,
+        baselineFemalePercentage: 57,
+        sampleAgeMean: '79.5 (6.8)',
+        baselineEducation: '30.4% illiterate cases<br/> 11.3% illiterate controls',
+        usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: false,
+        numFollowUps: 1,
+        followUpYears: [6, 'mean 3.2 (range 0.03 - 6.6)'],
+        riskOfBias: LowMedHigh.Low,
+        numberIncidentCases: 18,
+        measureOfEffect: ['HR'],
+        adjustedFor: 'age, sex, current smoker, current ethanol consumption, stroke, diabetes mellitus, hypertension, heart disease, depressive symptoms',
+        effectSize: [1.83, 0.41, 8.13],
+        educationSubcategory: 'illiterate',
+        referenceSubcategory: 'secondary or higher studies'
+      },
+      {
+        isSubcategoryRow: true,
+        effectSize: [0.33, 0.07, 1.54],
+        educationSubcategory: 'can read and write',
+        referenceSubcategory: 'secondary or higher studies'
+      },
+      {
+        isSubcategoryRow: true,
+        effectSize: [0.48, 0.09, 2.46],
+        educationSubcategory: 'primary studies',
+        referenceSubcategory: 'secondary or higher studies'
+      },
     ];
   }
 }
