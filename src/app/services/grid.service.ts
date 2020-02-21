@@ -109,7 +109,7 @@ export class GridService {
         eDiv.innerHTML = '<div class="squeeze">' +
           `<div class="segmentLabel floatDown">&nbsp;</div><div class="segmentLabel floatUp float-left">${ headerLabels[0] }</div><div class="segmentLabel float-right floatUp">${ headerLabels[1] }</div>` +
         '</div>';
-      } else if (!params.data.isAverageRow && !params.data.isSubcategoryRow) {
+      } else if (!params.data.isAverageRow && !params.data.isSubcategoryRow && !!params.value) {
         const first = `<div class="float-left binaryCategoryLeft" style="width: ${ params.value }%">&nbsp;</div>`;
         const second = `<div class="float-right binaryCategoryRight" style="width: ${ 100 - params.value }%">&nbsp;</div>`;
         const text = `<div class="float-left binaryCategoryText">${ params.value }%</div>`;
@@ -156,15 +156,16 @@ export class GridService {
   }
 
   // fat line with two background colours, adding up to total width (assumes percentage value passed in for now)
-  getConfidenceCellRenderer(rangeStart: number, rangeEnd: number) {
+  getConfidenceCellRenderer(rangeEnd: number) {
     return params => {
       const isFakeHeader = params.data.isFakeHeader;
       const eDiv = document.createElement('div');
       eDiv.className = 'centredCell fullHeightCell';
+      const rangeStart = 1 / rangeEnd;
 
       if (isFakeHeader) {
         eDiv.innerHTML = '<div class="squeeze">' +
-        `<div class="segmentLabel floatDown">1</div><div class="segmentLabel floatUp float-left">${ rangeStart }</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
+        `<div class="segmentLabel floatDown">1</div><div class="segmentLabel floatUp float-left">${ rangeStart.toFixed(3) }</div><div class="segmentLabel float-right floatUp">${ rangeEnd }</div>` +
       '</div>';
       } else {
         const dEffect = +params.value[0];

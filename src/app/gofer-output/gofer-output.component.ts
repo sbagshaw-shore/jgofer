@@ -104,7 +104,9 @@ export class GoferOutputComponent implements OnInit {
         break;
 
       case 3:
-        columnDefs = this.column.getCategoricalColumns();
+      case 4:
+      case 5:
+        columnDefs = this.column.getCategoricalColumns(this.id$);
         break;
     }
 
@@ -129,7 +131,15 @@ export class GoferOutputComponent implements OnInit {
         break;
 
       case 3:
-        data = this.data.getCategoricalData();
+        data = this.data.getCategoricalDataAlzheimers();
+        break;
+
+      case 4:
+        data = this.data.getCategoricalDataAllDementia();
+        break;
+
+      case 5:
+        data = this.data.getCategoricalDataVascularDementia();
         break;
     }
 

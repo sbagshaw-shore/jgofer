@@ -460,38 +460,8 @@ export class DataService {
       },
       {
         isAverageRow: true,
-        // JANET: these are fake numbers
         effectSize: [0.92, 0.91, 0.94, true], // true indicates this is an average of other values
       }
-
-      // JANET - copy and paste EMPTY rows and enter the data
-      // where there is '' it is a string; otherwise it's a number
-      // [] indicates an array, so far just of numbers
-      /*
-
-      {
-        publicationYear: , firstAuthor: '', studyName: '', country: '', context: [''],
-        period: [, ],
-        studyType: [''],
-        sampling: [''],
-        populationRecruited: '',
-        sampleAgeRecruited: [, ],
-        contributingNumber: ,
-        baselineFemalePercentage: ,
-        sampleAgeMean: '',
-        baselineEducation: '',
-        usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
-        numFollowUpsMin: , numFollowUpsMax: ,
-        followUpYears: [, ''],
-        riskOfBias: LowMedHigh.,
-        numberIncidentCases: ,
-        measureOfEffect: [''],
-        adjustedFor: '',
-        effectSize: [, , ],
-        weight: ''
-      }
-
-      */
     ];
   }
 
@@ -503,7 +473,7 @@ export class DataService {
         publicationYear: 2000, firstAuthor: 'He', studyName: 'unknown', country: 'CN', context: ['LM'],
         period: [1987, 1997],
         studyType: ['PC'],
-        sampling: ['RC'], // can I please have RC for random cluster?
+        sampling: ['RC'],
         populationRecruited: ['C'],
         sampleAgeRecruited: [55, 100],
         contributingNumber: 1203,
@@ -561,7 +531,7 @@ export class DataService {
         numberIncidentCases: 140,
         measureOfEffect: ['HR'],
         adjustedFor: 'sex, age x sex',
-        cutoff: 'no education or no primary school diploma',
+        cutoff: 'no education or<br/>no primary<br/>school diploma',
         effectSize: [1.78, 1.27, 2.45],
         weight: 17.62
       },
@@ -627,7 +597,7 @@ export class DataService {
         numberIncidentCases: 241,
         measureOfEffect: ['OR'],
         adjustedFor: 'age, sex',
-        cutoff: '9 years', // additional to continuous
+        cutoff: '9 years',
         effectSize: [1.13, 0.69, 1.85],
         weight: 9.45
       },
@@ -677,7 +647,6 @@ export class DataService {
       },
       {
         isAverageRow: true,
-        // JANET: these are fake numbers
         effectSize: [1.85, 1.56, 2.18, true], // true indicates this is an average of other values
       },
       {
@@ -721,7 +690,7 @@ export class DataService {
         numberIncidentCases: 190,
         measureOfEffect: ['HR'],
         adjustedFor: 'sex, age x sex',
-        cutoff: 'no education or no primary school diploma',
+        cutoff: 'no education or<br/>no primary<br/>school diploma',
         effectSize: [1.82, 1.36, 2.42],
         weight: 11.29
       },
@@ -751,8 +720,8 @@ export class DataService {
         publicationYear: 1994, firstAuthor: 'Stern', studyName: 'unknown', country: 'US', context: ['H'],
         period: [null, null],
         studyType: ['PC'],
-        sampling: ['R-V'],
-        populationRecruited: ['C-H'],
+        sampling: ['R', 'V'],
+        populationRecruited: ['C', 'H'],
         sampleAgeRecruited: [65, 99],
         contributingNumber: 583,
         baselineFemalePercentage: 72.9,
@@ -809,7 +778,7 @@ export class DataService {
         numberIncidentCases: 496,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, race, education, household income, hypertensio, myocardial infarction, stroke/TIA, obesity, smoking, alcohol, APOE-e4',
-        cutoff: '9th grade reading level',
+        cutoff: '9th grade<br/>reading level',
         effectSize: [1.39, 1.04, 1.85],
         weight: 11.30
       },
@@ -853,28 +822,24 @@ export class DataService {
         numberIncidentCases: 577,
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, diabetes, hypertension, BMI, exercise, psychological distress, smoking',
-        cutoff: 'finished school < age 16',
+        cutoff: 'finished school<br/>< age 16',
         effectSize: [1.17, 0.99, 1.39],
         weight: 19.16
       },
       {
         isAverageRow: true,
-        // JANET: these are fake numbers
         effectSize: [1.48, 1.31, 1.67, true], // true indicates this is an average of other values
       }
     ];
   }
 
-  // CATEGORICAL - to discuss - there are categories within categories here. Need 3 separate GOfERs for Alzheimer's, All dementia and VaD.
-  // The first two need 2 sections (Low ed as base, high ed as base) like the continuous and dichotomous had 2 sections for ALzheimer's and All dementia
-  public getCategoricalData(): any[] {
+  // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  public getCategoricalDataAlzheimers(): any[] {
     return [
       {
-        // new GOfER - Alzheimer's disease
-        // category: 'Alzheimer\'s disease',
         // first category - low ed as base
         category: 'Low education is the base',
-        publicationYear: 2003, firstAuthor: 'Harmanci', studyName: 'TAPS', country: 'TR', context: ['UM'], // can I please have this? Upper middle income
+        publicationYear: 2003, firstAuthor: 'Harmanci', studyName: 'TAPS', country: 'TR', context: ['UM'],
         period: [null, null],
         studyType: ['CC'],
         sampling: ['R'],
@@ -1136,7 +1101,7 @@ export class DataService {
         baselineEducation: '37.6% low',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
-        followUpYears: [3, '2.24(0.73)'],
+        followUpYears: [3, '2.24 (0.73)'],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 328,
         measureOfEffect: ['RR'],
@@ -1184,8 +1149,13 @@ export class DataService {
         effectSize: [1.30, 1.01, 1.74],
         educationSubcategory: '9-12 years',
         referenceSubcategory: '13+ years'
-      },
-      // new GOfER - categorical all dementia
+      }
+    ];
+  }
+
+  // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  public getCategoricalDataAllDementia(): any[] {
+    return [
       {
         // category: 'All dementia',
         // first section - low ed is base
@@ -1895,7 +1865,12 @@ export class DataService {
         educationSubcategory: 'A-level',
         referenceSubcategory: 'university degree'
       },
-      // Vascular Dementia
+    ];
+  }
+
+  // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  public getCategoricalDataVascularDementia(): any[] {
+    return [
       {
         // category: 'Vascular dementia',
         // first section - low ed as base

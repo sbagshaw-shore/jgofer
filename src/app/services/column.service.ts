@@ -19,28 +19,46 @@ export class ColumnService {
   public getDichotomousColumns(): any[] {
     const columnDefs = this.getColumnDefs();
 
-    columnDefs.push({ headerName: 'Cutoff', field: 'cutoff' });
+    columnDefs.push({ headerName: 'Cutoff', field: 'cutoff', width: 150, cellRenderer: this.grid.getMultilineTextCellRenderer() });
 
     const periodColumn = columnDefs.find(x => x.field === 'period');
     periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1975, 2013, true, '?');
 
     const effectColumn = columnDefs.find(x => x.field === 'effectSize');
-    effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(0.5, 4.2);
+    effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(4.2);
 
     return columnDefs;
   }
 
-  public getCategoricalColumns(): any[] {
+  public getCategoricalColumns(id: number): any[] {
     const columnDefs = this.getColumnDefs();
 
     columnDefs.push({ headerName: 'Ed cat', field: 'educationSubcategory' });
     columnDefs.push({ headerName: 'Ref cat', field: 'referenceSubcategory' });
 
     const periodColumn = columnDefs.find(x => x.field === 'period');
-    periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1980, 2017, true, '?');
 
     const effectColumn = columnDefs.find(x => x.field === 'effectSize');
-    effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(0, 17);
+
+    switch (id) {
+      case 3: // Alzheimer's
+        periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1988, 2004, true, '?');
+        effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(12);
+        break;
+
+      case 4: // All demetia
+        periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1980, 2017, true, '?');
+        effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(17);
+        break;
+
+      case 5: // Vascular demetia
+        periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1980, 2017, true, '?');
+        effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(8); // todo actually highest is slightly over 8 - check how it looks
+        break;
+
+      default:
+        break;
+    }
 
     return columnDefs;
   }
@@ -74,7 +92,7 @@ export class ColumnService {
       { headerName: 'N incident cases', field: 'numberIncidentCases', isDataCentred: true },
       { headerName: 'Effect measure', field: 'measureOfEffect', cellRenderer: this.grid.getLetteredCellRenderer() },
       { headerName: 'Adjusted for', field: 'adjustedFor', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 175 },
-      { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(0.3, 1.7), width: 250 }
+      { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(1.7), width: 250 }
     ];
   }
 }
