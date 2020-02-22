@@ -838,7 +838,7 @@ export class DataService {
     return [
       {
         // first category - low ed as base
-        category: 'Low education is the base',
+        category: 'Low education base',
         publicationYear: 2003, firstAuthor: 'Harmanci', studyName: 'TAPS', country: 'TR', context: ['UM'],
         period: [null, null],
         studyType: ['CC'],
@@ -998,7 +998,7 @@ export class DataService {
       },
       // new section - high ed as base
       {
-        category: 'High education is the base',
+        category: 'High education base',
         publicationYear: 2005, firstAuthor: 'Ravaglia', studyName: 'CSBA', country: 'IT', context: ['H'],
         period: [1991, 2004],
         studyType: ['PC'],
@@ -1042,7 +1042,7 @@ export class DataService {
         followUpYears: [4, '4.5'],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 87,
-        measureOfEffect: ['IRR'], // can I please have this? Incident rate ratio
+        measureOfEffect: ['IRR'],
         adjustedFor: 'age',
         effectSize: [3.33, 1.88, 5.67],
         educationSubcategory: 'illiterate',
@@ -1092,7 +1092,7 @@ export class DataService {
         publicationYear: 2000, firstAuthor: 'Letenneur', studyName: 'EURODEM', country: 'DK-FR-NL-GB', context: ['H'],
         period: [1988, 1996],
         studyType: ['PC'],
-        sampling: ['A-R'],
+        sampling: ['A', 'R'],
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 12647,
@@ -1159,7 +1159,7 @@ export class DataService {
       {
         // category: 'All dementia',
         // first section - low ed is base
-        category: 'Low education is the base',
+        category: 'Low education base',
         publicationYear: 2016, firstAuthor: 'Yuan', studyName: 'unknown', country: 'CN', context: ['LM'],
         period: [1997, 2002],
         studyType: ['PC'],
@@ -1391,7 +1391,7 @@ export class DataService {
       },
       // new section - high ed as base
       {
-        category: 'High education is the base',
+        category: 'High education base',
         publicationYear: 2005, firstAuthor: 'Ravaglia', studyName: 'CSBA', country: 'IT', context: ['H'],
         period: [1991, 2004],
         studyType: ['PC'],
@@ -1547,7 +1547,7 @@ export class DataService {
         publicationYear: 2000, firstAuthor: 'Letenneur', studyName: 'EURODEM', country: 'DK-FR-NL-GB', context: ['H'],
         period: [1988, 1996],
         studyType: ['PC'],
-        sampling: ['A-R'],
+        sampling: ['A', 'R'],
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 12647,
@@ -1733,7 +1733,7 @@ export class DataService {
         publicationYear: 1997, firstAuthor: 'Schmand - B', studyName: 'AMSTEL', country: 'NL', context: ['H'],
         period: [1990, 1994],
         studyType: ['PC'],
-        sampling: [null],
+        sampling: [],
         populationRecruited: ['H'],
         sampleAgeRecruited: [65, 85],
         contributingNumber: 1950,
@@ -1835,7 +1835,7 @@ export class DataService {
         publicationYear: 2018, firstAuthor: 'Cadar', studyName: 'ELSA', country: 'GB', context: ['H'],
         period: [2002, 2015],
         studyType: ['PC'],
-        sampling: [null],
+        sampling: [],
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 6220,
@@ -1872,9 +1872,8 @@ export class DataService {
   public getCategoricalDataVascularDementia(): any[] {
     return [
       {
-        // category: 'Vascular dementia',
         // first section - low ed as base
-        category: 'Low education is the base',
+        category: 'Low ed. base',
         publicationYear: 2016, firstAuthor: 'Yuan', studyName: 'unknown', country: 'CN', context: ['LM'],
         period: [1997, 2002],
         studyType: ['PC'],
@@ -1938,7 +1937,7 @@ export class DataService {
       },
       {
         // second section - high ed as base
-        category: 'High education is the base',
+        category: 'High ed. base',
         publicationYear: 2005, firstAuthor: 'Ravaglia', studyName: 'CSBA', country: 'IT', context: ['H'],
         period: [1991, 2004],
         studyType: ['PC'],

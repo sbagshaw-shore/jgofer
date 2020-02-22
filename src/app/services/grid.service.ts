@@ -88,7 +88,7 @@ export class GridService {
 
       let html = '';
       params.value.forEach(val => {
-        const extraClass = val.length > 3 ? ' letteredButtonSmall' : '';
+        const extraClass = val && val.length > 3 ? ' letteredButtonSmall' : '';
         html += `<button class="btn btn-xs letteredButton ${ extraClass }">${ val }</button>`;
       });
 

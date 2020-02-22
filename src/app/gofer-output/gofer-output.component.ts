@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouteConfigLoadStart } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { GridOptions, ColDef, Module } from '@ag-grid-community/core';
@@ -56,7 +56,7 @@ export class GoferOutputComponent implements OnInit {
       },
     };
 
-    gridOptions.getRowHeight = (params) => params.data.isFakeHeader ? 30 : this.rowHeight;
+    gridOptions.getRowHeight = (params) => this.getRowHeight(params.data);
     return gridOptions;
   }
 
@@ -70,25 +70,29 @@ export class GoferOutputComponent implements OnInit {
       };
     }
 
-    return { height: `${ this.getRowSpanForCategory(val) * this.rowHeight }px` };
+    return { height: `${ this.getRowHeightForCategory(val) }px` };
   }
 
   // calculates how many in the current category based on (correctly sorted) data
-  private getRowSpanForCategory(val: string): number {
-    let index = this.rowData.findIndex(x => x.category === val) + 1; // start here
-    let count = 1;
+  private getRowHeightForCategory(val: string): number {
+    let index = this.rowData.findIndex(x => x.category === val); // start here
+    let height = 0;
 
     while (true && index < this.rowData.length) {
       const record = this.rowData[index];
-      if (!!record.category || record.isAverageRow || record.isFakeHeader) {
+      if ((record.category && record.category !== val) || record.isAverageRow || record.isFakeHeader) {
         break;
       }
 
+      height += this.getRowHeight(record);
       index++;
-      count++;
     }
 
-    return count;
+    return height;
+  }
+
+  private getRowHeight(record: any) {
+    return record.isFakeHeader || record.isSubcategoryRow ? 30 : this.rowHeight;
   }
 
   private getColumnDefs() {
