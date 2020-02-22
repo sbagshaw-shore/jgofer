@@ -270,7 +270,7 @@ export class DataService {
         weight: 0.20
       },
       {
-        publicationYear: 2010, firstAuthor: 'Brayne', studyName: 'EClipSE - CFAS, CC75C, Vantaa 85+', country: 'FI-GB', context: ['H'],
+        publicationYear: 2010, firstAuthor: 'Brayne', studyName: 'EClipSE - CFAS, CC75C, Vantaa 85+', country: 'UN', context: ['H'],
         period: [1985, 2005],
         studyType: ['PC'],
         sampling: ['?'],
@@ -651,7 +651,8 @@ export class DataService {
       },
       {
         category: 'All dementia',
-        publicationYear: 2012, firstAuthor: 'Prince', studyName: 'Unknown', country: 'CU-DO-VE-PE-MX-CN', context: ['LM'],
+        // publicationYear: 2012, firstAuthor: 'Prince', studyName: 'Unknown', country: 'CU-DO-VE-PE-MX-CN', context: ['LM'],
+        publicationYear: 2012, firstAuthor: 'Prince', studyName: 'Unknown', country: 'UN', context: ['LM'],
         period: [2003, 2010],
         studyType: ['PC'],
         sampling: ['?'],
