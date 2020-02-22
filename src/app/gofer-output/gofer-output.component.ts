@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouteConfigLoadStart } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { GridOptions, ColDef, Module } from '@ag-grid-community/core';

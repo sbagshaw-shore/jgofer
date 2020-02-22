@@ -172,6 +172,7 @@ export class GridService {
         const dStart = +params.value[1];
         const dEnd =  +params.value[2];
         const isAverage = params.value[3];
+        const isSubCategory = params.data.isSubcategoryRow;
         const percentPerIncrement = 100 / (rangeEnd - rangeStart);
         const rangeMarginLeft = +(dStart - rangeStart) * percentPerIncrement;
         const rangeWidth = (dEnd - dStart) * percentPerIncrement;
@@ -185,7 +186,7 @@ export class GridService {
 
         const colour = isAverage ? '#888888' : 'skyblue';
         const diamondId = isAverage ? 'averageDiamond' : 'diamond';
-        const marginTop = isAverage ? -38 : -24;
+        const marginTop = isAverage ? -38 : isSubCategory ? -16 : -24; // subcat margin based on rowHeight of 30
 
         const rangeLine = `<div style="margin-left: 1px;"><div style="margin-left: ${ rangeMarginLeft }%; margin-top: ${ marginTop }px; width: ${ rangeWidth }%; border-bottom: 4px solid ${ colour };"></div></div>`;
         const point = `<div style="margin-left: 1px;"><div style="margin-left: ${ pointMarginLeft }%; margin-top: -8px" id="${ diamondId }"></div></div>`;

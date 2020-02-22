@@ -978,7 +978,7 @@ export class DataService {
         sampleAgeRecruited: [65, 100],
         contributingNumber: 2356,
         baselineFemalePercentage: 59.0,
-        sampleAgeMean: '79.4 with dementia<br>74.0 without dementia',
+        sampleAgeMean: '79.4 with dementia<br>74.0 w/o dementia',
         baselineEducation: '7.8% illiterate',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,

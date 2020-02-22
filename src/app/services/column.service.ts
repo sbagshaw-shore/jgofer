@@ -92,7 +92,7 @@ export class ColumnService {
       { headerName: 'N incident cases', field: 'numberIncidentCases', isDataCentred: true },
       { headerName: 'Effect measure', field: 'measureOfEffect', cellRenderer: this.grid.getLetteredCellRenderer() },
       { headerName: 'Adjusted for', field: 'adjustedFor', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 175 },
-      { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(1.7), width: 250 }
+      { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(3), width: 250 }
     ];
   }
 }
