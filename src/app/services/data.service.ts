@@ -67,7 +67,7 @@ export class DataService {
         baselineEducation: '12.8 w/ dementia<br/>13.9 w/o dementia',
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
-        followUpYears: [4, 'presume 4'],
+        followUpYears: [4],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 151,
         measureOfEffect: ['RaR'],
@@ -240,7 +240,7 @@ export class DataService {
         baselineEducation: '12.8 w/ dementia<br/>13.9 w/o dementia',
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
-        followUpYears: [4, 'presume 4'],
+        followUpYears: [4],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 215,
         measureOfEffect: ['RR'],
@@ -1040,7 +1040,7 @@ export class DataService {
         baselineEducation: '7.8% illiterate',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
-        followUpYears: [4, '4.5'],
+        followUpYears: [4.5],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 87,
         measureOfEffect: ['IRR'],
@@ -1090,7 +1090,7 @@ export class DataService {
         referenceSubcategory: 'secondary or higher studies'
       },
       {
-        publicationYear: 2000, firstAuthor: 'Letenneur', studyName: 'EURODEM', country: 'DK-FR-NL-GB', context: ['H'],
+        publicationYear: 2000, firstAuthor: 'Letenneur', studyName: 'EURODEM', country: 'UN', context: ['H'], // DK-FR-NL-GB
         period: [1988, 1996],
         studyType: ['PC'],
         sampling: ['A', 'R'],
@@ -1375,7 +1375,7 @@ export class DataService {
         baselineEducation: '12.8 w/ dementia<br/>13.9 w/o dementia',
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
-        followUpYears: [4, 'presume 4'],
+        followUpYears: [4],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 215,
         measureOfEffect: ['RR'],
@@ -1433,7 +1433,7 @@ export class DataService {
         baselineEducation: '7.8% illiterate',
         usedDiagnosticCriteria: true, screenedBeforeClinicalEvaluation: true,
         numFollowUps: 2,
-        followUpYears: [4, '4.5'],
+        followUpYears: [4.5],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 138,
         measureOfEffect: ['IRR'],
@@ -1545,7 +1545,7 @@ export class DataService {
         referenceSubcategory: '>=10 years'
       },
       {
-        publicationYear: 2000, firstAuthor: 'Letenneur', studyName: 'EURODEM', country: 'DK-FR-NL-GB', context: ['H'],
+        publicationYear: 2000, firstAuthor: 'Letenneur', studyName: 'EURODEM', country: 'UN', context: ['H'], // DK-FR-NL-GB
         period: [1988, 1996],
         studyType: ['PC'],
         sampling: ['A', 'R'],

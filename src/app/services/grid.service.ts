@@ -1,4 +1,4 @@
-import { Injectable, ɵCompiler_compileModuleSync__POST_R3__ } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { LowMedHigh } from './enums';
 
 @Injectable({
@@ -155,6 +155,16 @@ export class GridService {
     };
   }
 
+  logPosition(options, value): number {
+    const minpos = options.minpos || 0;
+    const maxpos = options.maxpos || 100;
+    const minlval = Math.log(options.minval || 1);
+    const maxlval = Math.log(options.maxval || 100000);
+    const scale = (maxlval - minlval) / (maxpos - minpos);
+
+    return minpos + (Math.log(value) - minlval) / scale;
+ }
+
   // fat line with two background colours, adding up to total width (assumes percentage value passed in for now)
   getConfidenceCellRenderer(rangeEnd: number) {
     return params => {
@@ -172,13 +182,16 @@ export class GridService {
         const dStart = +params.value[1];
         const dEnd =  +params.value[2];
         const isAverage = params.value[3];
-        const isSubCategory = params.data.isSubcategoryRow;
-        const percentPerIncrement = 100 / (rangeEnd - rangeStart);
-        const rangeMarginLeft = +(dStart - rangeStart) * percentPerIncrement;
-        const rangeWidth = (dEnd - dStart) * percentPerIncrement;
-        const pointMarginLeft = +(dEffect - rangeStart) * percentPerIncrement;
+        // const isSubCategory = params.data.isSubcategoryRow;
 
-        // just a 1 marker
+        const logOptions = { minval: 1 / rangeEnd, maxval: rangeEnd };
+        const rangeMarginLeft = this.logPosition(logOptions, dStart);
+        const rangeWidth = this.logPosition(logOptions, dEnd) - rangeMarginLeft;
+        const pointMarginLeft = this.logPosition(logOptions, dEffect);
+
+        // console.log(dStart, rangeMarginLeft);
+
+        // just a 1 marker - no lines for ends at the moment
         const markerLines =
         '<div class="row squeeze">' +
           '<span class="col-6">&nbsp;</span><span class="col-6 qtr">&nbsp;</span>' +
@@ -186,11 +199,13 @@ export class GridService {
 
         const colour = isAverage ? '#888888' : 'skyblue';
         const diamondId = isAverage ? 'averageDiamond' : 'diamond';
-        const marginTop = isAverage ? -38 : isSubCategory ? -16 : -24; // subcat margin based on rowHeight of 30
+        // const marginTop = isAverage ? -38 : isSubCategory ? -16 : -24; // subcat margin based on rowHeight of 30
+        const marginTop = isAverage ? -38 : -24; // subcat margin based on rowHeight of 50
 
         const rangeLine = `<div style="margin-left: 1px;"><div style="margin-left: ${ rangeMarginLeft }%; margin-top: ${ marginTop }px; width: ${ rangeWidth }%; border-bottom: 4px solid ${ colour };"></div></div>`;
         const point = `<div style="margin-left: 1px;"><div style="margin-left: ${ pointMarginLeft }%; margin-top: -8px" id="${ diamondId }"></div></div>`;
-        const valueText = isAverage ? `<div class="averageRowText">Summ OR: ${ dEffect } (${ dStart } - ${ dEnd })</div>` : '';
+        // const valueText = isAverage ? `<div class="averageRowText">Summ OR: ${ dEffect } (${ dStart } - ${ dEnd })</div>` : '';
+        const valueText = `<div>${ dEffect } (${ dStart } - ${ dEnd })</div>`; // todo restore above
 
         eDiv.innerHTML = `${ markerLines }${ rangeLine }${ point }${ valueText }`;
       }

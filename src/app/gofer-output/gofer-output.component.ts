@@ -92,7 +92,8 @@ export class GoferOutputComponent implements OnInit {
   }
 
   private getRowHeight(record: any) {
-    return record.isFakeHeader || record.isSubcategoryRow ? 30 : this.rowHeight;
+    // return record.isFakeHeader || record.isSubcategoryRow ? 30 : this.rowHeight;
+    return record.isFakeHeader ? 30 : this.rowHeight;
   }
 
   private getColumnDefs() {
