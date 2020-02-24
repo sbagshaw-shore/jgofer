@@ -17,6 +17,7 @@ export class GridService {
       if (!params.colDef.isCategory && !params.data.isFakeHeader) { classes = 'nonCategoryCell '; }
       if (params.colDef.isDataCentred) { classes += 'centredCell '; }
       if (params.colDef.isDataMultiline) { classes += 'multilineCell '; }
+      if (params.colDef.isTinyFont) { classes += 'tinyText '; }
       if (params.colDef.isSubHeadingInColumn && !params.data.isFakeHeader && typeof params.value !== 'number') { classes += 'subHeadingInRow '; }
 
       return classes;
@@ -205,7 +206,8 @@ export class GridService {
         const rangeLine = `<div style="margin-left: 1px;"><div style="margin-left: ${ rangeMarginLeft }%; margin-top: ${ marginTop }px; width: ${ rangeWidth }%; border-bottom: 4px solid ${ colour };"></div></div>`;
         const point = `<div style="margin-left: 1px;"><div style="margin-left: ${ pointMarginLeft }%; margin-top: -8px" id="${ diamondId }"></div></div>`;
         // const valueText = isAverage ? `<div class="averageRowText">Summ OR: ${ dEffect } (${ dStart } - ${ dEnd })</div>` : '';
-        const valueText = `<div>${ dEffect } (${ dStart } - ${ dEnd })</div>`; // todo restore above
+        const valueText = isAverage ? `<div class="averageRowText">Summary OR: ${ dEffect } (${ dStart } - ${ dEnd })</div>` :
+                                      `<div>${ dEffect } (${ dStart } - ${ dEnd })</div>`;
 
         eDiv.innerHTML = `${ markerLines }${ rangeLine }${ point }${ valueText }`;
       }

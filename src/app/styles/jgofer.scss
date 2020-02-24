@@ -78,6 +78,10 @@
   height: 100%;
 }
 
+.tinyText {
+  font-size: 0.8em !important;
+}
+
 /* national flag */
 .jgofer-flag {
   font-size: 3.2em;
@@ -168,7 +172,7 @@
 .averageRowText {
   text-align: center;
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 .binaryCategoryCell {
@@ -202,41 +206,41 @@
 #diamond {
   width: 0;
   height: 0;
-  left: -9px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
-  border: 9px solid transparent;
-  border-bottom: 4px solid royalblue;
+  left: -5px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
+  border: 5px solid transparent;
+  border-bottom: 8px solid royalblue;
   position: relative;
   top: -7px;
 }
 #diamond:after {
   content:'';
   position: absolute;
-  left: -9px;
-  top: 4px;
+  left: -5px;
+  top: 7px;
   width: 0;
   height: 0;
-  border: 9px solid transparent;
-  border-top: 4px solid royalblue;
+  border: 5px solid transparent;
+  border-top: 8px solid royalblue;
 }
 
 #averageDiamond {
   width: 0;
   height: 0;
-  left: -9px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
-  border: 9px solid transparent;
-  border-bottom: 4px solid black;
+  left: -5px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
+  border: 5px solid transparent;
+  border-bottom: 8px solid black;
   position: relative;
   top: -7px;
 }
 #averageDiamond:after {
   content:'';
   position: absolute;
-  left: -9px;
-  top: 4px;
+  left: -5px;
+  top: 7px;
   width: 0;
   height: 0;
-  border: 9px solid transparent;
-  border-top: 4px solid black;
+  border: 5px solid transparent;
+  border-top: 8px solid black;
 }
 
 .arrow {

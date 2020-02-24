@@ -33,8 +33,8 @@ export class ColumnService {
   public getCategoricalColumns(id: number): any[] {
     const columnDefs = this.getColumnDefs();
 
-    columnDefs.push({ headerName: 'Ed cat', field: 'educationSubcategory' });
-    columnDefs.push({ headerName: 'Ref cat', field: 'referenceSubcategory' });
+    columnDefs.push({ headerName: 'Ed cat', field: 'educationSubcategory', isDataMultiline: true });
+    columnDefs.push({ headerName: 'Ref cat', field: 'referenceSubcategory', isDataMultiline: true });
 
     const periodColumn = columnDefs.find(x => x.field === 'period');
 
@@ -52,7 +52,7 @@ export class ColumnService {
         break;
 
       case 5: // Vascular demetia
-        periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1980, 2017, true, '?');
+        periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1991, 2004, true, '?');
         effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(8); // todo actually highest is slightly over 8 - check how it looks
         break;
 
@@ -91,7 +91,7 @@ export class ColumnService {
       { headerName: 'Risk of bias', field: 'riskOfBias', cellRenderer: this.grid.getLowMediumHighCellRenderer() },
       { headerName: 'N incident cases', field: 'numberIncidentCases', isDataCentred: true },
       { headerName: 'Effect measure', field: 'measureOfEffect', cellRenderer: this.grid.getLetteredCellRenderer() },
-      { headerName: 'Adjusted for', field: 'adjustedFor', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 175 },
+      { headerName: 'Adjusted for', field: 'adjustedFor', cellRenderer: this.grid.getMultilineTextCellRenderer(), isDataMultiline: true, width: 175, isTinyFont: true },
       { headerName: 'Effect size', field: 'effectSize', cellRenderer: this.grid.getConfidenceCellRenderer(3), width: 250 }
     ];
   }
