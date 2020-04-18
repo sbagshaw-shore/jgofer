@@ -11,7 +11,7 @@ export class ColumnService {
   public getContinuousColumns(): any[] {
     const columnDefs = this.getColumnDefs();
 
-    columnDefs.push({ headerName: 'Weight', field: 'weight', isDataCentred: true });
+    columnDefs.push({ headerName: 'Weight', field: 'weight', isDataCentred: true, cellRenderer: this.grid.getFixedIntCellRenderer(2) });
 
     return columnDefs;
   }
@@ -20,6 +20,7 @@ export class ColumnService {
     const columnDefs = this.getColumnDefs();
 
     columnDefs.push({ headerName: 'Cutoff', field: 'cutoff', width: 150, cellRenderer: this.grid.getMultilineTextCellRenderer() });
+    columnDefs.push({ headerName: 'Weight', field: 'weight', isDataCentred: true, cellRenderer: this.grid.getFixedIntCellRenderer(2) });
 
     const periodColumn = columnDefs.find(x => x.field === 'period');
     periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1975, 2013, true, '?');
@@ -37,7 +38,6 @@ export class ColumnService {
     columnDefs.push({ headerName: 'Ref cat', field: 'referenceSubcategory', isDataMultiline: true });
 
     const periodColumn = columnDefs.find(x => x.field === 'period');
-
     const effectColumn = columnDefs.find(x => x.field === 'effectSize');
 
     switch (id) {
@@ -46,15 +46,20 @@ export class ColumnService {
         effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(12);
         break;
 
-      case 4: // All demetia
+      case 4: // Any demetia
         periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1980, 2017, true, '?');
         effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(17);
         break;
 
       case 5: // Vascular demetia
         periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1991, 2004, true, '?');
-        effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(8); // todo actually highest is slightly over 8 - check how it looks
+        effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(8);
         break;
+
+        case 6: // MCI
+          periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1991, 2009, true, '?');
+          effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(12); // todo actually highest is slightly over 8 - check how it looks
+          break;
 
       default:
         break;

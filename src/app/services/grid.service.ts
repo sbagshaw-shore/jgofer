@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LowMedHigh } from './enums';
+import { prepareEventListenerParameters, parseTemplate } from '@angular/compiler/src/render3/view/template';
+import { PreloadAllModules } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -110,12 +112,16 @@ export class GridService {
         eDiv.innerHTML = '<div class="squeeze">' +
           `<div class="segmentLabel floatDown">&nbsp;</div><div class="segmentLabel floatUp float-left">${ headerLabels[0] }</div><div class="segmentLabel float-right floatUp">${ headerLabels[1] }</div>` +
         '</div>';
-      } else if (!params.data.isAverageRow && !params.data.isSubcategoryRow && !!params.value) {
-        const first = `<div class="float-left binaryCategoryLeft" style="width: ${ params.value }%">&nbsp;</div>`;
-        const second = `<div class="float-right binaryCategoryRight" style="width: ${ 100 - params.value }%">&nbsp;</div>`;
-        const text = `<div class="float-left binaryCategoryText">${ params.value }%</div>`;
+      } else if (!params.data.isAverageRow && !params.data.isSubcategoryRow) {
+        if (!!params.value) {
+          const first = `<div class="float-left binaryCategoryLeft" style="width: ${ params.value }%">&nbsp;</div>`;
+          const second = `<div class="float-right binaryCategoryRight" style="width: ${ 100 - params.value }%">&nbsp;</div>`;
+          const text = `<div class="float-left binaryCategoryText">${ params.value }%</div>`;
 
-        eDiv.innerHTML = `<div class="binaryCategoryCell">${ first }${ second }</div>${ text }`;
+          eDiv.innerHTML = `<div class="binaryCategoryCell">${ first }${ second }</div>${ text }`;
+        } else {
+          eDiv.innerHTML = '<div style="margin-top: 15px">?</div>';
+        }
       }
 
       return eDiv;
@@ -140,6 +146,9 @@ export class GridService {
       '</div>';
     } else if (params.data.isAverageRow || params.data.isSubcategoryRow) {
       eDiv.innerHTML = markerLines;
+    } else if (!params.value[0] && !params.value[1]) {
+      const unknown = '<div style="text-align: center; margin-top: -20px;">?</div>';
+      eDiv.innerHTML = `${ markerLines }${ unknown }`;
     } else {
         const dEnd =  +params.value[0];
         const dataText =  params.value[1];
@@ -225,6 +234,15 @@ export class GridService {
     };
   }
 
+  getFixedIntCellRenderer() {
+    return params => {
+      const eDiv = document.createElement('div');
+      eDiv.className = 'centredCell';
+      eDiv.innerHTML = params.value ? parseFloat(params.value).toFixed(2) : '';
+      return eDiv;
+    };
+  }
+
   // fancier boolean cell renderer (green tick, grey cross)
   getBooleanCellRenderer() {
     return params => {
@@ -280,7 +298,9 @@ export class GridService {
       let html = '';
       const val = params.value;
 
-      if (!!val) {
+      if (!val && !params.data.isSubcategoryRow && !params.data.isFakeHeader && !params.data.isAverageRow) {
+        html = '?';
+      } else if (!!val) {
         for (let i = 1; i <= val; i++) {
           if (i % numDotsPerRow === 1) {
             html += '<div class="dotRow">';
@@ -301,5 +321,6 @@ export class GridService {
       eDiv.innerHTML = html;
       return eDiv;
     };
+
   }
 }
