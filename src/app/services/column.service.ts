@@ -11,7 +11,7 @@ export class ColumnService {
   public getContinuousColumns(): any[] {
     const columnDefs = this.getColumnDefs();
 
-    columnDefs.push({ headerName: 'Weight', field: 'weight', isDataCentred: true, cellRenderer: this.grid.getFixedIntCellRenderer(2) });
+    columnDefs.push({ headerName: 'Weight', field: 'weight', isDataCentred: true, cellRenderer: this.grid.getFixedIntCellRenderer() });
 
     return columnDefs;
   }
@@ -20,7 +20,7 @@ export class ColumnService {
     const columnDefs = this.getColumnDefs();
 
     columnDefs.push({ headerName: 'Cutoff', field: 'cutoff', width: 150, cellRenderer: this.grid.getMultilineTextCellRenderer() });
-    columnDefs.push({ headerName: 'Weight', field: 'weight', isDataCentred: true, cellRenderer: this.grid.getFixedIntCellRenderer(2) });
+    columnDefs.push({ headerName: 'Weight', field: 'weight', isDataCentred: true, cellRenderer: this.grid.getFixedIntCellRenderer() });
 
     const periodColumn = columnDefs.find(x => x.field === 'period');
     periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1975, 2013, true, '?');
@@ -77,7 +77,7 @@ export class ColumnService {
       // use isSubHeadingInColumn if having category headers on their own rows -
       { headerName: 'Pub year', field: 'publicationYear', isSubHeadingInColumn: true  },
       { headerName: 'First author', field: 'firstAuthor' },
-      { headerName: 'Study name', field: 'studyName' },
+      { headerName: 'Study name', field: 'studyName', cellRenderer: this.grid.getMultilineTextCellRenderer() },
       { headerName: 'Country', field: 'country', cellRenderer: this.grid.getNationalFlagCellRenderer() },
       { headerName: 'Context', field: 'context', cellRenderer: this.grid.getLetteredCellRenderer() },
       { headerName: 'Period', field: 'period', cellRenderer: this.grid.getRangedLineCellRenderer(1982, 2013, true, '?'), width: 200 },

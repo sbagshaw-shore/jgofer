@@ -169,7 +169,7 @@ export class DataService {
         contributingNumber: 3276,
         baselineFemalePercentage: 65.5,
         sampleAgeMean: '77.7 (5.9) 1992 cohort<br/>77.2 (5.5) 2001 cohort',
-        baselineEducation: '9.3 (3.1) 1992 cohort<br/>11.4(2.7) 2001 cohort',
+        baselineEducation: '9.3 (3.1) 1992 cohort<br/>11.4 (2.7) 2001 cohort',
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
         numFollowUps: 7,
         followUpYears: [17, null],
@@ -186,7 +186,7 @@ export class DataService {
       },
       {
         category: 'Any dementia',
-        publicationYear: 1994, firstAuthor: 'Ste.0rn', studyName: 'Unknown', country: 'US', context: ['H'],
+        publicationYear: 1994, firstAuthor: 'Stern', studyName: 'Unknown', country: 'US', context: ['H'],
         period: [null, null],
         studyType: ['PC'],
         sampling: ['V', 'mixed'],
@@ -228,7 +228,7 @@ export class DataService {
         weight: 8.87
       },
       {
-        publicationYear: 2010, firstAuthor: 'Brayne', studyName: 'EClipSE - CFAS, CC75C, Vantaa 85+', country: 'UN', context: ['H'],
+        publicationYear: 2010, firstAuthor: 'Brayne', studyName: 'EClipSE', country: 'UN', context: ['H'],
         period: [1985, 2005],
         studyType: ['PC'],
         sampling: ['?'],
@@ -354,7 +354,7 @@ export class DataService {
         weight: 2.59
       },
       {
-        publicationYear: 2016, firstAuthor: 'Zahodne', studyName: 'W HAP', country: 'US', context: ['H'],
+        publicationYear: 2016, firstAuthor: 'Zahodne', studyName: 'WHICAP', country: 'US', context: ['H'],
         period: [1992, 2011],
         studyType: ['PC'],
         sampling: ['R'],
@@ -384,7 +384,7 @@ export class DataService {
         contributingNumber: 3276,
         baselineFemalePercentage: 65.5,
         sampleAgeMean: '77.7 (5.9) 1992 cohort<br/>77.2 (5.5) 2001 cohort',
-        baselineEducation: '9.3 (3.1) 1992 cohort<br/>11.4(2.7) 2001 cohort',
+        baselineEducation: '9.3 (3.1) 1992 cohort<br/>11.4 (2.7) 2001 cohort',
         usedDiagnosticCriteria: true,  screenedBeforeClinicalEvaluation: true,
         numFollowUps: 7,
         followUpYears: [17, null],
@@ -1306,11 +1306,11 @@ export class DataService {
       {
         isSubcategoryRow: true,
         effectSize: [0.94, 0.55, 1.61],
-        educationSubcategory: 'post-secondary and university',
+        educationSubcategory: 'post-secondary/university',
         referenceSubcategory: 'elementary education'
       },
       {
-        publicationYear: 2015, firstAuthor: 'Dekhtyar', studyName: 'Uppsala Birth Cohort', country: 'SE', context: ['H'],
+        publicationYear: 2015, firstAuthor: 'Dekhtyar', studyName: 'Uppsala<br/>Birth<br/>Cohort', country: 'SE', context: ['H'],
         period: [1980, 2008],
         studyType: ['PC'],
         sampling: ['A'],
@@ -1329,16 +1329,16 @@ export class DataService {
         adjustedFor: 'calendar year during follow up, birth cohort, sex, childhood grades, occupational complexity',
         effectSize: [0.95, 0.82, 1.10],
         educationSubcategory: 'senior high school',
-        referenceSubcategory: 'elementary (up to 10 years)'
+        referenceSubcategory: 'elementary (<=10 years)'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.87, 0.66, 1.15],
         educationSubcategory: 'professional/university',
-        referenceSubcategory: 'elementary (up to 10 years)'
+        referenceSubcategory: 'elementary (<=10 years)'
       },
       {
-        publicationYear: 2018, firstAuthor: 'Sullivan', studyName: 'MoVIES and MYHAT', country: 'US', context: ['H'],
+        publicationYear: 2018, firstAuthor: 'Sullivan', studyName: 'MoVIES<br>and <br>MYHAT', country: 'US', context: ['H'],
         period: [1987, 2017],
         studyType: ['PC'],
         sampling: ['R'],
@@ -1349,21 +1349,21 @@ export class DataService {
         sampleAgeMean: '75.69 (6.93)',
         baselineEducation: '25.4% less than high school',
         usedDiagnosticCriteria: false,  screenedBeforeClinicalEvaluation: null, // todo true-false, //has a true and a false - is this possible?
-        numFollowUps: 'unclear',
-        followUpYears: ['unclear', 'mean 7.1'],
+        numFollowUps: null,
+        followUpYears: [7.1, 'mean 7.1'],
         riskOfBias: LowMedHigh.Medium,
         numberIncidentCases: 257,
         measureOfEffect: ['IRR'],
         adjustedFor: 'birth cohort, age, sex',
         effectSize: [0.88, 0.65, 1.19],
         educationSubcategory: 'high school graduate',
-        referenceSubcategory: 'less than high school'
+        referenceSubcategory: '< high school'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.77, 0.56, 1.07],
         educationSubcategory: 'college or higher',
-        referenceSubcategory: 'less than high school'
+        referenceSubcategory: '< high school'
       },
       {
         publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: ['H'],
@@ -1449,7 +1449,7 @@ export class DataService {
         isSubcategoryRow: true,
         effectSize: [5.58, 2.73, 12.08],
         educationSubcategory: 'illiterate',
-        referenceSubcategory: 'secondary school or higher'
+        referenceSubcategory: '>=secondary school'
       },
       {
         publicationYear: 1998, firstAuthor: 'Zhang', studyName: 'unknown', country: 'CN', context: ['LM'],
@@ -1511,16 +1511,16 @@ export class DataService {
         isSubcategoryRow: true,
         effectSize: [1.16, 0.34, 3.94],
         educationSubcategory: '1-3 years',
-        referenceSubcategory: '8 or more years'
+        referenceSubcategory: '8+ years'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.39, 0.40, 4.89],
         educationSubcategory: '4-7 years',
-        referenceSubcategory: '8 or more years'
+        referenceSubcategory: '8+ years'
       },
       {
-        publicationYear: 2018, firstAuthor: 'Nakahori', studyName: 'Toyama Dementia Survey', country: 'JP', context: ['H'],
+        publicationYear: 2018, firstAuthor: 'Nakahori', studyName: 'Toyama <br>Dementia <br>Survey', country: 'JP', context: ['H'],
         period: [2014, 2014],
         studyType: ['CC'],
         sampling: ['R'],
@@ -1691,13 +1691,13 @@ export class DataService {
         adjustedFor: 'unclear - possibly age, sex, BMI, urban/rural, occupation, income, smoking',
         effectSize: [2.12, 1.03, 4.38],
         educationSubcategory: 'primary school',
-        referenceSubcategory: '>= high secondary school'
+        referenceSubcategory: '>= high school'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.35, 0.70, 2.61],
         educationSubcategory: 'secondary school',
-        referenceSubcategory: '>= high secondary school'
+        referenceSubcategory: '>= high school'
       },
       {
         publicationYear: 2008, firstAuthor: 'Bermejo-Pareja', studyName: 'NEDICES', country: 'ES', context: ['H'],
@@ -1719,25 +1719,25 @@ export class DataService {
         adjustedFor: 'age, sex, current smoker, current ethanol consumption, stroke, diabetes mellitus, hypertension, heart disease, depressive symptoms',
         effectSize: [2.71, 1.46, 5.02],
         educationSubcategory: 'illiterate',
-        referenceSubcategory: 'secondary or higher studies'
+        referenceSubcategory: 'secondary +'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.27, 0.70, 2.29],
         educationSubcategory: 'can read and write',
-        referenceSubcategory: 'secondary or higher studies'
+        referenceSubcategory: 'secondary+'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.01, 0.53, 1.92],
         educationSubcategory: 'primary studies',
-        referenceSubcategory: 'secondary or higher studies'
+        referenceSubcategory: 'secondary+'
       },
       {
         publicationYear: 1997, firstAuthor: 'Schmand - B', studyName: 'AMSTEL', country: 'NL', context: ['H'],
         period: [1990, 1994],
         studyType: ['PC'],
-        sampling: [],
+        sampling: ['?'],
         populationRecruited: ['H'],
         sampleAgeRecruited: [65, 85],
         contributingNumber: 1950,
@@ -1753,34 +1753,34 @@ export class DataService {
         adjustedFor: 'age and sex',
         effectSize: [1.76, 0.48, 6.36],
         educationSubcategory: 'incomplete primary (<6 years)',
-        referenceSubcategory: 'higher levels (11-18 years)'
+        referenceSubcategory: 'higher (11-18 years)'
       },
       {
         isSubcategoryRow: true,
         effectSize: [2.19, 1.05, 4.59],
         educationSubcategory: 'primary (6 years)',
-        referenceSubcategory: 'higher levels (11-18 years)'
+        referenceSubcategory: 'higher (11-18 years)'
       },
       {
         isSubcategoryRow: true,
         effectSize: [2.19, 0.93, 5.14],
         educationSubcategory: 'extended primary (7-8 years)',
-        referenceSubcategory: 'higher levels (11-18 years)'
+        referenceSubcategory: 'higher (11-18 years)'
       },
       {
         isSubcategoryRow: true,
         effectSize: [2.31, 1.06, 5.01],
         educationSubcategory: 'lower vocational (9-10 years)',
-        referenceSubcategory: 'higher levels (11-18 years)'
+        referenceSubcategory: 'higher (11-18 years)'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.77, 0.32, 1.86],
         educationSubcategory: 'general intermediate (10-12 years)',
-        referenceSubcategory: 'higher levels (11-18 years)'
+        referenceSubcategory: 'higher (11-18 years)'
       },
       {
-        publicationYear: 2015, firstAuthor: 'de Bruijn', studyName: 'Rotterdam - original cohort', country: 'NL', context: ['H'],
+        publicationYear: 2015, firstAuthor: 'de Bruijn', studyName: 'Rotterdam - <br>original <br>cohort', country: 'NL', context: ['H'],
         period: [1990, 2003],
         studyType: ['PC'],
         sampling: ['A'],
@@ -1798,17 +1798,17 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, BMI, hypertension, DM, total/HDL cholesterol ratio, lipid-lowering meds, smoking',
         effectSize: [1.13, 0.78, 1.63],
-        educationSubcategory: 'low (primary or lower vocational)',
-        referenceSubcategory: 'high (higher vocational or university)'
+        educationSubcategory: 'low',
+        referenceSubcategory: 'high'
       },
       {
         isSubcategoryRow: true,
         effectSize: [0.99, 0.68, 1.45],
-        educationSubcategory: 'intermediate (secondary or intermediate vocational)',
-        referenceSubcategory: 'high (higher vocational or university)'
+        educationSubcategory: 'intermediate',
+        referenceSubcategory: 'high'
       },
       {
-        publicationYear: 2015, firstAuthor: 'de Bruijn', studyName: 'Rotterdam - extended cohort', country: 'NL', context: ['H'],
+        publicationYear: 2015, firstAuthor: 'de Bruijn', studyName: 'Rotterdam - <br>extended <br>cohort', country: 'NL', context: ['H'],
         period: [2000, 2012],
         studyType: ['PC'],
         sampling: ['A'],
@@ -1826,20 +1826,20 @@ export class DataService {
         measureOfEffect: ['HR'],
         adjustedFor: 'age, sex, BMI, hypertension, DM, total/HDL cholesterol ratio, lipid-lowering meds, smoking',
         effectSize: [1.32, 0.73, 2.36],
-        educationSubcategory: 'low (primary or lower vocational)',
-        referenceSubcategory: 'high (higher vocational or university)'
+        educationSubcategory: 'low',
+        referenceSubcategory: 'high'
       },
       {
         isSubcategoryRow: true,
         effectSize: [1.01, 0.57, 1.78],
-        educationSubcategory: 'intermediate (secondary or intermediate vocational)',
-        referenceSubcategory: 'high (higher vocational or university)'
+        educationSubcategory: 'intermediate',
+        referenceSubcategory: 'high'
       },
       {
         publicationYear: 2018, firstAuthor: 'Cadar', studyName: 'ELSA', country: 'GB', context: ['H'],
         period: [2002, 2015],
         studyType: ['PC'],
-        sampling: [],
+        sampling: ['?'],
         populationRecruited: ['C'],
         sampleAgeRecruited: [65, 100],
         contributingNumber: 6220,
