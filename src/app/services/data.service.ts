@@ -973,7 +973,7 @@ export class DataService {
         referenceSubcategory: 'low'
       },
       {
-        publicationYear: 2011, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: ['H'],
+        publicationYear: 2002, firstAuthor: 'Kukull', studyName: 'ACT', country: 'US', context: ['H'],
         period: [1994, 2000],
         studyType: ['PC'],
         sampling: ['R'],
@@ -1338,7 +1338,7 @@ export class DataService {
         referenceSubcategory: 'elementary (<=10 years)'
       },
       {
-        publicationYear: 2018, firstAuthor: 'Sullivan', studyName: 'MoVIES<br>and <br>MYHAT', country: 'US', context: ['H'],
+        publicationYear: 2019, firstAuthor: 'Sullivan', studyName: 'MoVIES<br>and <br>MYHAT', country: 'US', context: ['H'],
         period: [1987, 2017],
         studyType: ['PC'],
         sampling: ['R'],
