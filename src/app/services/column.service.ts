@@ -52,7 +52,7 @@ export class ColumnService {
         break;
 
       case 5: // Vascular demetia
-        periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1991, 2004, true, '?');
+        periodColumn.cellRenderer = this.grid.getRangedLineCellRenderer(1985, 2004, true, '?');
         effectColumn.cellRenderer = this.grid.getConfidenceCellRenderer(8);
         break;
 
