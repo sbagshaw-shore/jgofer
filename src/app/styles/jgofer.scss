@@ -1,0 +1,263 @@
+/* make cells vertical middle */
+.ag-row .ag-cell {
+  display: flex;
+  align-items: center;
+}
+
+.ag-theme-balham .ag-cell {
+  font-size: 10pt;
+  font-family: Calibri, "Segoe UI", Thonburi, Arial, Verdana, sans-serif;
+  line-height: 1.4;
+}
+
+// .ag-theme-balham .ag-header-cell::after, - this has border-right that is the pipe between header cells
+/* centres all header cells */
+.ag-header-cell-label {
+   justify-content: center;
+}
+
+// need to have word-wrapping in header cells
+.ag-theme-balham .ag-header-cell-label .ag-header-cell-text {
+  white-space: normal;
+  text-align: center;
+}
+
+// increases height of pipe in between header cells
+// value is the 50 height set in gridOptions minus ag-grid's 8 margin-top (and leaving 8 for the bottom)
+.ag-theme-balham .ag-header-cell::after {
+  height: 34px;
+}
+
+.centredCell {
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
+
+// unsets needed to get .categoryCell displaying correctly
+.ag-theme-balham .ag-row-even {
+  background-color: unset;
+}
+
+.ag-theme-balham .ag-row-odd {
+  background-color: unset;
+}
+
+// hide default row separators so these can be controlled by cell (stops them appearing in the middle of category cells)
+.ag-theme-balham .ag-row:not(.ag-row-first) {
+  border-width: 0;
+}
+
+.categoryCell {
+  font-size: 2.0em !important;
+  font-weight: bold;
+  background-color: #084269 !important;
+  color: white;
+
+  writing-mode:vertical-lr;
+  transform: rotate(-180deg);
+
+  border: 5px solid #084269 !important;
+  border-radius: .7rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+// row separators
+.nonCategoryCell {
+  border-top: 1px solid #dddddd !important;
+}
+
+.multilineCell {
+  white-space: normal;
+}
+
+.fullHeightCell {
+  vertical-align: middle;
+  height: 100%;
+}
+
+.tinyText {
+  font-size: 0.8em !important;
+}
+
+/* national flag */
+.jgofer-flag {
+  font-size: 3.2em;
+}
+
+.subHeadingInRow {
+  font-size: 2.3em !important;
+  font-weight: bold;
+}
+
+.dotRow {
+  height: 11px;
+}
+
+.dot {
+  height: 9px;
+  width: 9px;
+  background-color: purple;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 1px;
+}
+
+// appears amongst ranged lines
+.rangeDot {
+  height: 10px;
+  width: 10px;
+  margin-left: -5px;
+  background-color: goldenrod;
+  border-radius: 35%;
+  display: inline-block;
+}
+
+.header {
+  background-color: black;
+  color: white;
+}
+
+.fakeHeader {
+  background-color: black;
+  color: white;
+}
+
+.qtr {
+  border-left: 1px solid goldenrod;
+  opacity: 0.5;
+}
+
+.qtr4 {
+  border-left: 1px solid goldenrod;
+  border-right: 1px solid goldenrod;
+  opacity: 0.5;
+}
+
+.segmentLabel {
+  color: goldenrod;
+  margin-top: 2px;
+}
+
+.squeeze {
+  margin-left: 1px;
+  width: 99%;
+  height: 100%;
+}
+
+.floatUp {
+  margin-top: -18px;
+}
+
+.floatDown {
+  margin-top: 4px;
+}
+
+// to resemble an icon with just a letter in it
+.letteredButton {
+  border: 1px solid black;
+  border-radius: .3rem;
+  background-color: white;
+  margin-right: 3px;
+  padding: 7px 5px !important;
+}
+
+.letteredButtonSmall {
+  font-size: 0.8em !important;
+  padding: 8px 5px !important;
+}
+
+.averageRowText {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.binaryCategoryCell {
+  margin-top: 14px;
+}
+
+.binaryCategoryLeft {
+  background-color: mediumvioletred;
+}
+
+.binaryCategoryRight {
+  background-color: orchid;
+}
+
+.binaryCategoryText {
+  justify-content: left;
+  text-align: left;
+  margin-left: 5px;
+  color: white;
+  margin-top: -18px;
+}
+
+/* this style was somehow removed for BootStrap 4 */
+.btn-group-xs > .btn, .btn-xs {
+  padding: .25rem .4rem;
+  font-size: .875rem;
+  line-height: .5;
+  border-radius: .2rem;
+}
+
+#diamond {
+  width: 0;
+  height: 0;
+  left: -5px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
+  border: 5px solid transparent;
+  border-bottom: 8px solid royalblue;
+  position: relative;
+  top: -7px;
+}
+#diamond:after {
+  content:'';
+  position: absolute;
+  left: -5px;
+  top: 7px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 8px solid royalblue;
+}
+
+#averageDiamond {
+  width: 0;
+  height: 0;
+  left: -5px; // wasn't in where I had copied and pasted this from, but needed to place it on the correct point
+  border: 5px solid transparent;
+  border-bottom: 8px solid black;
+  position: relative;
+  top: -7px;
+}
+#averageDiamond:after {
+  content:'';
+  position: absolute;
+  left: -5px;
+  top: 7px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 8px solid black;
+}
+
+.arrow {
+  background: goldenrod;
+  position: relative;
+  height: 4px;
+  // width: 0;
+}
+.arrow::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 12px solid goldenrod;
+  top: -3px;
+  right: -2px;
+}
+
